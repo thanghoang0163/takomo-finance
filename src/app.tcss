@@ -1,0 +1,12 @@
+@import '@tiki.vn/tini-style/es/index.tcss';
+@import "./styles/skeleton.tcss";
+@import "./styles/grid-system.tcss";
+@import "./styles/index.tcss";
+
+
+:root {
+  --primary-color: #7209B7;
+  --second-color: #F82486;
+  --white-color: #FFFFFF;
+  --text-color: #000000;
+}

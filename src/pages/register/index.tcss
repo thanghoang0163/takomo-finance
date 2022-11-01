@@ -1,0 +1,46 @@
+.onboarding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-color);
+}
+
+.onboarding-img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+.onboarding-text {
+  font-size: 16px;
+  color: #fff;
+  font-style: italic;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.onboarding-text text {
+  color: var(--second-color);
+}
+
+.onboarding-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--second-color);
+  border-radius: 50%;
+  border: none;
+  padding: 6px;
+  margin-top: 100px;
+}
+
+.onboarding-btn:hover{
+  background-color: var(--second-color);
+}
+
+
+
+

@@ -1,0 +1,7 @@
+{
+  "pages": ["pages/onboarding/index"],
+  "window": {
+    "defaultTitle": "",
+    "backgroundColor": "#fff"
+  }
+}

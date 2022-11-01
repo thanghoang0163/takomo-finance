@@ -1,0 +1,11 @@
+{
+  "name": "takomo-finance",
+  "version": "0.1.0",
+  "tiki": {
+    "appIdentifier": "vn.uway.miniapp.takomo",
+    "buildNumber": 1
+  },
+  "dependencies": {
+    "@tiki.vn/tini-ui": "^0.16.0"
+  }
+}
