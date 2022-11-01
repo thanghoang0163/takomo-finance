@@ -1,0 +1,5 @@
+<view class="{{className}}">
+  <block tiki:for="{{inputsArray}}">
+    <input-item label="{{label}}" placeHolder="{{placeHolder}}" onInput="onInput" />
+  </block>
+</view>

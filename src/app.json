@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/onboarding/index"],
+  "pages": ["pages/register/index"],
   "window": {
     "defaultTitle": "",
     "backgroundColor": "#fff"

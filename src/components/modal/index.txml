@@ -1,0 +1,5 @@
+<modal className="{{className}}" show="{{isShow}}" mask="{{true}}" showClose onModalClose="_onHide">
+  <view slot="description">
+    <rich-text nodes="{{text}}" />
+  </view>
+</modal>

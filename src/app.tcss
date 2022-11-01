@@ -1,12 +1,16 @@
-@import '@tiki.vn/tini-style/es/index.tcss';
+@import "@tiki.vn/tini-style/es/index.tcss";
 @import "./styles/skeleton.tcss";
 @import "./styles/grid-system.tcss";
 @import "./styles/index.tcss";
 
-
 :root {
-  --primary-color: #7209B7;
-  --second-color: #F82486;
-  --white-color: #FFFFFF;
+  --primary-color: #7209b7;
+  --second-color: #f82486;
+  --white-color: #ffffff;
   --text-color: #000000;
+  --error-message: red;
+}
+
+* {
+  box-sizing: border-box;
 }

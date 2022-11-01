@@ -1,0 +1,3 @@
+.tu-modal .tu-modal-content {
+  margin-bottom: 0;
+}

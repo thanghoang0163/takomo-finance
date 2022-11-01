@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents":{
+    "modal": "@tiki.vn/tini-ui/es/modal/index"
+  }
+}

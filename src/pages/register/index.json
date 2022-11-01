@@ -1,6 +1,10 @@
 {
   "transparentTitle": "always",
   "usingComponents": {
+    "header": "components/header/index",
+    "input-section": "components/input-section/index",
+    "modal": "components/modal/index",
+    "onboarding": "components/onboarding/index",
     "button": "@tiki.vn/tini-ui/es/button/index"
   }
 }

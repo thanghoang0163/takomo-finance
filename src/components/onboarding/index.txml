@@ -1,8 +1,10 @@
-<view class="onboarding page">
-  <image class="onboarding-img" src="/assets/images/onboarding.png" />
+<view class="onboarding">
+  <view class="onboarding-content">
+    <image class="onboarding-img" src="/assets/images/onboarding.png" />
   <text class="onboarding-text">
     <text>{{text}}</text> cung cấp sản phẩm tài chính đa dạng, giúp khách hàng dễ dàng tiếp cận các công ty hoặc tổ chức cho vay uy tín, thông qua công nghệ đăng ký và đánh giá khả năng tín dụng hiện đại. Giúp khách hàng hoàn tất mọi thủ tục và nhận được kết quả nhanh chóng, dễ dàng hơn bao giờ hết.</text>
-  <button class="onboarding-btn" onTap="onTap">
-    <icon type="arrow_right" size="30" color="#fff" />
+  </view>
+  <button class="small-btn" onTap="onTap">
+    <icon type="arrow_right" size="40" color="#fff" />
   </button>
 </view>

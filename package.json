@@ -2,10 +2,12 @@
   "name": "takomo-finance",
   "version": "0.1.0",
   "tiki": {
-    "appIdentifier": "vn.uway.miniapp.takomo",
+    "appIdentifier": "vn.uway.tiniapp.ufood",
     "buildNumber": 1
   },
   "dependencies": {
-    "@tiki.vn/tini-ui": "^0.16.0"
+    "@tiki.vn/mini-html-parser2": "^0.0.4",
+    "@tiki.vn/tini-ui": "^0.16.0",
+    "html-entities": "^2.3.3"
   }
 }

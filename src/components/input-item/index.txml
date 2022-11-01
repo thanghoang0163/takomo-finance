@@ -1,0 +1,4 @@
+<view class="input-item">
+  <text class="label">{{label}}</text>
+  <input class="input" type="number" placeholder="{{placeHolder}}" maxlength="10" onInput="_onInput" />
+</view>
