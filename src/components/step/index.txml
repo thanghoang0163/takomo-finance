@@ -1,0 +1,5 @@
+<view class="step">
+  <block tiki:for="{{steps}}" tiki:key="{{index}}">
+    <view class="step-item" onTap="_onTap"></view>
+  </block>
+</view>

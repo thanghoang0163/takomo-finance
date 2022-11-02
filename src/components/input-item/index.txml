@@ -1,4 +1,12 @@
 <view class="input-item">
-  <text class="label">{{label}}</text>
-  <input class="input" type="number" placeholder="{{placeHolder}}" maxlength="10" onInput="_onInput" />
+  <view class="input-item-label">
+    <text class="label">{{label}}</text>
+    <block tiki:if="{{isRequired}}">
+      <text class="asterisk">*</text>
+    </block>
+  </view>
+  <input class="input" disabled="{{isDisabled}}" type="{{type}}" placeholder="{{placeHolder}}" maxlength="{{maxlength}}" onInput="_onInput" />
+  <block tiki:if="{{isError}}">
+    <text class="input-error-message">{{errorText}}</text>
+  </block>
 </view>

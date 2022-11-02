@@ -1,5 +1,9 @@
 {
-  "pages": ["pages/register/index"],
+  "pages": [
+    "pages/info-customer/index",
+    "pages/login/index",
+    "pages/register/index"
+  ],
   "window": {
     "defaultTitle": "",
     "backgroundColor": "#fff"

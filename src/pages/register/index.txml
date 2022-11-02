@@ -1,20 +1,19 @@
 <view class="register page">
-  <block tiki:if="{{isFirst}}">
-    <onboarding />
-  </block>
-  <block tiki:else>
-    <view class="register-container">
-      <header />
-      <image class="register-img" src="/assets/images/banner-home.jpg" />
-      <block tiki:if="{{!modal.isShow}}">
-        <view class="register-content">
-          <text class="title">TAKOMO xin chào !</text>
-          <input-section className="input-section" label="{{label}}" placeHolder="{{placeHolder}}" onInput="onInput"
-            inputsArray="{{inputsArray}}" />
-        </view>
-      </block>
+  <view class="register-container">
+    <header />
+    <view class="register-content">
+      <text class="register-title title">Tạo tài khoản Takomo</text>
+      <view class="input-section">
+        <input-item isRequired="{{true}}" label="{{labelPassword}}" type="{{typePassword}}" placeHolder="{{placeHolderPassword}}"
+          maxlength="{{maxLengthPassword}}" isError="{{isErrorPassword}}" errorText="{{errorTextPassword}}"
+          onInput="onInputPassword" />
+        <input-item isRequired="{{true}}" label="{{labelPasswordAgain}}" type="{{typePasswordAgain}}"
+          placeHolder="{{placeHolderPasswordAgain}}" maxlength="{{maxLengthPasswordAgain}}" isError="{{isErrorPasswordAgain}}"
+          errorText="{{errorTextPasswordAgain}}" onInput="onInputPasswordAgain" />
+        <input-item isRequired="{{true}}" label="{{labelEmail}}" type="{{typeEmail}}" placeHolder="{{placeHolderEmail}}"
+          maxlength="{{maxLengthEmail}}" isError="{{isErrorEmail}}" errorText="{{errorTextEmail}}" onInput="onInputEmail" />
+      </view>
     </view>
-    <button class="large-btn" style={{modal.isShow ? "background: #7209b7" : "" }} onTap="onTap">{{btnText}}</button>
-    <modal className="modal" isShow="{{modal.isShow}}" text="{{htmlNodes}}" onHide="onHide" />
-  </block>
+  </view>
+  <button class="large-btn" onTap="onRegister">{{btnText}}</button>
 </view>

@@ -1,4 +1,16 @@
+.input-item {
+  position: relative;
+}
 
+.input-error-message {
+  /* position: absolute;
+  bottom: -15px;
+  left: 10px; */
+  margin-left: 10px;
+  color: red;
+  font-size: 12px;
+}
 
-
-
+.asterisk{
+  color: red;
+}

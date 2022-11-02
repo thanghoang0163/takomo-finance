@@ -1,5 +1,5 @@
-<view class="{{className}}">
+<view class="input-section">
   <block tiki:for="{{inputsArray}}">
-    <input-item label="{{label}}" placeHolder="{{placeHolder}}" onInput="onInput" />
+    <input-item type="{{item.type}}" label="{{item.label}}" placeHolder="{{item.placeHolder}}" maxlength="{{item.maxlength}}" onInput="{{item.onInput}}" />
   </block>
 </view>

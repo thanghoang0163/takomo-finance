@@ -10,7 +10,20 @@ Component({
           title: false,
         },
       });
-      my.navigateTo({ url: "pages/register/index" });
+      my.navigateTo({ url: "pages/login/index" });
     },
+  },
+  didMount() {
+    // my.getStorage({
+    //   key: "isFirst",
+    //   success: (res) => {
+    //     this.setData({
+    //       isFirst: res.data.title,
+    //     });
+    //   },
+    //   failed: (err) => {
+    //     console.log(err);
+    //   },
+    // });
   },
 });

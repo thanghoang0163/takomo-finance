@@ -1,0 +1,22 @@
+<view class="login page">
+  <block tiki:if="{{isFirst}}">
+    <onboarding />
+  </block>
+  <block tiki:else>
+    <view class="login-container">
+      <header />
+      <image class="login-img" src="/assets/images/banner-home.jpg" />
+      <block tiki:if="{{!modal.isShow}}">
+        <view class="login-content">
+          <text class="title">TAKOMO xin chào !</text>
+          <view class="input-section">
+            <input-item focus label="{{label}}" type="{{type}}" placeHolder="{{placeHolder}}" maxlength="{{maxlength}}" isError="{{isError}}" errorText="{{errorText}}" onInput="onInputPhone" />
+          </view>
+        </view>
+      </block>
+    </view>
+    <button class="large-btn" style={{modal.isShow ? "background: #7209b7" : "" }}
+      onTap="onRegister">{{btnText}}</button>
+    <modal className="modal" isShow="{{modal.isShow}}" text="{{modal.text}}" onHide="onHide" />
+  </block>
+</view>

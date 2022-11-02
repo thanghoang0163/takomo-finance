@@ -3,6 +3,8 @@
   "usingComponents": {
     "header": "components/header/index",
     "input-item": "components/input-item/index",
-    "modal": "components/modal/index"
+    "modal": "components/modal/index",
+    "onboarding": "components/onboarding/index",
+    "button": "@tiki.vn/tini-ui/es/button/index"
   }
 }

@@ -1,5 +1,6 @@
 <modal className="{{className}}" show="{{isShow}}" mask="{{true}}" showClose onModalClose="_onHide">
   <view slot="description">
-    <rich-text nodes="{{text}}" />
+    <!-- <rich-text nodes="{{text}}" /> -->
+    <text tiki:for="{{text}}" tiki:key="*this">{{item}}</text>
   </view>
 </modal>
