@@ -1,4 +1,4 @@
-<view class="address page">
+<view class="address background-container page">
   <view class="address-content">
     <header isShowBtn="{{true}}" />
     <text class="address-title title">Thông tin địa chỉ</text>

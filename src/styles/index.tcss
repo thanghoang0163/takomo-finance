@@ -37,8 +37,6 @@
   background-color: var(--second-color);
 }
 
- 
-
 .label {
   display: inline-block;
   font-weight: 400;
@@ -72,7 +70,7 @@
   font-size: 12px;
 }
 
-.asterisk{
+.asterisk {
   color: red;
 }
 
@@ -80,10 +78,20 @@
 .tu-textfield-input {
   width: 100%;
   background: var(--white-color);
-  border: 1px solid #DDDDE3;
+  border: 1px solid #dddde3;
   border-radius: 20px;
 }
 
-
-
-
+.background-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(114, 9, 183, 1) 25%,
+    rgba(255, 255, 255, 1) 30%
+  );
+}

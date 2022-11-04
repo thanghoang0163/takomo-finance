@@ -1,4 +1,4 @@
-<view class="photo page">
+<view class="photo background-container page">
   <view class="photo-container">
     <header isShowBtn="{{true}}" />
     <block tiki:for="{{list}}" tiki:this="{{item.id}}">

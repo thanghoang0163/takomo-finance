@@ -1,7 +1,7 @@
 <import-sjs name="{moneyFormatter}" from="../../utils/common.sjs" />
 <import-sjs name="{randomNumber}" from="./index.sjs" />
 
-<view class="loan-contract page">
+<view class="loan-contract background-container page">
   <view class="loan-contract-container">
     <header isShowBtn="{{true}}" />
     <text class="address-title title">Ký hợp đồng vay</text>
