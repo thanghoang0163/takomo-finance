@@ -1,5 +1,3 @@
-import { convertTime } from "./index.sjs";
-
 Page({
   data: {
     labelName: "Họ và tên:",
@@ -146,19 +144,26 @@ Page({
     if (selectedDate === "") {
       this.setData({
         isErrorBirthDay: true,
-        errorTextBirthDay: "Thông tin chưa được điền!",
+        errorTextBirthDay: "Thông tin chưa được chọn!",
       });
     }
 
     if (selectedItem === "") {
       this.setData({
         isErrorMaritalStatus: true,
-        errorTextMaritalStatus: "Thông tin chưa được điền!",
+        errorTextMaritalStatus: "Thông tin chưa được chọn!",
       });
     }
 
-    if (!isErrorIdCard && !isErrorName) {
-      // my.navigateTo({ url: "pages/address/index" });
+    if (
+      !isErrorIdCard &&
+      !isErrorName &&
+      !isErrorBirthDay &&
+      !isErrorMaritalStatus &&
+      inputIdCard !== "" &&
+      inputName !== ""
+    ) {
+      my.navigateTo({ url: "pages/address/index" });
     }
   },
 

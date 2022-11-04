@@ -118,15 +118,31 @@ Page({
       });
     }
 
-    if (selectedItem.length === 0) {
+    if (city === null) {
       this.setData({
-        isErrorResidence: true,
-        errorTextResidence: "Thông tin chưa được điền!",
+        cityErrorMsg: "Thông tin chưa được chọn!",
+      });
+    }
+    if (district === null) {
+      this.setData({
+        districtErrorMsg: "Thông tin chưa được chọn!",
+      });
+    }
+    if (ward === null) {
+      this.setData({
+        wardErrorMsg: "Thông tin chưa được chọn!",
       });
     }
 
-    if (address !== {} && selectedItem !== {}) {
-      // my.navigateTo({ url: "pages/job-info/index" });
+    if (selectedItem.length === 0) {
+      this.setData({
+        isErrorResidence: true,
+        errorTextResidence: "Thông tin chưa được chọn!",
+      });
+    }
+
+    if (address !== {} && selectedItem !== "" && street !== "") {
+      my.navigateTo({ url: "pages/job-info/index" });
     }
   },
 

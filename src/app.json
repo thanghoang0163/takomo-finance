@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/loan-contract/index",
-    "pages/success-loan/index",
-    "pages/take-photo/index",
-    "pages/job-info/index",
     "pages/address/index",
     "pages/customer-info/index",
     "pages/login/index",
-    "pages/register/index"
+    "pages/register/index",
+    "pages/job-info/index",
+    "pages/take-photo/index",
+    "pages/loan-contract/index",
+    "pages/success-loan/index"
   ],
   "window": {
     "defaultTitle": "",

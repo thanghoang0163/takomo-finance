@@ -124,14 +124,14 @@ Page({
     }
 
     if (
-      isErrorEmail &&
-      isErrorPassword &&
-      isErrorPasswordAgain &&
+      !isErrorEmail &&
+      !isErrorPassword &&
+      !isErrorPasswordAgain &&
       inputEmail !== "" &&
       inputPassword !== "" &&
       inputPasswordAgain !== ""
     ) {
-      my.navigateTo({ url: "pages/info-customer/index" });
+      my.navigateTo({ url: "pages/customer-info/index" });
     }
   },
 

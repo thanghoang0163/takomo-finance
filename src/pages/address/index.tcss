@@ -24,30 +24,59 @@
   font-weight: normal;
 }
 
-.address view:first-of-type .tu-label .tu-label-inline view {
-  position: relative;
-}
-
-.address view:first-of-type .tu-label .tu-textfield-inline .tu-icon.tu-textfield-error-icon {
+.address
+  view:first-of-type
+  .tu-label
+  .tu-textfield-inline
+  .tu-icon.tu-textfield-error-icon {
   display: none;
 }
 
-.address view:first-of-type .tu-label .tu-label-inline view::after {
+.address .input-section view:first-of-type .tu-label .tu-label-inline view {
+  position: relative;
+}
+
+.address .input-section view:first-of-type .tu-label .tu-label-inline view::after {
   content: "*";
   color: red;
   position: absolute;
   top: 0;
-  left: 130px;
+  left: 45px;
 }
 
-.address view:nth-of-type(2) .tu-label .tu-label-inline view {
+.address .input-section view:nth-of-type(2) .tu-label .tu-label-inline view {
   position: relative;
 }
 
-.address view:nth-of-type(2) .tu-label .tu-label-inline view::after {
+.address .input-section view:nth-of-type(2) .tu-label .tu-label-inline view::after {
   content: "*";
   color: red;
   position: absolute;
   top: 0;
   left: 110px;
 }
+
+.address .input-section view:nth-of-type(4) .tu-label .tu-label-inline view {
+  position: relative;
+}
+
+.address .input-section view:nth-of-type(4) .tu-label .tu-label-inline view::after {
+  content: "*";
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 90px;
+}
+
+.address .input-section view:nth-of-type(6) .tu-label .tu-label-inline view {
+  position: relative;
+}
+
+.address .input-section view:nth-of-type(6) .tu-label .tu-label-inline view::after {
+  content: "*";
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 83px;
+}
+
