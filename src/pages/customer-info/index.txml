@@ -1,0 +1,33 @@
+<view class="info-customer page">
+  <view class="info-customer-container">
+    <view class="info-customer-header">
+      <header isShowBtn="{{true}}" />
+    </view>
+    <view class="register-content">
+      <text class="register-title title">Thông tin khách hàng</text>
+      <view class="input-section">
+        <input-item isRequired="{{true}}" label="{{labelName}}" type="{{typeName}}" placeHolder="{{placeHolderName}}"
+          maxlength="{{maxLengthName}}" isError="{{isErrorName}}" errorText="{{errorTextName}}" onInput="onInputName" />
+        <input-item isRequired="{{true}}" label="{{labelIdCard}}" type="{{typeIdCard}}"
+          placeHolder="{{placeHolderIdCard}}" maxlength="{{maxLengthIdCard}}" isError="{{isErrorIdCard}}"
+          errorText="{{errorTextIdCard}}" onInput="onInputIdCard" />
+        <birthday-input isRequired="{{true}}" placeHolder="{{placeHolderBirthDay}}" label="{{labelBirthDay}}"
+          value="{{selectedDate}}" isError="{{isErrorBirthDay}}" errorText="{{errorTextBirthDay}}"
+          onTapIcon="onSelectDate" />
+        <view class="gender">
+          <text class="label">Giới tính:</text>
+          <radio-group class="radio-group" onChange="onChange">
+            <view class="radio" tiki:for="{{items}}" key="radio-{{index}}">
+              <radio value="{{item.name}}" checked="{{item.checked}}" />
+              <text class="text-{{item.name}}">{{item.value}}</text>
+            </view>
+          </radio-group>
+        </view>
+        <options-selector isRequired="{{true}}" list="{{listMaritalStatus}}" title="{{titleMaritalStatus}}"
+          label="{{labelMaritalStatus}}" placeHolder="{{placeHolderMaritalStatus}}" isError="{{isErrorMaritalStatus}}"
+          errorText="{{errorTextMaritalStatus}}" value="{{selectedItem}}" onSelect="onSelect" />
+      </view>
+    </view>
+  </view>
+  <button class="large-btn" onTap="onContinue">{{btnText}}</button>
+</view>

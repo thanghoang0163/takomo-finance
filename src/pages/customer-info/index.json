@@ -1,0 +1,10 @@
+{
+  "transparentTitle": "always",
+  "usingComponents": {
+    "header": "components/header/index",
+    "input-item": "components/input-item/index",
+    "options-selector": "components/options-selector/index",
+    "birthday-input": "components/birthday-input/index",
+    "button": "@tiki.vn/tini-ui/es/button/index"
+  }
+}

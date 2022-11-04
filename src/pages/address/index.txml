@@ -1,0 +1,21 @@
+<view class="address page">
+  <view class="address-content">
+    <header isShowBtn="{{true}}" />
+    <text class="address-title title">Thông tin địa chỉ</text>
+    <view class="input-section">
+      <address streetErrorMsg="{{streetErrorMsg}}" cityErrorMsg="{{cityErrorMsg}}"
+        districtErrorMsg="{{districtErrorMsg}}" wardErrorMsg="{{wardErrorMsg}}" cityPlaceLabel="{{cityPlaceLabel}}"
+        cityPlaceholder="{{cityPlaceholder}}" districtPlaceLabel="{{districtPlaceLabel}}"
+        districtPlaceholder="{{districtPlaceholder}}" wardPlaceLabel="{{wardPlaceLabel}}"
+        wardPlaceholder="{{wardPlaceholder}}" showName="{{false}}" showPhone="{{false}}"
+        onFullAddress="onFullAddress" />
+      <input-item label="{{labelApartment}}" type="{{typeApartment}}" placeHolder="{{placeHolderApartment}}"
+        maxlength="{{maxLengthApartment}}" isError="{{isErrorApartment}}" errorText="{{errorTextApartment}}"
+        onInput="onInputApartment" />
+      <options-selector isRequired="{{true}}" list="{{listResidence}}" title="{{titleResidence}}"
+        label="{{labelResidence}}" placeHolder="{{placeHolderResidence}}" isError="{{isErrorResidence}}"
+        errorText="{{errorTextResidence}}" value="{{selectedItem}}" onSelect="onSelect" />
+    </view>
+  </view>
+  <button class="large-btn" onTap="onTapNextStep">{{btnText}}</button>
+</view>

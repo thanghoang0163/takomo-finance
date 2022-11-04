@@ -1,0 +1,50 @@
+<import-sjs name="{moneyFormatter}" from="../../utils/common.sjs" />
+<import-sjs name="{randomNumber}" from="./index.sjs" />
+
+<view class="loan-contract page">
+  <view class="loan-contract-container">
+    <header isShowBtn="{{true}}" />
+    <text class="address-title title">Ký hợp đồng vay</text>
+    <view class="loan-contract-content">
+      <view class="loan-info-container">
+        <text class="loan-contract-label">Thông tin khoản vay:</text>
+        <view class="input-section">
+          <view class="loan-info">
+            <view class="loan-info-time-and-day">
+              <view class="loan-info-label">Thời gian vay:</view>
+              <view class="loan-info-content">{{loanTime}} ngày</view>
+              <view class="loan-info-label">Ngày đáo hạn:</view>
+              <view class="loan-info-content">{{loanDate}}</view>
+            </view>
+            <view class="loan-info-money">
+              <view class="loan-info-label">Số tiền được duyệt:</view>
+              <view class="loan-info-content">{{moneyFormatter(approvedMoney, "đ")}}</view>
+              <view class="loan-info-label">Số tiền cần trả:</view>
+              <view class="loan-info-content">{{moneyFormatter(paidMoney, "đ")}}</view>
+            </view>
+          </view>
+          <view class="fee">
+            <view class="fee-label">Phụ phí dịch vụ:</view>
+            <block tiki:for="{{feeList}}" tiki:key="{{item.id}}">
+              <view class="fee-child">
+                <view class="fee-child-text">{{item.text}}</view>
+                <view class="fee-child-amount">{{moneyFormatter(item.amount, "đ")}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="loan-info-container">
+      <text class="loan-contract-label loan-contract-complete-label">Hoàn tất đăng ký:</text>
+      <view class="input-section loan-contract-complete">
+        <text class="loan-contract-complete-text">Vui lòng nhấn vào nút <text style="color: #7209B7">“Xác nhận”</text> bên dưới để hoàn tất đăng ký hồ sơ vay.</text>
+        <view class="verification">
+          <text class="verification-text">Hoàn tất đăng ký:</text>
+          <view class="verification-code">{{randomNumber()}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button class="large-btn" onTap="onConfirm">{{btnText}}</button>
+</view>

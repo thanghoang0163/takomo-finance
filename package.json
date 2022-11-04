@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "tiki": {
     "appIdentifier": "vn.uway.tiniapp.ufood",
-    "buildNumber": 2
+    "buildNumber": 3
   },
   "dependencies": {
     "@tiki.vn/mini-html-parser2": "^0.0.4",
+    "@tiki.vn/tini-style": "^0.16.0",
     "@tiki.vn/tini-ui": "^0.16.0",
     "html-entities": "^2.3.3"
   }

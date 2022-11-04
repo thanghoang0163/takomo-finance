@@ -1,0 +1,13 @@
+<view class="options-selector">
+  <view class="options-selector-label">
+    <text class="label">{{label}}</text>
+    <block tiki:if="{{isRequired}}">
+      <text class="asterisk">*</text>
+    </block>
+  </view>
+  <dropdown className="{{className}}" showCheck bottomSheetHeight="{{bottomSheetHeight}}" bottomSheetTitle="{{title}}"
+    placeholder="{{placeHolder}}" items="{{list}}" showCheck errorMsg="{{errorMsg}}" value="{{value}}"  onSelect="onSelect" />
+  <block tiki:if="{{isError}}">
+    <text class="error-message">{{errorText}}</text>
+  </block>
+</view>

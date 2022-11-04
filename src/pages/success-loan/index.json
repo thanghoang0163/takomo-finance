@@ -1,0 +1,6 @@
+{
+  "transparentTitle": "always",
+  "usingComponents": {
+    "header": "components/header/index"
+  }
+}

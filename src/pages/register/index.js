@@ -1,3 +1,5 @@
+import { isValidEmail } from "./index.sjs";
+
 Page({
   data: {
     labelPassword: "Mật khẩu:",
@@ -19,6 +21,9 @@ Page({
     errorTextEmail: "",
     inputEmail: "",
     btnText: "Đăng ký",
+    isErrorEmail: false,
+    isErrorPassword: false,
+    isErrorPasswordAgain: false,
   },
 
   handleIsError() {
@@ -63,15 +68,22 @@ Page({
   },
 
   onRegister() {
-    const inputPasswordLength = this.data.inputPassword.length;
-    const inputPasswordAgainLength = this.data.inputPasswordAgain.length;
-    const inputEmailLength = this.data.inputEmail.length;
-    const { inputEmail } = this.data;
+    const {
+      isErrorEmail,
+      isErrorPassword,
+      isErrorPasswordAgain,
+      inputPassword,
+      inputPasswordAgain,
+      inputEmail,
+    } = this.data;
+    const inputPasswordLength = inputPassword.length;
+    const inputPasswordAgainLength = inputPasswordAgain.length;
+    const inputEmailLength = inputEmail.length;
 
     if (inputPasswordLength === 0) {
       this.setData({
         isErrorPassword: true,
-        errorTextPassword: "Vui lòng không bỏ trống!",
+        errorTextPassword: "Thông tin chưa được điền!",
       });
     } else if (inputPasswordLength < 4 && inputPasswordLength > 0) {
       this.setData({
@@ -83,7 +95,7 @@ Page({
     if (inputPasswordAgainLength === 0) {
       this.setData({
         isErrorPasswordAgain: true,
-        errorTextPasswordAgain: "Vui lòng không bỏ trống!",
+        errorTextPasswordAgain: "Thông tin chưa được điền!",
       });
     } else if (inputPasswordAgainLength < 4 && inputPasswordAgainLength > 0) {
       this.setData({
@@ -102,15 +114,25 @@ Page({
     if (inputEmailLength === 0) {
       this.setData({
         isErrorEmail: true,
-        errorTextEmail: "Vui lòng không bỏ trống!",
+        errorTextEmail: "Thông tin chưa được điền!",
       });
-    } else if (!inputEmail.includes("@") || !inputEmail.includes(".")) {
+    } else if (!isValidEmail(inputEmail)) {
       this.setData({
         isErrorEmail: true,
         errorTextEmail: "Định dạng email không đúng",
       });
     }
-    // my.navigateTo({ url: "pages/info-customer/index" });
+
+    if (
+      isErrorEmail &&
+      isErrorPassword &&
+      isErrorPasswordAgain &&
+      inputEmail !== "" &&
+      inputPassword !== "" &&
+      inputPasswordAgain !== ""
+    ) {
+      my.navigateTo({ url: "pages/info-customer/index" });
+    }
   },
 
   onLoad() {

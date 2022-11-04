@@ -1,0 +1,12 @@
+<view class="birthday-selector">
+  <view class="birthday-selector-label">
+    <text class="label">{{label}}</text>
+    <block tiki:if="{{isRequired}}">
+      <text class="asterisk">*</text>
+    </block>
+  </view>
+  <textfield placeholder="{{placeHolder}}" trailingIcon="calendar" iconColor="#000" value="{{value}}" onTapTrailingIcon="onTapIcon" />
+  <block tiki:if="{{isError}}">
+    <text class="error-message">{{errorText}}</text>
+  </block>
+</view>

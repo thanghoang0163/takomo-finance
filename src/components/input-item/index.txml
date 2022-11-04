@@ -5,8 +5,9 @@
       <text class="asterisk">*</text>
     </block>
   </view>
-  <input class="input" disabled="{{isDisabled}}" type="{{type}}" placeholder="{{placeHolder}}" maxlength="{{maxlength}}" onInput="_onInput" />
+  <input class="input" style={{isError ? "border-color:  red" :""}} disabled="{{isDisabled}}" type="{{type}}"
+    placeholder="{{placeHolder}}" maxlength="{{maxlength}}" onInput="_onInput" />
   <block tiki:if="{{isError}}">
-    <text class="input-error-message">{{errorText}}</text>
+    <text class="error-message">{{errorText}}</text>
   </block>
 </view>

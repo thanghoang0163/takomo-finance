@@ -1,6 +1,7 @@
 {
-  "component": true,
+  "transparentTitle": "always",
   "usingComponents": {
+    "header": "components/header/index",
     "button": "@tiki.vn/tini-ui/es/button/index"
   }
 }

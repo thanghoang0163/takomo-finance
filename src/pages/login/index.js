@@ -1,5 +1,6 @@
 import { decode } from "html-entities";
 import parse from "@tiki.vn/mini-html-parser2";
+import { isValidPhoneNumber } from "./index.sjs";
 
 Page({
   data: {
@@ -42,13 +43,13 @@ Page({
     //   modal: this.data.modal,
     // });
 
-    const itemInput = this.data.input.slice(0, 1);
-    const nextIteminput = this.data.input.slice(1, 2);
-    const inputLength = this.data.input.length;
+    const { input } = this.data;
+    const itemInput = input.slice(0, 1);
+    const formatNumberinput = input.slice(0, 2);
+    const inputLength = input.length;
     if (
-      itemInput !== "0" &&
-      itemInput.length !== 0 ||
-      nextIteminput === itemInput
+      (itemInput !== "0" && itemInput.length !== 0) ||
+      !isValidPhoneNumber(formatNumberinput)
     ) {
       this.setData({
         isError: true,

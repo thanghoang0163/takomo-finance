@@ -1,10 +1,9 @@
 {
   "transparentTitle": "always",
   "usingComponents": {
-    "step": "components/step/index",
     "header": "components/header/index",
     "input-item": "components/input-item/index",
-    "button": "@tiki.vn/tini-ui/es/button/index",
-    "calendar": "@tiki.vn/tini-ui/es/calendar/index"
+    "options-selector": "components/options-selector/index",
+    "button": "@tiki.vn/tini-ui/es/button/index"
   }
 }

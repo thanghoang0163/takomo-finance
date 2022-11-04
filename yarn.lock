@@ -18,7 +18,7 @@
     "entities" "^1.1.1"
     "events" "^3.0.0"
 
-"@tiki.vn/tini-style@0.16.0":
+"@tiki.vn/tini-style@^0.16.0", "@tiki.vn/tini-style@0.16.0":
   "integrity" "sha512-9Ed52s03NYIGbH/HxAuLY5x+pTonLBbqgD7qhotIRyUajjN32dE8sFe8ZKxCvwQJwAcqNi1YpqZb5Tp81tycSg=="
   "resolved" "https://registry.npmjs.org/@tiki.vn/tini-style/-/tini-style-0.16.0.tgz"
   "version" "0.16.0"
