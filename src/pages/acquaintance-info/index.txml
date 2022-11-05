@@ -1,0 +1,47 @@
+<view class="acquaintance-info background-container page">
+  <view class="acquaintance-info-container">
+    <header isShowBtn="{{true}}" />
+    <view class="acquaintance-info-content">
+      <text class="register-title title">Thông tin người liên hệ</text>
+      <view class="acquaintance-info">
+        <view class="relative-info-label acquaintance-info-label">Thông tin người thân</view>
+        <view class="input-section">
+          <input-item isRequired="{{true}}" label="{{labelNameRelative}}" type="{{typeNameRelative}}"
+            placeHolder="{{placeHolderNameRelative}}" maxlength="{{maxLengthNameRelative}}"
+            isError="{{isErrorNameRelative}}" errorText="{{errorTextNameRelative}}" onInput="onInputNameRelative" />
+          <options-selector isRequired="{{true}}" list="{{listRelationship}}" title="{{titleRelationship}}"
+            label="{{labelRelationship}}" placeHolder="{{placeHolderRelationship}}" isError="{{isErrorRelationship}}"
+            errorText="{{errorTextRelationship}}" value="{{selectedItem}}" onSelect="onSelectRelationship" />
+          <input-item isRequired="{{true}}" label="{{labelPhoneRelative}}" type="{{typePhoneRelative}}"
+            placeHolder="{{placeHolderPhoneRelative}}" maxlength="{{maxLengthPhoneRelative}}" isError="{{isErrorPhoneRelative}}"
+            errorText="{{errorTextPhoneRelative}}" onInput="onInputPhoneRelative" />
+        </view>
+      </view>
+      <view class="colleague-info">
+        <view class="colleague-info-label acquaintance-info-label">Thông tin đồng nghiệp</view>
+        <view class="input-section">
+          <input-item isRequired="{{true}}" label="{{labelNameColleague}}" type="{{typeNameColleague}}"
+            placeHolder="{{placeHolderNameColleague}}" maxlength="{{maxLengthNameColleague}}"
+            isError="{{isErrorNameColleague}}" errorText="{{errorTextNameColleague}}" onInput="onInputNameColleague" />
+          <input-item isRequired="{{true}}" label="{{labelPhoneColleague}}" type="{{typePhoneColleague}}"
+            placeHolder="{{placeHolderPhoneColleague}}" maxlength="{{maxLengthPhoneColleague}}"
+            isError="{{isErrorPhoneColleague}}" errorText="{{errorTextPhoneColleague}}"
+            onInput="onInputPhoneColleague" />
+        </view>
+      </view>
+      <view class="plus-contact-info">
+        <view class="plus-contact-info-label acquaintance-info-label">Người liên hệ bổ sung <text class="mx-4x-small" style="font-size: 14px; line-height: 17px;">(không bắt buộc)</text></view>
+        <view class="input-section">
+          <input-item label="{{labelNamePlusContact}}" type="{{typeNamePlusContact}}"
+            placeHolder="{{placeHolderNamePlusContact}}" maxlength="{{maxLengthNamePlusContact}}"
+            isError="{{isErrorNamePlusContact}}" errorText="{{errorTextNamePlusContact}}" onInput="onInputNamePlusContact" />
+          <input-item label="{{labelPhonePlusContact}}" type="{{typePhonePlusContact}}"
+            placeHolder="{{placeHolderPhonePlusContact}}" maxlength="{{maxLengthPhonePlusContact}}"
+            isError="{{isErrorPhonePlusContact}}" errorText="{{errorTextPhonePlusContact}}"
+            onInput="onInputPhonePlusContact" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <button class="large-btn" onTap="onContinue">{{btnText}}</button>
+</view>

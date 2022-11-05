@@ -1,6 +1,6 @@
 import { decode } from "html-entities";
 import parse from "@tiki.vn/mini-html-parser2";
-import { isValidPhoneNumber } from "./index.sjs";
+import { isValidPhoneNumber } from "../../utils/common.sjs";
 
 Page({
   data: {
@@ -63,7 +63,7 @@ Page({
     } else if (inputLength === 0) {
       this.setData({
         isError: true,
-        errorText: "Vui lòng không bỏ trống!",
+        errorText: "Thông tin không được bỏ trống!",
       });
     } else {
       my.navigateTo({ url: "pages/register/index" });

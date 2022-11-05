@@ -114,30 +114,30 @@ Page({
     } = this.data;
     if (street === "") {
       this.setData({
-        streetErrorMsg: "Thông tin chưa được điền!",
+        streetErrorMsg: "Thông tin không được bỏ trống!",
       });
     }
 
     if (city === null) {
       this.setData({
-        cityErrorMsg: "Thông tin chưa được chọn!",
+        cityErrorMsg: "Thông tin không được bỏ trống!",
       });
     }
     if (district === null) {
       this.setData({
-        districtErrorMsg: "Thông tin chưa được chọn!",
+        districtErrorMsg: "Thông tin không được bỏ trống!",
       });
     }
     if (ward === null) {
       this.setData({
-        wardErrorMsg: "Thông tin chưa được chọn!",
+        wardErrorMsg: "Thông tin không được bỏ trống!",
       });
     }
 
     if (selectedItem.length === 0) {
       this.setData({
         isErrorResidence: true,
-        errorTextResidence: "Thông tin chưa được chọn!",
+        errorTextResidence: "Thông tin không được bỏ trống!",
       });
     }
 

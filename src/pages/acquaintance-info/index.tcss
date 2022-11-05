@@ -1,0 +1,18 @@
+.acquaintance-info-container,
+.acquaintance-info-content {
+  width: 100%;
+}
+
+.acquaintance-info-content {
+  margin-bottom: 10px;
+}
+
+.acquaintance-info-label {
+  font-size: 18px;
+  line-height: 22px;
+  margin: 10px 0;
+}
+
+.relative-info-label {
+  color: var(--white-color);
+}

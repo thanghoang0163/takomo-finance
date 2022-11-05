@@ -7,7 +7,7 @@
     <text class="address-title title">Ký hợp đồng vay</text>
     <view class="loan-contract-content">
       <view class="loan-info-container">
-        <text class="loan-contract-label">Thông tin khoản vay:</text>
+        <text class="loan-contract-label">Thông tin khoản vay</text>
         <view class="input-section">
           <view class="loan-info">
             <view class="loan-info-time-and-day">
@@ -36,11 +36,11 @@
       </view>
     </view>
     <view class="loan-info-container">
-      <text class="loan-contract-label loan-contract-complete-label">Hoàn tất đăng ký:</text>
+      <text class="loan-contract-label loan-contract-complete-label">Hoàn tất đăng ký</text>
       <view class="input-section loan-contract-complete">
         <text class="loan-contract-complete-text">Vui lòng nhấn vào nút <text style="color: #7209B7">“Xác nhận”</text> bên dưới để hoàn tất đăng ký hồ sơ vay.</text>
         <view class="verification">
-          <text class="verification-text">Hoàn tất đăng ký:</text>
+          <text class="verification-text">Mã xác nhận:</text>
           <view class="verification-code">{{randomNumber()}}</view>
         </view>
       </view>

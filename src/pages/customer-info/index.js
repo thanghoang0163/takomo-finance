@@ -118,7 +118,7 @@ Page({
     if (inputNameLength === 0) {
       this.setData({
         isErrorName: true,
-        errorTextName: "Thông tin chưa được điền!",
+        errorTextName: "Thông tin không được bỏ trống!",
       });
     } else if (inputNameArray.length < 2) {
       this.setData({
@@ -130,7 +130,7 @@ Page({
     if (inputIdCardLength === 0) {
       this.setData({
         isErrorIdCard: true,
-        errorTextIdCard: "Thông tin chưa được điền!",
+        errorTextIdCard: "Thông tin không được bỏ trống!",
       });
     } else if (inputIdCardLength !== 9) {
       if (inputIdCardLength !== 12) {
@@ -144,14 +144,14 @@ Page({
     if (selectedDate === "") {
       this.setData({
         isErrorBirthDay: true,
-        errorTextBirthDay: "Thông tin chưa được chọn!",
+        errorTextBirthDay: "Thông tin không được bỏ trống!",
       });
     }
 
     if (selectedItem === "") {
       this.setData({
         isErrorMaritalStatus: true,
-        errorTextMaritalStatus: "Thông tin chưa được chọn!",
+        errorTextMaritalStatus: "Thông tin không được bỏ trống!",
       });
     }
 

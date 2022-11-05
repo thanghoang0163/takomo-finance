@@ -83,24 +83,24 @@ Page({
     if (inputPasswordLength === 0) {
       this.setData({
         isErrorPassword: true,
-        errorTextPassword: "Thông tin chưa được điền!",
+        errorTextPassword: "Thông tin không được bỏ trống!",
       });
     } else if (inputPasswordLength < 4 && inputPasswordLength > 0) {
       this.setData({
         isErrorPassword: true,
-        errorTextPassword: "Mật khẩu từ 4-6 số!",
+        errorTextPassword: "Mật khẩu từ 4 - 6 số!",
       });
     }
 
     if (inputPasswordAgainLength === 0) {
       this.setData({
         isErrorPasswordAgain: true,
-        errorTextPasswordAgain: "Thông tin chưa được điền!",
+        errorTextPasswordAgain: "Thông tin không được bỏ trống!",
       });
     } else if (inputPasswordAgainLength < 4 && inputPasswordAgainLength > 0) {
       this.setData({
         isErrorPasswordAgain: true,
-        errorTextPasswordAgain: "Mật khẩu từ 4-6 số!",
+        errorTextPasswordAgain: "Mật khẩu từ 4 - 6 số!",
       });
     } else if (inputPasswordAgainLength !== 0 && inputPasswordLength !== 0) {
       if (this.data.inputPasswordAgain !== this.data.inputPassword) {
@@ -114,7 +114,7 @@ Page({
     if (inputEmailLength === 0) {
       this.setData({
         isErrorEmail: true,
-        errorTextEmail: "Thông tin chưa được điền!",
+        errorTextEmail: "Thông tin không được bỏ trống!",
       });
     } else if (!isValidEmail(inputEmail)) {
       this.setData({

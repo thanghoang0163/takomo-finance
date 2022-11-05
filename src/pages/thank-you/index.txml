@@ -2,12 +2,13 @@
   <header />
   <view class="success-content">
     <view class="success-label">CHÚC MỪNG QUÝ KHÁCH ĐÃ HOÀN THÀNH​</view>
-    <view class="success-sub-label">THỦ TỤC ĐĂNG KÝ TẠI <text style="color: #F82486">TAKOMO.VN</text></view>
+    <view class="success-sub-label">THỦ TỤC ĐĂNG KÝ TẠI <text class="mx-4x-small" style="color: #F82486">TAKOMO.VN</text></view>
     <view class="success-text">Vui lòng giữ liên lạc, Kết quả của hồ sơ sẽ được nhân viên Takomo phản hồi trong ít
       phút qua điện thoại, hoặc email đã đăng ký.</view>
     <view class="success-sub-text">Để thuận tiện cho việc theo dõi tình trạng khoản vay và các ưu đãi hấp dẫn sắp tới,
-      vui lòng truy cập <text style="color: #F82486">ứng dụng di động</text> hoặc <text
-        style="color: #F82486">website</text> của <text style="color: #F82486">Takomo.vn</text>​</view>
+      vui lòng truy cập <text class="mx-4x-small" style="color: #F82486">ứng dụng di động</text> hoặc <text
+        class="mx-4x-small" style="color: #F82486">website</text> của <text class="mx-4x-small"
+        style="color: #F82486">Takomo.vn</text>​</view>
     <image class="success-img" src="/assets/images/finish.png" />
   </view>
 </view>
