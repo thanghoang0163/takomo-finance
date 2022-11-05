@@ -5,13 +5,13 @@ Page({
     titleWorkForm: "Hình thức công việc",
     errorTextWorkForm: "",
     isErrorWorkForm: false,
-    selectedItemWorkForm: "",
+    selectedWorkForm: "",
     labelWorkField: "Lĩnh vực công việc:",
     placeHolderWorkField: "Lĩnh vực công việc",
     titleWorkField: "Lĩnh vực công việc",
     errorTextWorkField: "",
     isErrorWorkField: false,
-    selectedItemWorkField: "",
+    selectedWorkField: "",
     labelCompanyName: "Tên công ty:",
     placeHolderCompanyName: "Tên công ty",
     typeCompanyName: "text",
@@ -31,13 +31,13 @@ Page({
     titleLastWorkPlace: "Thời gian làm việc tại nơi làm việc cuối cùng",
     errorTextLastWorkPlace: "",
     isErrorLastWorkPlace: false,
-    selectedItemLastWorkPlace: "",
+    selectedLastWorkPlace: "",
     labelIncome: "Thu nhập hàng tháng:",
     placeHolderIncome: "Thu nhập hàng tháng",
     titleIncome: "Thu nhập hàng tháng",
     errorTextIncome: "",
     isErrorIncome: false,
-    selectedItemIncome: "",
+    selectedIncome: "",
     btnText: "Tiếp tục bước 4/7",
     listWorkForm: [
       {
@@ -219,34 +219,34 @@ Page({
 
   onSelectWorkForm(value) {
     this.setData({
-      selectedItemWorkForm: value,
+      selectedWorkForm: value,
     });
   },
 
   onSelectWorkField(value) {
     this.setData({
-      selectedItemWorkField: value,
+      selectedWorkField: value,
     });
   },
 
   onSelectLastWorkPlace(value) {
     this.setData({
-      selectedItemLastWorkPlace: value,
+      selectedLastWorkPlace: value,
     });
   },
 
   onSelectIncome(value) {
     this.setData({
-      selectedItemIncome: value,
+      selectedIncome: value,
     });
   },
 
   onTapNextStep() {
     const {
-      selectedItemWorkForm,
-      selectedItemWorkField,
-      selectedItemIncome,
-      selectedItemLastWorkPlace,
+      selectedWorkForm,
+      selectedWorkField,
+      selectedIncome,
+      selectedLastWorkPlace,
       inputCompanyName,
       inputPosition,
     } = this.data;

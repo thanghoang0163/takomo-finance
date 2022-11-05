@@ -23,7 +23,7 @@ Page({
     placeHolderMaritalStatus: "Tình trạng hôn nhân",
     titleMaritalStatus: "Tình trạng hôn nhân",
     errorTextMaritalStatus: "",
-    selectedItem: "",
+    selectedMaritalStatus: "",
     isErrorMaritalStatus: false,
     btnText: "Tiếp tục bước 2/7",
     items: [
@@ -72,9 +72,9 @@ Page({
     }
   },
 
-  onSelect(value) {
+  onSelectMaritalStatus(value) {
     this.setData({
-      selectedItem: value.name,
+      selectedMaritalStatus: value.name,
     });
   },
 
@@ -108,7 +108,7 @@ Page({
       inputName,
       isErrorBirthDay,
       isErrorMaritalStatus,
-      selectedItem,
+      selectedMaritalStatus,
       selectedDate,
     } = this.data;
     const inputIdCardLength = inputIdCard.length;
@@ -148,7 +148,7 @@ Page({
       });
     }
 
-    if (selectedItem === "") {
+    if (selectedMaritalStatus === "") {
       this.setData({
         isErrorMaritalStatus: true,
         errorTextMaritalStatus: "Thông tin không được bỏ trống!",

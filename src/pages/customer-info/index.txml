@@ -23,7 +23,7 @@
         </view>
         <options-selector isRequired="{{true}}" list="{{listMaritalStatus}}" title="{{titleMaritalStatus}}"
           label="{{labelMaritalStatus}}" placeHolder="{{placeHolderMaritalStatus}}" isError="{{isErrorMaritalStatus}}"
-          errorText="{{errorTextMaritalStatus}}" value="{{selectedItem}}" onSelect="onSelect" />
+          errorText="{{errorTextMaritalStatus}}" value="{{selectedMaritalStatus}}" onSelect="onSelectMaritalStatus" />
       </view>
     </view>
   </view>

@@ -11,7 +11,7 @@
             isError="{{isErrorNameRelative}}" errorText="{{errorTextNameRelative}}" onInput="onInputNameRelative" />
           <options-selector isRequired="{{true}}" list="{{listRelationship}}" title="{{titleRelationship}}"
             label="{{labelRelationship}}" placeHolder="{{placeHolderRelationship}}" isError="{{isErrorRelationship}}"
-            errorText="{{errorTextRelationship}}" value="{{selectedItem}}" onSelect="onSelectRelationship" />
+            errorText="{{errorTextRelationship}}" value="{{selectedRelationship}}" onSelect="onSelectRelationship" />
           <input-item isRequired="{{true}}" label="{{labelPhoneRelative}}" type="{{typePhoneRelative}}"
             placeHolder="{{placeHolderPhoneRelative}}" maxlength="{{maxLengthPhoneRelative}}" isError="{{isErrorPhoneRelative}}"
             errorText="{{errorTextPhoneRelative}}" onInput="onInputPhoneRelative" />

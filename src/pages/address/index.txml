@@ -13,7 +13,7 @@
         onInput="onInputApartment" />
       <options-selector isRequired="{{true}}" list="{{listResidence}}" title="{{titleResidence}}"
         label="{{labelResidence}}" placeHolder="{{placeHolderResidence}}" isError="{{isErrorResidence}}"
-        errorText="{{errorTextResidence}}" value="{{selectedItem}}" onSelect="onSelect" />
+        errorText="{{errorTextResidence}}" value="{{selectedResidence}}" onSelect="onSelectResidence" />
     </view>
   </view>
   <button class="large-btn" onTap="onTapNextStep">{{btnText}}</button>

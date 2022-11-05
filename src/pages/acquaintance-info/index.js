@@ -20,7 +20,7 @@ Page({
     placeHolderRelationship: "Mối quan hệ",
     titleRelationship: "Mối quan hệ",
     errorTextRelationship: "",
-    selectedItem: "",
+    selectedRelationship: "",
     isErrorRelationship: false,
     labelNameColleague: "Họ và tên:",
     placeHolderNameColleague: "Họ và tên",
@@ -77,7 +77,7 @@ Page({
 
   onSelectRelationship(value){
     this.setData({
-      selectedItem: value
+      selectedRelationship: value
     })
   },
 

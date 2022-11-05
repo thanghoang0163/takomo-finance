@@ -18,7 +18,7 @@ Page({
     titleResidence: "Thời gian cư chú ( Năm )",
     errorTextResidence: "",
     isErrorResidence: false,
-    selectedItem: "",
+    selectedResidence: "",
     btnText: "Tiếp tục bước 3/7",
     street: "",
     city: {},
@@ -93,9 +93,9 @@ Page({
     }
   },
 
-  onSelect(value) {
+  onSelectResidence(value) {
     this.setData({
-      selectedItem: value,
+      selectedResidence: value,
     });
   },
 
@@ -134,14 +134,14 @@ Page({
       });
     }
 
-    if (selectedItem.length === 0) {
+    if (selectedResidence.length === 0) {
       this.setData({
         isErrorResidence: true,
         errorTextResidence: "Thông tin không được bỏ trống!",
       });
     }
 
-    if (address !== {} && selectedItem !== "" && street !== "") {
+    if (address !== {} && selectedResidence !== "" && street !== "") {
       my.navigateTo({ url: "pages/job-info/index" });
     }
   },

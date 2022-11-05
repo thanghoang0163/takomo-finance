@@ -6,10 +6,10 @@
       <view class="input-section">
         <options-selector isRequired="{{true}}" list="{{listWorkForm}}" title="{{titleWorkForm}}"
           label="{{labelWorkForm}}" placeHolder="{{placeHolderWorkForm}}" isError="{{isErrorWorkForm}}"
-          errorText="{{errorTextWorkForm}}" value="{{selectedItemWorkForm}}" onSelect="onSelectWorkForm" />
+          errorText="{{errorTextWorkForm}}" value="{{selectedWorkForm}}" onSelect="onSelectWorkForm" />
         <options-selector isRequired="{{true}}" list="{{listWorkField}}" title="{{titleWorkField}}"
           label="{{labelWorkField}}" placeHolder="{{placeHolderWorkField}}" isError="{{isErrorWorkField}}"
-          errorText="{{errorTextWorkField}}" value="{{selectedItemWorkField}}" onSelect="onSelectWorkField" />
+          errorText="{{errorTextWorkField}}" value="{{selectedWorkField}}" onSelect="onSelectWorkField" />
         <input-item isRequired="{{true}}" label="{{labelCompanyName}}" type="{{typeCompanyName}}"
           placeHolder="{{placeHolderCompanyName}}" maxlength="{{maxLengthCompanyName}}" isError="{{isErrorCompanyName}}"
           errorText="{{errorTextCompanyName}}" onInput="onInputCompanyName" />
@@ -18,11 +18,11 @@
           errorText="{{errorTextPosition}}" onInput="onInputPosition" />
         <options-selector isRequired="{{true}}" list="{{listLastWorkPlace}}" title="{{titleLastWorkPlace}}"
           label="{{labelLastWorkPlace}}" placeHolder="{{placeHolderLastWorkPlace}}" isError="{{isErrorLastWorkPlace}}"
-          errorText="{{errorTextLastWorkPlace}}" value="{{selectedItemLastWorkPlace}}"
+          errorText="{{errorTextLastWorkPlace}}" value="{{selectedLastWorkPlace}}"
           onSelect="onSelectLastWorkPlace" />
         <options-selector isRequired="{{true}}" list="{{listIncome}}" title="{{titleIncome}}" label="{{labelIncome}}"
           placeHolder="{{placeHolderIncome}}" isError="{{isErrorIncome}}" errorText="{{errorTextIncome}}"
-          value="{{selectedItemIncome}}" onSelect="onSelectIncome" />
+          value="{{selectedIncome}}" onSelect="onSelectIncome" />
       </view>
     </view>
   </view>

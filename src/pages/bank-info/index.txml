@@ -4,6 +4,14 @@
     <view class="bank-info-content">
       <text class="bank-info-title title">Thông tin tài khoản nhận tiền</text>
       <view class="input-section">
+        <options-selector isRequired="{{true}}" list="{{listBank}}" title="{{titleBank}}"
+          label="{{labelBank}}" placeHolder="{{placeHolderBank}}" isError="{{isErrorBank}}"
+          errorText="{{errorTextBank}}" value="{{selectedBank}}" onSelect="onSelectBank" />
+        <input-item isRequired="{{true}}" label="{{labelBankAcc}}" type="{{typeBankAcc}}" placeHolder="{{placeHolderBankAcc}}"
+          maxlength="{{maxLengthBankAcc}}" isError="{{isErrorBankAcc}}" errorText="{{errorTextBankAcc}}" onInput="onInputBankAcc" />
+        <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
+          label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurpose}}"
+          errorText="{{errorTextLoanPurpose}}" value="{{selectedLoan}}" onSelect="onSelectLoan" />
       </view>
     </view>
   </view>
