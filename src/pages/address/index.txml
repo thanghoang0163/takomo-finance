@@ -1,5 +1,5 @@
 <view class="address background-container page">
-  <view class="address-content">
+  <view class="address-content w-full">
     <header isShowBtn="{{true}}" />
     <text class="address-title title">Thông tin địa chỉ</text>
     <view class="input-section">

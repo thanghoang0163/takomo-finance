@@ -1,20 +1,13 @@
 .header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   background-color: var(--primary-color);
   padding-top: 5vh;
   margin-bottom: 20px;
 }
 
 .header-btn {
-  position: absolute;
   top: 33px;
   left: 0;
   border: none;
-  background-color: transparent;
 }
 
 .header-btn:hover {

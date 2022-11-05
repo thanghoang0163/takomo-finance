@@ -1,0 +1,11 @@
+<view class="bank-info container page">
+  <view class="bank-info-container w-full">
+    <header isShowBtn="{{true}}" />
+    <view class="bank-info-content">
+      <text class="bank-info-title title">Thông tin tài khoản nhận tiền</text>
+      <view class="input-section">
+      </view>
+    </view>
+  </view>
+  <button class="large-btn" onTap="onContinue">{{btnText}}</button>
+</view>

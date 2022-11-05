@@ -1,14 +1,15 @@
 {
   "pages": [
-    "pages/acquaintance-info/index",
-    "pages/thank-you/index",
-    "pages/address/index",
-    "pages/take-photo/index",
+    "pages/bank-info/index",
     "pages/loan-contract/index",
-    "pages/customer-info/index",
-    "pages/login/index",
+    "pages/thank-you/index",
+    "pages/take-photo/index",
     "pages/register/index",
-    "pages/job-info/index"
+    "pages/job-info/index",
+    "pages/customer-info/index",
+    "pages/address/index",
+    "pages/acquaintance-info/index",
+    "pages/login/index"
   ],
   "window": {
     "defaultTitle": "",

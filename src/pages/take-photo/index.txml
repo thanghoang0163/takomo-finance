@@ -1,8 +1,8 @@
-<view class="photo background-container page">
-  <view class="photo-container">
+<view class="photo container page">
+  <view class="photo-container w-full">
     <header isShowBtn="{{true}}" />
     <block tiki:for="{{list}}" tiki:this="{{item.id}}">
-      <view class="photo-content">
+      <view class="photo-content w-full">
         <text class="address-title title">Chụp ảnh đối chiếu</text>
         <view class="input-section">
           <view class="photo-item-label">
@@ -10,7 +10,7 @@
             <text class="asterisk">*</text>
           </view>
           <view class="photo-img-container" data-label="{{item.label}}" onTap="onChooseImg">
-            <image src="{{imgs[0] && dataset === item.label ? imgs[0] : item.img}}" />
+            <image class="w-full h-full" src="{{imgs[0] && dataset === item.label ? imgs[0] : item.img}}" />
           </view>
         </view>
       </view>

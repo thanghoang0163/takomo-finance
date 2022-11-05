@@ -1,7 +1,3 @@
-.address-content {
-  width: 100%;
-}
-
 .address .input-section {
   padding-top: 10px;
 }

@@ -1,22 +1,23 @@
-<view class="login page">
+<view class="login page container">
   <block tiki:if="{{isFirst}}">
     <onboarding />
   </block>
   <block tiki:else>
-    <view class="login-container">
+    <view class="login-container w-full">
       <header />
-      <image class="login-img" src="/assets/images/banner-home.jpg" />
+      <image class="login-img w-full mt-x-small" src="/assets/images/banner-home.jpg" />
       <block tiki:if="{{!modal.isShow}}">
-        <view class="login-content">
+        <view class="login-content w-full">
           <text class="title">TAKOMO xin chào !</text>
           <view class="input-section">
-            <input-item focus label="{{label}}" type="{{type}}" placeHolder="{{placeHolder}}" maxlength="{{maxlength}}" isError="{{isError}}" errorText="{{errorText}}" onInput="onInputPhone" />
+            <input-item focus label="{{label}}" type="{{type}}" placeHolder="{{placeHolder}}" maxlength="{{maxlength}}"
+              isError="{{isError}}" errorText="{{errorText}}" onInput="onInputPhone" />
           </view>
         </view>
       </block>
     </view>
     <button class="large-btn" style={{modal.isShow ? "background: #7209b7" : "" }}
       onTap="onRegister">{{btnText}}</button>
-    <modal className="modal" isShow="{{modal.isShow}}" text="{{modal.text}}" onHide="onHide" />
+    <modal className="modal text-center" isShow="{{modal.isShow}}" text="{{modal.text}}" onHide="onHide" />
   </block>
 </view>

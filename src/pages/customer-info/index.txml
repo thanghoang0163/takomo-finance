@@ -1,10 +1,8 @@
-<view class="info-customer background-container page">
-  <view class="info-customer-container">
-    <view class="info-customer-header">
-      <header isShowBtn="{{true}}" />
-    </view>
-    <view class="register-content">
-      <text class="register-title title">Thông tin khách hàng</text>
+<view class="customer-info container page">
+  <view class="customer-info-container w-full">
+    <header isShowBtn="{{true}}" />
+    <view class="customer-info-content">
+      <text class="customer-info-title title">Thông tin khách hàng</text>
       <view class="input-section">
         <input-item isRequired="{{true}}" label="{{labelName}}" type="{{typeName}}" placeHolder="{{placeHolderName}}"
           maxlength="{{maxLengthName}}" isError="{{isErrorName}}" errorText="{{errorTextName}}" onInput="onInputName" />

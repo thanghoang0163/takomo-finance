@@ -1,5 +1,5 @@
-<view class="register page">
-  <view class="register-container">
+<view class="register container page">
+  <view class="register-container w-full">
     <header />
     <view class="register-content">
       <text class="register-title title">Tạo tài khoản Takomo</text>
