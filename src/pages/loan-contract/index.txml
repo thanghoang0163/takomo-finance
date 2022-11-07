@@ -47,5 +47,5 @@
       </view>
     </view>
   </view>
-  <button class="large-btn" onTap="onConfirm">{{btnText}}</button>
 </view>
+<btn-footer onTap="onConfirm" btnText="{{btnText}}" />

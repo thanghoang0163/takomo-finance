@@ -2,10 +2,6 @@
   padding-top: 10px;
 }
 
-.address view .tu-label .tu-label-inline view {
-  font-weight: normal;
-}
-
 .address
   view:first-of-type
   .tu-label
@@ -28,7 +24,7 @@
   color: red;
   position: absolute;
   top: 0;
-  left: 45px;
+  left: 48px;
 }
 
 .address .input-section view:nth-of-type(2) .tu-label .tu-label-inline view {
@@ -45,7 +41,7 @@
   color: red;
   position: absolute;
   top: 0;
-  left: 110px;
+  left: 115px;
 }
 
 .address .input-section view:nth-of-type(4) .tu-label .tu-label-inline view {
@@ -62,7 +58,7 @@
   color: red;
   position: absolute;
   top: 0;
-  left: 90px;
+  left: 95px;
 }
 
 .address .input-section view:nth-of-type(6) .tu-label .tu-label-inline view {
@@ -79,5 +75,5 @@
   color: red;
   position: absolute;
   top: 0;
-  left: 83px;
+  left: 87px;
 }

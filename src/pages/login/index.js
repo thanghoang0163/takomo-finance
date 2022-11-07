@@ -33,7 +33,7 @@ Page({
     }
   },
 
-  onRegister() {
+  onLogin() {
     // this.data.modal = {
     //   ...this.data.modal,
     //   isShow: true,
@@ -66,6 +66,12 @@ Page({
         errorText: "Thông tin không được bỏ trống!",
       });
     } else {
+      my.setStorage({
+        key: "login",
+        data: {
+          phone: input,
+        },
+      });
       my.navigateTo({ url: "pages/register/index" });
     }
   },
@@ -93,6 +99,16 @@ Page({
       },
       failed: (err) => {
         console.log(err);
+      },
+    });
+    my.getStorage({
+      key: "login",
+      success: (res) => {
+        if(res.data){
+          this.setData({
+            input: res.data.phone,
+          });
+        }
       },
     });
     // parse(

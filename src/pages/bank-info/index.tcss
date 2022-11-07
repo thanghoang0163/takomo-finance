@@ -1,0 +1,12 @@
+.tu-tabs {
+  padding: 10px 0;
+}
+
+.tu-tabs-bar,
+.tu-tabs-content-wrap {
+  background-color: transparent;
+}
+
+.tu-tabs-content-wrap {
+  padding-top: 10px;
+}

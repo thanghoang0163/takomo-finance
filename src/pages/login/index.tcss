@@ -2,7 +2,7 @@
   background: linear-gradient(
     to bottom,
     rgba(114, 9, 183, 1) 45%,
-    rgba(255, 255, 255, 1) 50%
+    rgb(245, 245, 245) 50%
   );
 }
 
@@ -17,3 +17,25 @@
   border-radius: 20px;
   padding: 10px 0 0;
 }
+
+.more-info {
+  padding-top: 20px;
+}
+
+.about-us,
+.questions {
+  display: flex;
+  align-items: center;
+  width: 48%;
+  border-radius: 8px;
+  background-color: var(--white-color);
+  padding: 8px;
+}
+
+.more-info-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+

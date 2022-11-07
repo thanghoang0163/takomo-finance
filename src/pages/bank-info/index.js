@@ -1,8 +1,6 @@
 Page({
   data: {
-    labelBank: "Ngân hàng:",
-    placeHolderBank: "Ngân hàng",
-    titleBank: "Ngân hàng",
+    activeTab: 0,
     errorTextBank: "",
     selectedBank: "",
     isErrorBank: false,
@@ -19,7 +17,23 @@ Page({
     errorTextLoanPurpose: "",
     selectedLoan: "",
     isErrorLoanPurpose: false,
+    labelPhoneMomo: "Số điện thoại:",
+    placeHolderPhoneMomo: "Số điện thoại",
+    typePhoneMomo: "number",
+    maxLengthPhoneMomo: 10,
+    errorTextPhoneMomo: "",
+    inputPhoneMomo: "",
+    isErrorPhoneMomo: false,
+    isBank: true,
     btnText: "Tiếp tục bước 6/7",
+    tabsList: [
+      {
+        title: "Ngân hàng",
+      },
+      {
+        title: "Momo",
+      },
+    ],
     listLoanPurpose: [
       {
         id: 1,
@@ -50,6 +64,20 @@ Page({
         name: "Khác",
       },
     ],
+  },
+
+  onTabClick({ index, tabsName }) {
+    this.setData({
+      [tabsName]: index,
+    });
+  },
+  
+  onChangeTab({ index, tabsName }) {
+    if (!this.data.isBank) {
+      this.setData({
+        [tabsName]: index,
+      });
+    }
   },
 
   onSelectLoan(value) {

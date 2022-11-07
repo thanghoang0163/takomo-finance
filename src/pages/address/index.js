@@ -28,7 +28,6 @@ Page({
     cityErrorMsg: "",
     districtErrorMsg: "",
     wardErrorMsg: "",
-    address: {},
     listResidence: [
       {
         id: 1,
@@ -88,7 +87,6 @@ Page({
         city: value.city.name,
         district: value.district.name,
         ward: value.ward.name,
-        address: value,
       });
     }
   },
@@ -97,6 +95,11 @@ Page({
     this.setData({
       selectedResidence: value,
     });
+    if (this.data.isErrorResidence) {
+      this.setData({
+        isErrorResidence: false,
+      });
+    }
   },
 
   onTapNextStep() {
@@ -111,7 +114,10 @@ Page({
       wardErrorMsg,
       selectedItem,
       address,
+      selectedResidence,
+      inputApartment,
     } = this.data;
+
     if (street === "") {
       this.setData({
         streetErrorMsg: "Thông tin không được bỏ trống!",
@@ -141,7 +147,24 @@ Page({
       });
     }
 
-    if (address !== {} && selectedResidence !== "" && street !== "") {
+    if (
+      city !== "" &&
+      selectedResidence !== "" &&
+      street !== "" &&
+      district !== "" &&
+      ward !== ""
+    ) {
+      my.setStorage({
+        key: "address",
+        data: {
+          street,
+          city,
+          district,
+          ward,
+          apartment: inputApartment,
+          residenceTime: selectedResidence,
+        },
+      });
       my.navigateTo({ url: "pages/job-info/index" });
     }
   },

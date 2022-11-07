@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "input-item": "components/input-item/index"
+    "button": "@tiki.vn/tini-ui/es/button/index"
   }
 }

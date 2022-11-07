@@ -131,6 +131,14 @@ Page({
       inputPassword !== "" &&
       inputPasswordAgain !== ""
     ) {
+      my.setStorage({
+        key: "register",
+        data: {
+          password: inputPassword,
+          passwordAgain: inputPasswordAgain,
+          email: inputEmail,
+        },
+      });
       my.navigateTo({ url: "pages/customer-info/index" });
     }
   },

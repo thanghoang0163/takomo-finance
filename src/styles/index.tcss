@@ -29,7 +29,6 @@
   font-size: 20px;
   line-height: 24px;
   color: var(--white-color);
-  margin-bottom: 10px;
   border: none;
 }
 
@@ -92,6 +91,6 @@
   background: linear-gradient(
     to bottom,
     rgba(114, 9, 183, 1) 25%,
-    rgba(255, 255, 255, 1) 30%
+    rgb(245, 245, 245) 30%
   );
 }

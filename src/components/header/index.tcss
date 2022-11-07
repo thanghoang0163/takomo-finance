@@ -4,14 +4,12 @@
   margin-bottom: 20px;
 }
 
-.header-btn {
-  top: 33px;
-  left: 0;
-  border: none;
-}
-
 .header-btn:hover {
   background-color: transparent;
+}
+
+.header-img-container {
+  flex: 1;
 }
 
 .header-img {

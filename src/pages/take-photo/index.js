@@ -40,7 +40,7 @@ Page({
     });
   },
 
-  onTapNextStep() {
+  onContinue() {
     my.navigateTo({ url: "pages/loan-contract/index" });
   },
 

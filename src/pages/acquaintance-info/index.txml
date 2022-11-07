@@ -43,5 +43,5 @@
       </view>
     </view>
   </view>
-  <button class="large-btn" onTap="onContinue">{{btnText}}</button>
 </view>
+<btn-footer onTap="onContinue" btnText="{{btnText}}" />

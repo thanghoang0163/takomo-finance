@@ -25,6 +25,7 @@ Page({
     errorTextMaritalStatus: "",
     selectedMaritalStatus: "",
     isErrorMaritalStatus: false,
+    gender: "male",
     btnText: "Tiếp tục bước 2/7",
     items: [
       { name: "male", value: "Nam", checked: true },
@@ -76,10 +77,17 @@ Page({
     this.setData({
       selectedMaritalStatus: value.name,
     });
+    if (this.data.isErrorMaritalStatus) {
+      this.setData({
+        isErrorMaritalStatus: false,
+      });
+    }
   },
 
   onChange(e) {
-    console.log(e.detail.value);
+    this.setData({
+      gender: e.detail.value,
+    });
   },
 
   onSelectDate() {
@@ -92,6 +100,11 @@ Page({
         });
       },
     });
+    if (this.data.isErrorBirthDay) {
+      this.setData({
+        isErrorBirthDay: false,
+      });
+    }
   },
 
   onInputMaritalStatus(value) {
@@ -110,6 +123,7 @@ Page({
       isErrorMaritalStatus,
       selectedMaritalStatus,
       selectedDate,
+      gender,
     } = this.data;
     const inputIdCardLength = inputIdCard.length;
     const inputNameLength = inputName.length;
@@ -163,6 +177,16 @@ Page({
       inputIdCard !== "" &&
       inputName !== ""
     ) {
+      my.setStorage({
+        key: "customerInfo",
+        data: {
+          name: inputName,
+          idCard: inputIdCard,
+          birthday: selectedDate,
+          gender: gender,
+          maritalStatus: selectedMaritalStatus,
+        },
+      });
       my.navigateTo({ url: "pages/address/index" });
     }
   },

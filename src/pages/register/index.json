@@ -3,6 +3,7 @@
   "usingComponents": {
     "header": "components/header/index",
     "input-item": "components/input-item/index",
-    "modal": "components/modal/index"
+    "modal": "components/modal/index",
+    "btn-footer": "components/btn-footer/index"
   }
 }

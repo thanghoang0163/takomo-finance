@@ -1,5 +1,0 @@
-<view class="input-section w-full">
-  <block tiki:for="{{inputsArray}}">
-    <input-item type="{{item.type}}" label="{{item.label}}" placeHolder="{{item.placeHolder}}" maxlength="{{item.maxlength}}" onInput="{{item.onInput}}" />
-  </block>
-</view>

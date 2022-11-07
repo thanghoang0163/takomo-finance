@@ -4,16 +4,30 @@
     <view class="bank-info-content">
       <text class="bank-info-title title">Thông tin tài khoản nhận tiền</text>
       <view class="input-section">
-        <options-selector isRequired="{{true}}" list="{{listBank}}" title="{{titleBank}}"
-          label="{{labelBank}}" placeHolder="{{placeHolderBank}}" isError="{{isErrorBank}}"
-          errorText="{{errorTextBank}}" value="{{selectedBank}}" onSelect="onSelectBank" />
-        <input-item isRequired="{{true}}" label="{{labelBankAcc}}" type="{{typeBankAcc}}" placeHolder="{{placeHolderBankAcc}}"
-          maxlength="{{maxLengthBankAcc}}" isError="{{isErrorBankAcc}}" errorText="{{errorTextBankAcc}}" onInput="onInputBankAcc" />
-        <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
-          label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurpose}}"
-          errorText="{{errorTextLoanPurpose}}" value="{{selectedLoan}}" onSelect="onSelectLoan" />
+        <tabs tabs="{{tabsList}}" tabsName="{{item.title}}" activeTab="{{activeTab}}" tabBarUnderlineColor="#F82486"
+        tabBarActiveTextColor="#F82486" onTabClick="onTabClick" onChange="onChangeTab" swipeable="{{false}}">
+        <tab-content tabId="{{index}}">
+          <block tiki:if="{{isBank}}">
+            <banks-selector value="{{selectedBank}}" isError="{{isErrorBank}}" errorText="{{errorTextBank}}" list="{{bankList}}" />
+              <input-item isRequired="{{true}}" label="{{labelBankAcc}}" type="{{typeBankAcc}}"
+                placeHolder="{{placeHolderBankAcc}}" maxlength="{{maxLengthBankAcc}}" isError="{{isErrorBankAcc}}"
+                errorText="{{errorTextBankAcc}}" onInput="onInputBankAcc" />
+              <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
+                label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurpose}}"
+                errorText="{{errorTextLoanPurpose}}" value="{{selectedLoan}}" onSelect="onSelectLoan" />
+            </block>
+            <block tiki:else>
+              <input-item isRequired="{{true}}" label="{{labelPhoneMomo}}" type="{{typePhoneMomo}}"
+                placeHolder="{{placeHolderPhoneMomo}}" maxlength="{{maxLengthPhoneMomo}}"
+                isError="{{isErrorPhoneMomo}}" errorText="{{errorTextPhoneMomo}}" onInput="onInputPhoneMomo" />
+              <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
+                label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurpose}}"
+                errorText="{{errorTextLoanPurpose}}" value="{{selectedLoan}}" onSelect="onSelectLoanMomo" />
+            </block>
+          </tab-content>
+        </tabs>
       </view>
     </view>
   </view>
-  <button class="large-btn" onTap="onContinue">{{btnText}}</button>
 </view>
+<btn-footer onTap="onContinue" btnText="{{btnText}}" />

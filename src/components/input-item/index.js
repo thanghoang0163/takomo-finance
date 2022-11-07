@@ -3,6 +3,7 @@ Component({
     label: "",
     placeHolder: "",
     type: "",
+    value: "",
     maxlength: 0,
     errorText: "",
     isError: false,

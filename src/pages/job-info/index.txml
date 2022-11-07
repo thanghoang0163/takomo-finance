@@ -26,5 +26,5 @@
       </view>
     </view>
   </view>
-  <button class="large-btn" onTap="onTapNextStep">{{btnText}}</button>
 </view>
+<btn-footer onTap="onContinue" btnText="{{btnText}}" />

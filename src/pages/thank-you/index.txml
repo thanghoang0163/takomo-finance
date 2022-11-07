@@ -1,14 +1,12 @@
 <view class="success page flex flex-col items-center w-full">
-  <header />
   <view class="success-content flex flex-col items-center justify-center">
-    <view class="success-label text-center">CHÚC MỪNG QUÝ KHÁCH ĐÃ HOÀN THÀNH​</view>
-    <view class="success-sub-label text-center">THỦ TỤC ĐĂNG KÝ TẠI <text class="mx-4x-small" style="color: #F82486">TAKOMO.VN</text></view>
-    <view class="success-text text-center">Vui lòng giữ liên lạc, Kết quả của hồ sơ sẽ được nhân viên Takomo phản hồi trong ít
-      phút qua điện thoại, hoặc email đã đăng ký.</view>
-    <view class="success-sub-text text-center">Để thuận tiện cho việc theo dõi tình trạng khoản vay và các ưu đãi hấp dẫn sắp tới,
-      vui lòng truy cập <text class="mx-4x-small" style="color: #F82486">ứng dụng di động</text> hoặc <text
-        class="mx-4x-small" style="color: #F82486">website</text> của <text class="mx-4x-small"
-        style="color: #F82486">Takomo.vn</text>​</view>
+    <view class="success-label text-center">Chúc mừng quý khách đã hoàn thành​ thủ tục đăng ký tại takomo.vn</view>
+    <view class="success-text text-center">Vui lòng giữ liên lạc, kết quả của hồ sơ sẽ được nhân viên Takomo phản hồi
+      trong ít phút qua điện thoại, hoặc email đã đăng ký.</view>
+    <view class="success-sub-text text-center">Để thuận tiện cho việc theo dõi tình trạng khoản vay và các ưu đãi hấp
+      dẫn sắp tới, vui lòng truy cập <text class="mx-4x-small" style="color: #F82486">ứng dụng di động</text>hoặc
+      website của <text class="mx-4x-small" style="color: #F82486">Takomo.vn</text>​</view>
+      <button class="large-btn" onTap="onGoHome">{{btnText}}</button>
     <image class="success-img" src="/assets/images/finish.png" />
   </view>
 </view>

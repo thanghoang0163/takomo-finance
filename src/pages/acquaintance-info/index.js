@@ -75,13 +75,245 @@ Page({
     ],
   },
 
-  onSelectRelationship(value){
-    this.setData({
-      selectedRelationship: value
-    })
+  itemInput(input) {
+    const itemInput = input.slice(0, 1);
+    return itemInput;
   },
 
-  onContinue() {},
+  formatNumberinput(input) {
+    const formatNumberinput = input.slice(0, 2);
+    return formatNumberinput;
+  },
+
+  onInputNameRelative(value) {
+    this.setData({
+      inputNameRelative: value,
+    });
+    if (this.data.isErrorNameRelative) {
+      this.setData({
+        isErrorNameRelative: false,
+      });
+    }
+  },
+
+  onInputPhoneRelative(value) {
+    this.setData({
+      inputPhoneRelative: value,
+    });
+    if (this.data.isErrorPhoneRelative) {
+      this.setData({
+        isErrorPhoneRelative: false,
+      });
+    }
+  },
+
+  onInputNameColleague(value) {
+    this.setData({
+      inputNameColleague: value,
+    });
+    if (this.data.isErrorNameColleague) {
+      this.setData({
+        isErrorNameColleague: false,
+      });
+    }
+  },
+
+  onInputPhoneColleague(value) {
+    this.setData({
+      inputPhoneColleague: value,
+    });
+    if (this.data.isErrorPhoneColleague) {
+      this.setData({
+        isErrorPhoneColleague: false,
+      });
+    }
+  },
+
+  onInputNamePlusContact(value) {
+    this.setData({
+      inputNamePlusContact: value,
+    });
+    if (this.data.isErrorNamePlusContact) {
+      this.setData({
+        isErrorNamePlusContact: false,
+      });
+    }
+  },
+
+  onInputPhonePlusContact(value) {
+    this.setData({
+      inputPhonePlusContact: value,
+    });
+    if (this.data.isErrorPhonePlusContact) {
+      this.setData({
+        isErrorPhonePlusContact: false,
+      });
+    }
+  },
+
+  onSelectRelationship(value) {
+    this.setData({
+      selectedRelationship: value,
+    });
+    if (this.data.isErrorRelationship) {
+      this.setData({
+        isErrorRelationship: false,
+      });
+    }
+  },
+
+  onContinue() {
+    const {
+      inputNameRelative,
+      inputPhoneRelative,
+      inputNameColleague,
+      inputPhoneColleague,
+      inputNamePlusContact,
+      inputPhonePlusContact,
+      selectedRelationship,
+    } = this.data;
+
+    if (inputNameRelative === 0) {
+      this.setData({
+        isErrorNameRelative: true,
+        errorTextNameRelative: "Thông tin không được bỏ trống!",
+      });
+    } else if (inputNameRelative.split(" ").length < 2) {
+      this.setData({
+        isErrorNameRelative: true,
+        errorTextNameRelative: "Tên ít nhất bao gồm họ và tên!",
+      });
+    }
+
+    if (inputNameColleague === 0) {
+      this.setData({
+        isErrorNameColleague: true,
+        errorTextNameColleague: "Thông tin không được bỏ trống!",
+      });
+    } else if (inputNameColleague.split(" ").length < 2) {
+      this.setData({
+        isErrorNameColleague: true,
+        errorTextNameColleague: "Tên ít nhất bao gồm họ và tên!",
+      });
+    }
+
+    if (inputNamePlusContact !== "") {
+      if (inputNamePlusContact === 0) {
+        this.setData({
+          isErrorNamePlusContact: true,
+          errorTextNamePlusContact: "Thông tin không được bỏ trống!",
+        });
+      } else if (inputNamePlusContact.split(" ").length < 2) {
+        this.setData({
+          isErrorNamePlusContact: true,
+          errorTextNamePlusContact: "Tên ít nhất bao gồm họ và tên!",
+        });
+      }
+    }
+
+    if (
+      (this.itemInput(inputPhoneRelative) !== "0" &&
+        inputPhoneRelative.length !== 0) ||
+      !isValidPhoneNumber(this.formatNumberinput(inputPhoneRelative))
+    ) {
+      this.setData({
+        isErrorPhoneRelative: true,
+        errorTextPhoneRelative: "Định dạng số điện thoại không đúng!",
+      });
+    } else if (
+      inputPhoneRelative.length < 10 &&
+      inputPhoneRelative.length > 0
+    ) {
+      this.setData({
+        isErrorPhoneRelative: true,
+        errorTextPhoneRelative: "Số điện thoại nhập không đủ!",
+      });
+    } else if (inputPhoneRelative.length === 0) {
+      this.setData({
+        isErrorPhoneRelative: true,
+        errorTextPhoneRelative: "Thông tin không được bỏ trống!",
+      });
+    }
+
+    if (
+      (this.itemInput(inputPhoneColleague) !== "0" &&
+        inputPhoneColleague.length !== 0) ||
+      !isValidPhoneNumber(this.formatNumberinput(inputPhoneColleague))
+    ) {
+      this.setData({
+        isErrorPhoneColleague: true,
+        errorTextPhoneColleague: "Định dạng số điện thoại không đúng!",
+      });
+    } else if (
+      inputPhoneColleague.length < 10 &&
+      inputPhoneColleague.length > 0
+    ) {
+      this.setData({
+        isErrorPhoneColleague: true,
+        errorTextPhoneColleague: "Số điện thoại nhập không đủ!",
+      });
+    } else if (inputPhoneColleague.length === 0) {
+      this.setData({
+        isErrorPhoneColleague: true,
+        errorTextPhoneColleague: "Thông tin không được bỏ trống!",
+      });
+    }
+
+    if (inputPhonePlusContact !== "") {
+      if (
+        (this.itemInput(inputPhonePlusContact) !== "0" &&
+          inputPhonePlusContact.length !== 0) ||
+        !isValidPhoneNumber(this.formatNumberinput(inputPhonePlusContact))
+      ) {
+        this.setData({
+          isErrorPhonePlusContact: true,
+          errorTextPhonePlusContact: "Định dạng số điện thoại không đúng!",
+        });
+      } else if (
+        inputPhonePlusContact.length < 10 &&
+        inputPhonePlusContact.length > 0
+      ) {
+        this.setData({
+          isErrorPhonePlusContact: true,
+          errorTextPhonePlusContact: "Số điện thoại nhập không đủ!",
+        });
+      } else if (inputPhonePlusContact.length === 0) {
+        this.setData({
+          isErrorPhonePlusContact: true,
+          errorTextPhonePlusContact: "Thông tin không được bỏ trống!",
+        });
+      }
+    }
+
+    if (selectedRelationship === "") {
+      this.setData({
+        isErrorRelationship: true,
+        errorTextRelationship: "Thông tin không được bỏ trống!",
+      });
+    }
+
+    if (
+      inputNameRelative !== "" &&
+      inputPhoneRelative !== "" &&
+      inputNameColleague !== "" &&
+      inputPhoneColleague !== "" &&
+      selectedRelationship !== ""
+    ) {
+      my.setStorage({
+        key: "address",
+        data: {
+          nameRelative: inputNameRelative,
+          phoneRelative: inputPhoneRelative,
+          nameColleague: inputNameColleague,
+          phoneColleague: inputPhoneColleague,
+          namePlusContact: inputNamePlusContact,
+          phonePlusContact: inputPhonePlusContact,
+          relationship: selectedResidence,
+        },
+      });
+      my.navigateTo({ url: "pages/bank-info/index" });
+    }
+  },
 
   onLoad() {
     my.hideBackHome({ hide: true });

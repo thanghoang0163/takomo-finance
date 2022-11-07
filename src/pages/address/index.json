@@ -4,7 +4,7 @@
     "header": "components/header/index",
     "input-item": "components/input-item/index",
     "options-selector": "components/options-selector/index",
-    "button": "@tiki.vn/tini-ui/es/button/index",
+    "btn-footer": "components/btn-footer/index",
     "address": "@tiki.vn/tini-ui/es/address/index"
   }
 }

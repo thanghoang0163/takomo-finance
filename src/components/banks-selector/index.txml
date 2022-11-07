@@ -1,0 +1,21 @@
+<view class="banks-selector w-full">
+  <view class="input-item-label">
+    <text class="label">{{label}}</text>
+    <block tiki:if="{{isRequired}}">
+      <text class="asterisk">*</text>
+    </block>
+  </view>
+  <input class="input" type="text" placeholder="Ngân hàng" maxlength="{{100}}" value="{{value}}" onInput="_onInput" />
+  <button class="banks-selector-btn absolute flex justify-end items-center" onTap="onTap">
+    <icon type="arrow_down" size="{{22}}" color="#999" />
+  </button>
+  <block tiki:if="{{isError}}">
+    <text class="error-message">{{errorText}}</text>
+  </block>
+  <bottom-sheet show="{{isShow}}" title="Ngân hàng" onClose="_onClose">
+    <search-bar placeholder="Tìm kiếm ngân hàng" onInput="_onSearch" />
+    <block tiki:for="{{list}}">
+      <view>{{item.name}}</view>
+    </block>
+  </bottom-sheet>
+</view>

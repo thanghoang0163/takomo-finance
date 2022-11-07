@@ -217,31 +217,73 @@ Page({
     ],
   },
 
+  onInputCompanyName(value) {
+    this.setData({
+      inputCompanyName: value,
+    });
+    if (this.data.isErrorCompanyName) {
+      this.setData({
+        isErrorCompanyName: false,
+      });
+    }
+  },
+
+  onInputPosition(value) {
+    this.setData({
+      inputPosition: value,
+    });
+    if (this.data.isErrorPosition) {
+      this.setData({
+        isErrorPosition: false,
+      });
+    }
+  },
+
   onSelectWorkForm(value) {
     this.setData({
       selectedWorkForm: value,
     });
+    if (this.data.isErrorWorkForm) {
+      this.setData({
+        isErrorWorkForm: false,
+      });
+    }
   },
 
   onSelectWorkField(value) {
     this.setData({
       selectedWorkField: value,
     });
+    if (this.data.isErrorWorkField) {
+      this.setData({
+        isErrorWorkField: false,
+      });
+    }
   },
 
   onSelectLastWorkPlace(value) {
     this.setData({
       selectedLastWorkPlace: value,
     });
+    if (this.data.isErrorLastWorkPlace) {
+      this.setData({
+        isErrorLastWorkPlace: false,
+      });
+    }
   },
 
   onSelectIncome(value) {
     this.setData({
       selectedIncome: value,
     });
+    if (this.data.isErrorIncome) {
+      this.setData({
+        isErrorIncome: false,
+      });
+    }
   },
 
-  onTapNextStep() {
+  onContinue() {
     const {
       selectedWorkForm,
       selectedWorkField,
@@ -250,7 +292,70 @@ Page({
       inputCompanyName,
       inputPosition,
     } = this.data;
-    console.log();
+
+    if (selectedWorkForm.length === 0) {
+      this.setData({
+        isErrorWorkForm: true,
+        errorTextWorkForm: "Thông tin không được bỏ trống!",
+      });
+    }
+
+    if (selectedWorkField.length === 0) {
+      this.setData({
+        isErrorWorkField: true,
+        errorTextWorkField: "Thông tin không được bỏ trống!",
+      });
+    }
+
+    if (selectedLastWorkPlace.length === 0) {
+      this.setData({
+        isErrorLastWorkPlace: true,
+        errorTextLastWorkPlace: "Thông tin không được bỏ trống!",
+      });
+    }
+
+    if (selectedIncome.length === 0) {
+      this.setData({
+        isErrorIncome: true,
+        errorTextIncome: "Thông tin không được bỏ trống!",
+      });
+    }
+
+    if (inputCompanyName.length === 0) {
+      this.setData({
+        isErrorCompanyName: true,
+        errorTextCompanyName: "Thông tin không được bỏ trống!",
+      });
+    }
+
+    if (inputPosition.length === 0) {
+      this.setData({
+        isErrorPosition: true,
+        errorTextPosition: "Thông tin không được bỏ trống!",
+      });
+    }
+
+    if (
+      selectedLastWorkPlace !== "" &&
+      selectedWorkField !== "" &&
+      selectedWorkForm !== "" &&
+      selectedIncome !== "" &&
+      inputCompanyName !== "" &&
+      inputPosition !== ""
+    ) {
+      my.setStorage({
+        key: "jobInfo",
+        data: {
+          workForm: selectedWorkForm,
+          workField: selectedWorkField,
+          lastWorkPlace: selectedLastWorkPlace,
+          income: selectedIncome,
+          companyName: inputCompanyName,
+          position: inputPosition,
+        },
+      });
+      my.navigateTo({ url: "pages/acquaintance-info/index" });
+    }
   },
 
   onLoad() {

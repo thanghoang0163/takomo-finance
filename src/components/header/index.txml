@@ -1,8 +1,10 @@
-<view class="header flex items-center justify-center w-full relative">
+<view class="header flex items-center justify-between w-full">
   <block tiki:if="{{isShowBtn}}">
-    <button class="header-btn absolute bg-transparent" onTap="onTap">
+    <button class="header-btn border-none bg-transparent flex justify-center items-center" onTap="onTap">
       <icon type="arrow_left" size="40" color="#fff" />
     </button>
   </block>
-  <image class="header-img" src="/assets/icons/logo.svg" />
+  <view class="header-img-container flex justify-center items-center">
+    <image class="header-img" style={{isShowBtn ? "transform: translateX(-70%)" : "transform: translateX(-10%)" }} src="/assets/icons/logo.svg" />
+  </view>
 </view>

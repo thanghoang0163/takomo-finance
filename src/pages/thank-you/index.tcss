@@ -4,30 +4,26 @@
 }
 
 .success-content {
+  margin-top: 10vh;
   width: 90vw;
 }
 
 .success-label {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-  color: var(--white-color);
-}
-
-.success-sub-label {
   font-size: 18px;
+  font-weight: 700;
   line-height: 22px;
   color: var(--white-color);
-  margin: 5px 0 50px;
 }
 
 .success-text {
   color: var(--white-color);
+  margin: 10px 0;
 }
 
 .success-sub-text {
-  font-size: 12px;
-  line-height: 15px;
   color: var(--white-color);
-  margin: 5px 0 50px;
+}
+
+.success .large-btn{
+  margin: 20px 0;
 }
