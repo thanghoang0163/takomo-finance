@@ -4,7 +4,7 @@
     <view class="bank-info-content">
       <view class="input-section">
         <tabs tabs="{{tabsList}}" tabsName="{{item.title}}" activeTab="{{activeTab}}" tabBarUnderlineColor="#F82486"
-        tabBarActiveTextColor="#F82486" onTabClick="onTabClick" onChange="onChangeTab" swipeable="{{false}}">
+        tabBarActiveTextColor="#F82486" onTabClick="onTabClick" onChange="onChangeTab">
         <tab-content tabId="{{index}}">
           <block tiki:if="{{isBank}}">
             <banks-selector value="{{selectedBank}}" isError="{{isErrorBank}}" errorText="{{errorTextBank}}" list="{{bankList}}" />

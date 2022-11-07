@@ -71,14 +71,23 @@ Page({
     this.setData({
       [tabsName]: index,
     });
+    if (index === 1) {
+      this.setData({
+        isBank: false,
+        activeTab: 1,
+      });
+    } else {
+      this.setData({
+        isBank: true,
+        activeTab: 0,
+      });
+    }
   },
 
   onChangeTab({ index, tabsName }) {
-    if (!this.data.isBank) {
-      this.setData({
-        [tabsName]: index,
-      });
-    }
+    this.setData({
+      [tabsName]: index,
+    });
   },
 
   onSelectLoan(value) {
