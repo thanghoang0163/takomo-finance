@@ -309,7 +309,7 @@ Page({
           phoneColleague: inputPhoneColleague,
           namePlusContact: inputNamePlusContact,
           phonePlusContact: inputPhonePlusContact,
-          relationship: selectedResidence,
+          relationship: selectedRelationship,
         },
       });
       my.navigateTo({ url: "pages/bank-info/index" });

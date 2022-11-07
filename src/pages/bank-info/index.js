@@ -87,6 +87,10 @@ Page({
     });
   },
 
+  onContinue() {
+    my.navigateTo({ url: "pages/take-photo/index" });
+  },
+
   onLoad() {
     my.hideBackHome({ hide: true });
   },

@@ -2,7 +2,6 @@ Page({
   data: {
     titleHeader: "Thông tin khoản vay",
     loanTime: 7,
-    loanDate: "14/10/2022",
     approvedMoney: 500000,
     paidMoney: 570000,
     btnText: "Xác nhận",
@@ -26,7 +25,7 @@ Page({
   },
 
   onConfirm() {
-    my.navigateTo({ url: "pages/success-loan/index" });
+    my.navigateTo({ url: "pages/thank-you/index" });
   },
 
   onLoad() {
