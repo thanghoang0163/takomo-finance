@@ -2,6 +2,7 @@
   "transparentTitle": "always",
   "usingComponents": {
     "header": "components/header/index",
-    "btn-footer": "components/btn-footer/index"
+    "btn-footer": "components/btn-footer/index",
+    "comparison-image": "components/comparison-image/index"
   }
 }

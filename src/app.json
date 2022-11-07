@@ -1,15 +1,15 @@
 {
   "pages": [
-    "pages/loan-contract/index",
+    "pages/take-photo/index",
     "pages/acquaintance-info/index",
+    "pages/loan-contract/index",
     "pages/address/index",
     "pages/bank-info/index",
     "pages/customer-info/index",
     "pages/job-info/index",
     "pages/register/index",
     "pages/login/index",
-    "pages/thank-you/index",
-    "pages/take-photo/index"
+    "pages/thank-you/index"
   ],
   "window": {
     "defaultTitle": "",

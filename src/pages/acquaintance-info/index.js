@@ -301,7 +301,7 @@ Page({
       selectedRelationship !== ""
     ) {
       my.setStorage({
-        key: "address",
+        key: "accquaintanceInfo",
         data: {
           nameRelative: inputNameRelative,
           phoneRelative: inputPhoneRelative,

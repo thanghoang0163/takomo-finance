@@ -1,0 +1,9 @@
+<view class="input-section">
+  <view class="photo-item-label">
+    <text class="label">{{label}}</text>
+    <text class="asterisk">*</text>
+  </view>
+  <view class="photo-img-container" onTap="_onTap">
+    <image class="w-full h-full" src="{{imgUrl}}" />
+  </view>
+</view>

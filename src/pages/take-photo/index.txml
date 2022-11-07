@@ -1,20 +1,11 @@
 <view class="photo container page">
   <view class="photo-container w-full">
-    <header isShowBtn="{{true}}" />
-    <block tiki:for="{{list}}" tiki:this="{{item.id}}">
+    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
       <view class="photo-content w-full">
-        <text class="address-title title">Chụp ảnh đối chiếu</text>
-        <view class="input-section">
-          <view class="photo-item-label">
-            <text class="label">{{item.label}}</text>
-            <text class="asterisk">*</text>
-          </view>
-          <view class="photo-img-container" data-label="{{item.label}}" onTap="onChooseImg">
-            <image class="w-full h-full" src="{{imgs[0] && dataset === item.label ? imgs[0] : item.img}}" />
-          </view>
-        </view>
+        <comparison-image label="{{list[0].label}}" imgUrl="{{imgFace[0] ? imgFace[0] : list[0].img}}" onTap="onChooseFace" />
+        <comparison-image label="{{list[1].label}}" imgUrl="{{imgFrontIdCard[0] ? imgFrontIdCard[0] : list[1].img}}" onTap="onChooseFrontIdCard" />
+        <comparison-image label="{{list[2].label}}" imgUrl="{{imgRearIdCard[0] ? imgRearIdCard[0] : list[2].img}}" onTap="onChooseRearIdCard" />
       </view>
-    </block>
   </view>
 </view>
 <btn-footer onTap="onContinue" btnText="{{btnText}}" />

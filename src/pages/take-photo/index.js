@@ -1,6 +1,9 @@
 Page({
   data: {
-    imgs: [],
+    titleHeader: "Chụp ảnh đối chiếu",
+    imgFace:[],
+    imgFrontIdCard:[],
+    imgRearIdCard:[],
     dataset: "",
     btnText: "Tiếp tục",
     list: [
@@ -22,16 +25,40 @@ Page({
     ],
   },
 
-  onChooseImg(value) {
-    this.setData({
-      dataset: value.target.dataset.label,
-    });
+  onChooseFace() {
     my.chooseImage({
       count: 1,
       success: (res) => {
-        console.log(res);
         this.setData({
-          imgs: res.filePaths,
+          imgFace: res.filePaths,
+        });
+      },
+      fail: (e) => {
+        console.log(e);
+      },
+    });
+  },
+
+  onChooseFrontIdCard() {
+    my.chooseImage({
+      count: 1,
+      success: (res) => {
+        this.setData({
+          imgFrontIdCard: res.filePaths,
+        });
+      },
+      fail: (e) => {
+        console.log(e);
+      },
+    });
+  },
+
+  onChooseRearIdCard() {
+    my.chooseImage({
+      count: 1,
+      success: (res) => {
+        this.setData({
+          imgFrontIdCard: res.filePaths,
         });
       },
       fail: (e) => {

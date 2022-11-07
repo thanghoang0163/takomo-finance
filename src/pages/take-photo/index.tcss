@@ -4,3 +4,7 @@
   border-radius: 20px;
   height: 150px;
 }
+
+.photo .input-section{
+  margin-bottom: 20px;
+}
