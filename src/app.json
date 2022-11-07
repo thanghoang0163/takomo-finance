@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/index",
     "pages/take-photo/index",
     "pages/acquaintance-info/index",
     "pages/loan-contract/index",
@@ -8,7 +9,6 @@
     "pages/customer-info/index",
     "pages/job-info/index",
     "pages/register/index",
-    "pages/login/index",
     "pages/thank-you/index"
   ],
   "window": {
