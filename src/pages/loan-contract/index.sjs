@@ -1,5 +1,10 @@
 export const randomNumber = () => {
-  return Math.floor(Math.random() * 1000000);
+  var random = Math.floor(Math.random() * 1000000).toString();
+  var unit = Math.floor(Math.random() * 10).toString();
+  if (random.length === 5) {
+    random += unit;
+  }
+  return random;
 };
 
 export const countDate = () => {
