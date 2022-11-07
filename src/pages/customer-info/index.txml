@@ -1,6 +1,6 @@
 <view class="customer-info container page">
   <view class="customer-info-container w-full">
-    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
+    <header title="{{titleHeader}}" />
     <view class="customer-info-content">
       <view class="input-section">
         <input-item isRequired="{{true}}" label="{{labelName}}" type="{{typeName}}" placeHolder="{{placeHolderName}}"
