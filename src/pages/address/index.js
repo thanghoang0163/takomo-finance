@@ -1,5 +1,6 @@
 Page({
   data: {
+    titleHeader: "Thông tin địa chỉ",
     cityPlaceLabel: "Tỉnh / Thành phố:",
     cityPlaceholder: "Tỉnh / Thành phố",
     districtPlaceLabel: "Quận / Huyện:",

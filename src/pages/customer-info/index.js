@@ -1,5 +1,6 @@
 Page({
   data: {
+    titleHeader: "Thông tin khách hàng",
     labelName: "Họ và tên:",
     placeHolderName: "Họ và tên",
     typeName: "text",

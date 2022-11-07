@@ -2,6 +2,7 @@ import { isValidEmail } from "./index.sjs";
 
 Page({
   data: {
+    titleHeader: "Tạo tài khoản Takomo",
     labelPassword: "Mật khẩu:",
     placeHolderPassword: "Mật khẩu",
     typePassword: "number",

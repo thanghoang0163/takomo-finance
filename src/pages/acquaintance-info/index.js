@@ -2,6 +2,7 @@ import { isValidPhoneNumber } from "../../utils/common.sjs";
 
 Page({
   data: {
+    titleHeader: "Thông tin người liên hệ",
     labelNameRelative: "Họ và tên:",
     placeHolderNameRelative: "Họ và tên",
     typeNameRelative: "text",

@@ -1,6 +1,7 @@
 Component({
   props: {
     isShowBtn: false,
+    title: "",
   },
   methods: {
     onTap() {

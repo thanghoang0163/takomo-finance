@@ -1,8 +1,7 @@
 <view class="customer-info container page">
   <view class="customer-info-container w-full">
-    <header isShowBtn="{{true}}" />
+    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="customer-info-content">
-      <text class="customer-info-title title">Thông tin khách hàng</text>
       <view class="input-section">
         <input-item isRequired="{{true}}" label="{{labelName}}" type="{{typeName}}" placeHolder="{{placeHolderName}}"
           maxlength="{{maxLengthName}}" isError="{{isErrorName}}" errorText="{{errorTextName}}" onInput="onInputName" />

@@ -1,5 +1,6 @@
 Page({
   data: {
+    titleHeader: "Thông tin khoản vay",
     loanTime: 7,
     loanDate: "14/10/2022",
     approvedMoney: 500000,
@@ -14,12 +15,12 @@ Page({
       {
         id: 2,
         text: "Phí quản lý: ",
-        amount: 20000,
+        amount: 40000,
       },
       {
         id: 3,
         text: "Phí thuế tài sản: ",
-        amount: 20000,
+        amount: 10000,
       },
     ],
   },

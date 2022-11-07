@@ -1,48 +1,54 @@
 <import-sjs name="{moneyFormatter}" from="../../utils/common.sjs" />
 <import-sjs name="{randomNumber}" from="./index.sjs" />
 
-<view class="loan-contract container page">
+<view class="loan-contract container">
   <view class="loan-contract-container w-full">
-    <header isShowBtn="{{true}}" />
-    <text class="address-title title">Ký hợp đồng vay</text>
+    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="loan-contract-content w-full">
       <view class="loan-info-container">
-        <text class="loan-contract-label">Thông tin khoản vay</text>
         <view class="input-section">
-          <view class="loan-info flex justify-between w-full">
+          <text class="loan-contract-label loan-contract-complete-label">Thông tin khoản vay</text>
+          <view class="loan-info w-full">
             <view class="loan-info-time-and-day">
-              <view class="loan-info-label">Thời gian vay:</view>
-              <view class="loan-info-content">{{loanTime}} ngày</view>
-              <view class="loan-info-label">Ngày đáo hạn:</view>
-              <view class="loan-info-content">{{loanDate}}</view>
+              <view class="loan-info-container">
+                <view class="loan-info-label">Thời gian vay:</view>
+                <view class="loan-info-content">{{loanTime}} ngày</view>
+              </view>
+              <view class="loan-info-container">
+                <view class="loan-info-label">Ngày đáo hạn:</view>
+                <view class="loan-info-content">{{loanDate}}</view>
+              </view>
             </view>
-            <view class="loan-info-money flex flex-col items-end">
-              <view class="loan-info-label">Số tiền được duyệt:</view>
-              <view class="loan-info-content">{{moneyFormatter(approvedMoney, "đ")}}</view>
-              <view class="loan-info-label">Số tiền cần trả:</view>
-              <view class="loan-info-content">{{moneyFormatter(paidMoney, "đ")}}</view>
+            <view class="loan-info-money">
+              <view class="loan-info-container">
+                <view class="loan-info-label">Số tiền được duyệt:</view>
+                <view class="loan-info-content">{{moneyFormatter(approvedMoney, "đ")}}</view>
+              </view>
+              <view class="loan-info-container">
+                <view class="loan-info-label">Số tiền cần trả:</view>
+                <view class="loan-info-content">{{moneyFormatter(paidMoney, "đ")}}</view>
+              </view>
             </view>
           </view>
-          <view class="fee w-full flex flex-col items-center">
+          <view class="fee w-full">
             <view class="fee-label">Phụ phí dịch vụ:</view>
             <block tiki:for="{{feeList}}" tiki:key="{{item.id}}">
-              <view class="fee-child flex">
-                <view class="fee-child-text">{{item.text}}</view>
-                <view class="fee-child-amount">{{moneyFormatter(item.amount, "đ")}}</view>
+              <view class="loan-info-container">
+                <view class="loan-info-label">{{item.text}}</view>
+                <view class="loan-info-content">{{moneyFormatter(item.amount, "đ")}}</view>
               </view>
             </block>
           </view>
         </view>
       </view>
     </view>
-    <view class="loan-info-container">
+    <view class="verification-code">
       <text class="loan-contract-label loan-contract-complete-label">Hoàn tất đăng ký</text>
-      <view class="input-section loan-contract-complete flex flex-col items-center justify-center">
-        <text class="loan-contract-complete-text text-center">Vui lòng nhấn vào nút <text style="color: #7209B7">“Xác
-            nhận”</text> bên dưới để hoàn tất đăng ký hồ sơ vay.</text>
-        <view class="verification flex items-center justify-center">
+      <view class="">
+        <view class="loan-contract-complete-text">Vui lòng nhấn vào nút “Xác nhận” bên dưới để hoàn tất đăng ký hồ sơ vay.</view>
+        <view class="verification flex items-center justify-between">
           <text class="verification-text">Mã xác nhận:</text>
-          <view class="verification-code flex items-center justify-center font-bold">{{randomNumber()}}</view>
+          <view class="loan-info-content">{{randomNumber()}}</view>
         </view>
       </view>
     </view>

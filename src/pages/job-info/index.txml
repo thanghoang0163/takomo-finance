@@ -1,8 +1,7 @@
 <view class="job-info container page">
   <view class="job-info-container w-full">
-    <header isShowBtn="{{true}}" />
+    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="job-info-content w-full">
-      <text class="address-title title">Thông tin công việc</text>
       <view class="input-section">
         <options-selector isRequired="{{true}}" list="{{listWorkForm}}" title="{{titleWorkForm}}"
           label="{{labelWorkForm}}" placeHolder="{{placeHolderWorkForm}}" isError="{{isErrorWorkForm}}"

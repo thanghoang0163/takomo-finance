@@ -1,8 +1,7 @@
 <view class="acquaintance-info container page">
   <view class="acquaintance-info-container w-full">
-    <header isShowBtn="{{true}}" />
+    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="acquaintance-info-content w-full mb-x-small">
-      <text class="register-title title">Thông tin người liên hệ</text>
       <view class="acquaintance-info">
         <view class="relative-info-label acquaintance-info-label">Thông tin người thân</view>
         <view class="input-section">

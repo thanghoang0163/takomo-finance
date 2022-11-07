@@ -1,5 +1,6 @@
 Page({
   data: {
+    titleHeader: "Thông tin tài khoản nhận tiền",
     activeTab: 0,
     errorTextBank: "",
     selectedBank: "",
@@ -71,7 +72,7 @@ Page({
       [tabsName]: index,
     });
   },
-  
+
   onChangeTab({ index, tabsName }) {
     if (!this.data.isBank) {
       this.setData({

@@ -1,7 +1,6 @@
 <view class="address container page">
   <view class="address-content w-full">
-    <header isShowBtn="{{true}}" />
-    <text class="address-title title">Thông tin địa chỉ</text>
+    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="input-section">
       <address streetErrorMsg="{{streetErrorMsg}}" cityErrorMsg="{{cityErrorMsg}}"
         districtErrorMsg="{{districtErrorMsg}}" wardErrorMsg="{{wardErrorMsg}}" cityPlaceLabel="{{cityPlaceLabel}}"

@@ -1,18 +1,15 @@
 .header {
   background-color: var(--primary-color);
-  padding-top: 4.5vh;
+  padding-top: 5vh;
   margin-bottom: 20px;
 }
 
+.header-btn {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
+}
+
 .header-btn:hover {
-  background-color: transparent;
-}
-
-.header-img-container {
-  flex: 1;
-}
-
-.header-img {
-  width: 50px;
-  height: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
 }

@@ -4,7 +4,10 @@
   </block>
   <block tiki:else>
     <view class="login-container w-full">
-      <header />
+      <view class="login-header flex justify-start items-center w-full">
+        <image src="/assets/icons/logo.svg" />
+        <text class="login-title title">TAKOMO</text>
+      </view>
       <image class="login-img w-full mt-x-small" src="/assets/images/banner-home.jpg" />
       <block tiki:if="{{!modal.isShow}}">
         <view class="login-content w-full">

@@ -1,8 +1,7 @@
 <view class="register container page">
   <view class="register-container w-full">
-    <header />
+    <header title="{{titleHeader}}" />
     <view class="register-content">
-      <text class="register-title title">Tạo tài khoản Takomo</text>
       <view class="input-section">
         <input-item isRequired="{{true}}" label="{{labelPassword}}" type="{{typePassword}}"
           placeHolder="{{placeHolderPassword}}" maxlength="{{maxLengthPassword}}" isError="{{isErrorPassword}}"

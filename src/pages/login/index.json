@@ -1,7 +1,6 @@
 {
   "transparentTitle": "always",
   "usingComponents": {
-    "header": "components/header/index",
     "input-item": "components/input-item/index",
     "modal": "components/modal/index",
     "onboarding": "components/onboarding/index",

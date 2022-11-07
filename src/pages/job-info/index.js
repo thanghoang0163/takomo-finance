@@ -1,5 +1,6 @@
 Page({
   data: {
+    titleHeader: "Thông tin công việc",
     labelWorkForm: "Hình thức công việc:",
     placeHolderWorkForm: "Hình thức công việc",
     titleWorkForm: "Hình thức công việc",
