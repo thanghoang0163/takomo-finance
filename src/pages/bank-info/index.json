@@ -5,6 +5,7 @@
     "input-item": "components/input-item/index",
     "options-selector": "components/options-selector/index",
     "banks-selector": "components/banks-selector/index",
+    "btn-footer": "components/btn-footer/index",
     "button": "@tiki.vn/tini-ui/es/button/index",
     "tabs": "@tiki.vn/tini-ui/es/tabs/index",
     "tab-content": "@tiki.vn/tini-ui/es/tabs/tab-content/index"
