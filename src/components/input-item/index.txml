@@ -6,7 +6,7 @@
     </block>
   </view>
   <input class="input" style={{isError ? "border-color:  red" :""}} disabled="{{isDisabled}}" type="{{type}}"
-    placeholder="{{placeHolder}}" maxlength="{{maxlength}}" value="{{value}}" onInput="_onInput" />
+    placeholder="{{placeHolder}}" password="{{isPassword}}" maxlength="{{maxlength}}" value="{{value}}" onInput="_onInput" />
   <block tiki:if="{{isError}}">
     <text class="error-message">{{errorText}}</text>
   </block>

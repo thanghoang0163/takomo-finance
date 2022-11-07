@@ -1,5 +1,5 @@
 <view class="birthday-selector">
-  <view class="birthday-selector-label">
+  <view class="input-item-label">
     <text class="label">{{label}}</text>
     <block tiki:if="{{isRequired}}">
       <text class="asterisk">*</text>

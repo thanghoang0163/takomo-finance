@@ -9,6 +9,7 @@ Component({
     isError: false,
     isRequired: false,
     isDisabled: false,
+    isPassword: false,
     onInput: () => {},
   },
   methods: {
