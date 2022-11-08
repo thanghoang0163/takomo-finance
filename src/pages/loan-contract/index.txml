@@ -2,7 +2,7 @@
 <import-sjs name="{randomNumber, countDate}" from="./index.sjs" />
 
 <view class="loan-contract container">
-  <view class="loan-contract-container w-full">
+  <view class="loan-contract-container content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="loan-contract-content w-full">
       <view class="loan-info-container">
@@ -53,5 +53,5 @@
       </view>
     </view>
   </view>
+  <btn-footer onTap="onConfirm" btnText="{{btnText}}" />
 </view>
-<btn-footer onTap="onConfirm" btnText="{{btnText}}" />

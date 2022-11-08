@@ -1,5 +1,5 @@
-<view class="acquaintance-info container page">
-  <view class="acquaintance-info-container w-full">
+<view class="acquaintance-info container">
+  <view class="acquaintance-info-container content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="acquaintance-info-content w-full mb-x-small">
       <view class="acquaintance-info">
@@ -42,5 +42,5 @@
       </view>
     </view>
   </view>
+  <btn-footer onTap="onContinue" btnText="{{btnText}}" />
 </view>
-<btn-footer onTap="onContinue" btnText="{{btnText}}" />

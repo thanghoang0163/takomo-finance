@@ -1,5 +1,5 @@
-<view class="address container page">
-  <view class="address-content w-full">
+<view class="address container">
+  <view class="address-content content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="input-section">
       <address streetErrorMsg="{{streetErrorMsg}}" cityErrorMsg="{{cityErrorMsg}}"
@@ -16,5 +16,5 @@
         errorText="{{errorTextResidence}}" value="{{selectedResidence}}" onSelect="onSelectResidence" />
     </view>
   </view>
+  <btn-footer onTap="onTapNextStep" btnText="{{btnText}}" />
 </view>
-<btn-footer onTap="onTapNextStep" btnText="{{btnText}}" />

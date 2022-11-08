@@ -1,5 +1,5 @@
-<view class="customer-info container page">
-  <view class="customer-info-container w-full">
+<view class="customer-info container">
+  <view class="customer-info-container content w-full">
     <header title="{{titleHeader}}" />
     <view class="customer-info-content">
       <view class="input-section">
@@ -26,5 +26,5 @@
       </view>
     </view>
   </view>
+  <btn-footer onTap="onContinue" btnText="{{btnText}}" />
 </view>
-<btn-footer onTap="onContinue" btnText="{{btnText}}" />

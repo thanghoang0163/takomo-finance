@@ -1,5 +1,5 @@
-<view class="bank-info container page">
-  <view class="bank-info-container w-full">
+<view class="bank-info container">
+  <view class="bank-info-container content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="bank-info-content">
       <view class="input-section">
@@ -28,5 +28,5 @@
       </view>
     </view>
   </view>
+  <btn-footer onTap="onContinue" btnText="{{btnText}}" />
 </view>
-<btn-footer onTap="onContinue" btnText="{{btnText}}" />

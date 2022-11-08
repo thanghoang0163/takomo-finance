@@ -1,5 +1,5 @@
-<view class="photo container page">
-  <view class="photo-container w-full">
+<view class="photo container">
+  <view class="photo-container content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="photo-content w-full">
       <comparison-image label="{{list[0].label}}" imgUrl="{{imgFace[0] ? imgFace[0] : list[0].img}}"
@@ -10,5 +10,5 @@
         onTap="onChooseRearIdCard" />
     </view>
   </view>
+  <btn-footer onTap="onContinue" btnText="{{btnText}}" />
 </view>
-<btn-footer onTap="onContinue" btnText="{{btnText}}" />

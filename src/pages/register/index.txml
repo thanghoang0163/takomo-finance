@@ -1,5 +1,5 @@
-<view class="register container page">
-  <view class="register-container w-full">
+<view class="register container">
+  <view class="register-container content w-full">
     <header title="{{titleHeader}}" />
     <view class="register-content">
       <view class="input-section">
@@ -15,5 +15,5 @@
       </view>
     </view>
   </view>
+  <btn-footer onTap="onRegister" btnText="{{btnText}}" />
 </view>
-<btn-footer onTap="onRegister" btnText="{{btnText}}" />

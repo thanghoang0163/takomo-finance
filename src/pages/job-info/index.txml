@@ -1,5 +1,5 @@
-<view class="job-info container page">
-  <view class="job-info-container w-full">
+<view class="job-info container">
+  <view class="job-info-container content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="job-info-content w-full">
       <view class="input-section">
@@ -25,5 +25,5 @@
       </view>
     </view>
   </view>
+  <btn-footer onTap="onContinue" btnText="{{btnText}}" />
 </view>
-<btn-footer onTap="onContinue" btnText="{{btnText}}" />

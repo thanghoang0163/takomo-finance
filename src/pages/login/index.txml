@@ -1,39 +1,41 @@
-<view class="login page container">
-  <block tiki:if="{{isFirst}}">
-    <onboarding />
-  </block>
-  <block tiki:else>
-    <view class="login-container w-full">
-      <view class="login-header flex justify-start items-center w-full">
-        <image src="/assets/icons/logo.svg" />
-        <text class="login-title title">TAKOMO</text>
-      </view>
-      <image class="login-img w-full mt-x-small" src="/assets/images/banner-home.jpg" />
-      <block tiki:if="{{!modal.isShow}}">
-        <view class="login-content w-full">
-          <text class="title">TAKOMO xin chào !</text>
-          <view class="input-section">
-            <input-item focus label="{{label}}" type="{{type}}" placeHolder="{{placeHolder}}" maxlength="{{maxlength}}"
-              isError="{{isError}}" errorText="{{errorText}}" onInput="onInputPhone" />
-          </view>
-          <view class="more-info flex justify-between items-center w-full">
-            <view class="about-us">
-              <view class="more-info-img-container">
-                <image class="more-info-img" src="/assets/icons/info.svg" />
-              </view>
-              <text class="more-info-text">Giới thiệu về chúng tôi</text>
-            </view>
-            <view class="questions">
-              <view class="more-info-img-container">
-                <image class="more-info-img" src="/assets/icons/question-mark.svg" />
-              </view>
-              <text class="more-info-text">Những câu hỏi thường gặp</text>
-            </view>
-          </view>
+<view class="login container">
+  <view class="content">
+    <block tiki:if="{{isFirst}}">
+      <onboarding />
+    </block>
+    <block tiki:else>
+      <view class="login-container w-full">
+        <view class="login-header flex justify-start items-center w-full">
+          <image src="/assets/icons/logo.svg" />
+          <text class="login-title title">TAKOMO</text>
         </view>
-      </block>
-    </view>
-    <modal className="modal text-center" isShow="{{modal.isShow}}" text="{{modal.text}}" onHide="onHide" />
-  </block>
+        <image class="login-img w-full mt-x-small" src="/assets/images/banner-home.jpg" />
+        <block tiki:if="{{!modal.isShow}}">
+          <view class="login-content w-full">
+            <text class="title">TAKOMO xin chào !</text>
+            <view class="input-section">
+              <input-item focus label="{{label}}" type="{{type}}" placeHolder="{{placeHolder}}"
+                maxlength="{{maxlength}}" isError="{{isError}}" errorText="{{errorText}}" onInput="onInputPhone" />
+            </view>
+            <view class="more-info flex justify-between items-center w-full">
+              <view class="about-us">
+                <view class="more-info-img-container">
+                  <image class="more-info-img" src="/assets/icons/info.svg" />
+                </view>
+                <text class="more-info-text">Giới thiệu về chúng tôi</text>
+              </view>
+              <view class="questions">
+                <view class="more-info-img-container">
+                  <image class="more-info-img" src="/assets/icons/question-mark.svg" />
+                </view>
+                <text class="more-info-text">Những câu hỏi thường gặp</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <modal className="modal text-center" isShow="{{modal.isShow}}" text="{{modal.text}}" onHide="onHide" />
+  <btn-footer style={{modal.isShow ? "background: #7209b7" : "" }} btnText="{{btnText}}" onTap="onLogin" />
 </view>
-<btn-footer style={{modal.isShow ? "background: #7209b7" : "" }} btnText="{{btnText}}" onTap="onLogin" />
