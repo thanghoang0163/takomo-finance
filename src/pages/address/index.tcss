@@ -5,6 +5,7 @@
 .address-title {
   width: 100%;
   color: #27272a;
+  margin-bottom: 10px;
 }
 
 .address
@@ -81,6 +82,14 @@
   position: absolute;
   top: 0;
   left: 88px;
+}
+
+.address .input-section view:nth-of-type(8) .tu-textfield-inline {
+  background-color: transparent;
+}
+
+.address .input-section view:nth-of-type(10) .tu-textfield-inline {
+  background-color: transparent;
 }
 
 .select-address {

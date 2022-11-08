@@ -91,6 +91,26 @@ Page({
         ward: value.ward.name,
       });
     }
+    if (this.data.streetErrorMsg) {
+      this.setData({
+        streetErrorMsg: "",
+      });
+    }
+    if (this.data.cityErrorMsg) {
+      this.setData({
+        cityErrorMsg: "",
+      });
+    }
+    if (this.data.districtErrorMsg) {
+      this.setData({
+        districtErrorMsg: "",
+      });
+    }
+    if (this.data.wardErrorMsg) {
+      this.setData({
+        wardErrorMsg: "",
+      });
+    }
   },
 
   onSelectResidence(value) {
