@@ -133,25 +133,25 @@ Page({
     if (inputNameLength === 0) {
       this.setData({
         isErrorName: true,
-        errorTextName: "Thông tin không được bỏ trống!",
+        errorTextName: "Vui lòng nhập họ và tên!",
       });
     } else if (inputNameArray.length < 2) {
       this.setData({
         isErrorName: true,
-        errorTextName: "Tên ít nhất bao gồm họ và tên!",
+        errorTextName: "Định dạng họ và tên không đúng!",
       });
     }
 
     if (inputIdCardLength === 0) {
       this.setData({
         isErrorIdCard: true,
-        errorTextIdCard: "Thông tin không được bỏ trống!",
+        errorTextIdCard: "Vui lòng nhập CMND hoặc CCCD!",
       });
     } else if (inputIdCardLength !== 9) {
       if (inputIdCardLength !== 12) {
         this.setData({
           isErrorIdCard: true,
-          errorTextIdCard: "Định dạng không đúng!",
+          errorTextIdCard: "Định dạng số CMND hoặc CCCD không đúng!",
         });
       }
     }
@@ -159,22 +159,22 @@ Page({
     if (selectedDate === "") {
       this.setData({
         isErrorBirthDay: true,
-        errorTextBirthDay: "Thông tin không được bỏ trống!",
+        errorTextBirthDay: "Vui lòng chọn ngày sinh!",
       });
     }
 
     if (selectedMaritalStatus === "") {
       this.setData({
         isErrorMaritalStatus: true,
-        errorTextMaritalStatus: "Thông tin không được bỏ trống!",
+        errorTextMaritalStatus: "Vui lòng chọn tình trạng hôn nhân!",
       });
     }
 
     if (
-      !!this.data.isErrorIdCard &&
-      !!this.data.isErrorName &&
-      !!this.data.isErrorBirthDay &&
-      !!this.data.isErrorMaritalStatus &&
+      !this.data.isErrorIdCard &&
+      !this.data.isErrorName &&
+      !this.data.isErrorBirthDay &&
+      !this.data.isErrorMaritalStatus &&
       inputIdCard !== "" &&
       inputName !== ""
     ) {

@@ -53,7 +53,7 @@ Page({
     ) {
       this.setData({
         isError: true,
-        errorText: "Định dạng số điện thoại không đúng!",
+        errorText: "Định dạng của số điện thoại không đúng!",
       });
     } else if (inputLength < 10 && inputLength > 0) {
       this.setData({
@@ -63,7 +63,7 @@ Page({
     } else if (inputLength === 0) {
       this.setData({
         isError: true,
-        errorText: "Thông tin không được bỏ trống!",
+        errorText: "Vui lòng nhập số điện thoại để đăng ký!",
       });
     } else {
       my.setStorage({
@@ -99,16 +99,6 @@ Page({
       },
       failed: (err) => {
         console.log(err);
-      },
-    });
-    my.getStorage({
-      key: "login",
-      success: (res) => {
-        if(res.data){
-          this.setData({
-            input: res.data.phone,
-          });
-        }
       },
     });
     // parse(

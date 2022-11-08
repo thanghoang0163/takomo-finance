@@ -297,42 +297,42 @@ Page({
     if (selectedWorkForm.length === 0) {
       this.setData({
         isErrorWorkForm: true,
-        errorTextWorkForm: "Thông tin không được bỏ trống!",
+        errorTextWorkForm: "Vui lòng chọn hình thức công việc!",
       });
     }
 
     if (selectedWorkField.length === 0) {
       this.setData({
         isErrorWorkField: true,
-        errorTextWorkField: "Thông tin không được bỏ trống!",
+        errorTextWorkField: "Vui lòng chọn lĩnh vực công việc!",
       });
     }
 
     if (selectedLastWorkPlace.length === 0) {
       this.setData({
         isErrorLastWorkPlace: true,
-        errorTextLastWorkPlace: "Thông tin không được bỏ trống!",
+        errorTextLastWorkPlace: "Vui lòng chọn kinh nghiệm làm việc!",
       });
     }
 
     if (selectedIncome.length === 0) {
       this.setData({
         isErrorIncome: true,
-        errorTextIncome: "Thông tin không được bỏ trống!",
+        errorTextIncome: "Vui lòng chọn thu nhập hằng tháng!",
       });
     }
 
     if (inputCompanyName.length === 0) {
       this.setData({
         isErrorCompanyName: true,
-        errorTextCompanyName: "Thông tin không được bỏ trống!",
+        errorTextCompanyName: "Vui lòng nhập tên công ty đang làm việc!",
       });
     }
 
     if (inputPosition.length === 0) {
       this.setData({
         isErrorPosition: true,
-        errorTextPosition: "Thông tin không được bỏ trống!",
+        errorTextPosition: "Vui lòng nhập chức vụ tại công ty!",
       });
     }
 

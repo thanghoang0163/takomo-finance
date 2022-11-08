@@ -101,13 +101,13 @@ Page({
     } else if (inputPasswordAgainLength < 4 && inputPasswordAgainLength > 0) {
       this.setData({
         isErrorPasswordAgain: true,
-        errorTextPasswordAgain: "Mật khẩu từ 4 - 6 số!",
+        errorTextPasswordAgain: "Mật khẩu cần tối thiểu 4 ký tự số!",
       });
     } else if (inputPasswordAgainLength !== 0 && inputPasswordLength !== 0) {
       if (this.data.inputPasswordAgain !== this.data.inputPassword) {
         this.setData({
           isErrorPasswordAgain: true,
-          errorTextPasswordAgain: "Không khớp với mật khẩu!",
+          errorTextPasswordAgain: "Mật khẩu cung cấp không trùng khớp!",
         });
       }
     }
@@ -120,7 +120,7 @@ Page({
     } else if (!isValidEmail(inputEmail)) {
       this.setData({
         isErrorEmail: true,
-        errorTextEmail: "Định dạng email không đúng",
+        errorTextEmail: "Định dạng email không đúng!",
       });
     }
 
@@ -140,7 +140,7 @@ Page({
           email: inputEmail,
         },
       });
-      // my.navigateTo({ url: "pages/customer-info/index" });
+      my.navigateTo({ url: "pages/customer-info/index" });
     }
   },
 

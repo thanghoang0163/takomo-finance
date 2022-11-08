@@ -153,30 +153,30 @@ Page({
 
     if (street === "") {
       this.setData({
-        streetErrorMsg: "Thông tin không được bỏ trống!",
+        streetErrorMsg: "Vui lòng nhập địa chỉ cư trú!",
       });
     }
 
     if (city === null) {
       this.setData({
-        cityErrorMsg: "Thông tin không được bỏ trống!",
+        cityErrorMsg: "Vui lòng chọn tỉnh / thành phố cư trú!",
       });
     }
     if (district === null) {
       this.setData({
-        districtErrorMsg: "Thông tin không được bỏ trống!",
+        districtErrorMsg: "Vui lòng chọn quận / huyện cư trú!",
       });
     }
     if (ward === null) {
       this.setData({
-        wardErrorMsg: "Thông tin không được bỏ trống!",
+        wardErrorMsg: "Vui lòng chọn phường / xã / thị trấn cư trú!",
       });
     }
 
     if (selectedResidence.length === 0) {
       this.setData({
         isErrorResidence: true,
-        errorTextResidence: "Thông tin không được bỏ trống!",
+        errorTextResidence: "Vui lòng chọn thời gian cư trú!",
       });
     }
 

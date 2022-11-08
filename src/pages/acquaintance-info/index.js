@@ -177,24 +177,24 @@ Page({
     if (inputNameRelative === 0) {
       this.setData({
         isErrorNameRelative: true,
-        errorTextNameRelative: "Thông tin không được bỏ trống!",
+        errorTextNameRelative: "Vui lòng nhập họ và tên người liên hệ!",
       });
     } else if (inputNameRelative.split(" ").length < 2) {
       this.setData({
         isErrorNameRelative: true,
-        errorTextNameRelative: "Tên ít nhất bao gồm họ và tên!",
+        errorTextNameRelative: "Định dạng họ và tên không đúng!",
       });
     }
 
     if (inputNameColleague === 0) {
       this.setData({
         isErrorNameColleague: true,
-        errorTextNameColleague: "Thông tin không được bỏ trống!",
+        errorTextNameColleague: "Vui lòng nhập họ và tên đồng nghiệp!",
       });
     } else if (inputNameColleague.split(" ").length < 2) {
       this.setData({
         isErrorNameColleague: true,
-        errorTextNameColleague: "Tên ít nhất bao gồm họ và tên!",
+        errorTextNameColleague: "Định dạng họ và tên không đúng!",
       });
     }
 
@@ -202,12 +202,12 @@ Page({
       if (inputNamePlusContact === 0) {
         this.setData({
           isErrorNamePlusContact: true,
-          errorTextNamePlusContact: "Thông tin không được bỏ trống!",
+          errorTextNamePlusContact: "Vui lòng nhập họ và tên người bổ sung!",
         });
       } else if (inputNamePlusContact.split(" ").length < 2) {
         this.setData({
           isErrorNamePlusContact: true,
-          errorTextNamePlusContact: "Tên ít nhất bao gồm họ và tên!",
+          errorTextNamePlusContact: "Định dạng họ và tên không đúng!",
         });
       }
     }
@@ -232,7 +232,7 @@ Page({
     } else if (inputPhoneRelative.length === 0) {
       this.setData({
         isErrorPhoneRelative: true,
-        errorTextPhoneRelative: "Thông tin không được bỏ trống!",
+        errorTextPhoneRelative: "Vui lòng nhập số điện thoại của người thân!",
       });
     }
 
@@ -256,7 +256,7 @@ Page({
     } else if (inputPhoneColleague.length === 0) {
       this.setData({
         isErrorPhoneColleague: true,
-        errorTextPhoneColleague: "Thông tin không được bỏ trống!",
+        errorTextPhoneColleague: "Vui lòng nhập số điện thoại của đồng nghiệp!",
       });
     }
 
@@ -281,7 +281,7 @@ Page({
       } else if (inputPhonePlusContact.length === 0) {
         this.setData({
           isErrorPhonePlusContact: true,
-          errorTextPhonePlusContact: "Thông tin không được bỏ trống!",
+          errorTextPhonePlusContact: "Vui lòng nhập số điện thoại của người bổ sung!",
         });
       }
     }
@@ -289,7 +289,7 @@ Page({
     if (selectedRelationship === "") {
       this.setData({
         isErrorRelationship: true,
-        errorTextRelationship: "Thông tin không được bỏ trống!",
+        errorTextRelationship: "Vui lòng xác nhận mối quan hệ!",
       });
     }
 
