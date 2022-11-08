@@ -12,8 +12,8 @@
         <image class="login-img w-full mt-x-small" src="/assets/images/banner-home.jpg" />
         <block tiki:if="{{!modal.isShow}}">
           <view class="login-content w-full">
-            <text class="title">TAKOMO xin chào !</text>
             <view class="input-section">
+              <text class="login-title title">TAKOMO xin chào !</text>
               <input-item focus label="{{label}}" type="{{type}}" placeHolder="{{placeHolder}}"
                 maxlength="{{maxlength}}" isError="{{isError}}" errorText="{{errorText}}" onInput="onInputPhone" />
             </view>

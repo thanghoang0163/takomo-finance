@@ -5,7 +5,7 @@
       <text class="asterisk">*</text>
     </block>
   </view>
-  <input class="input" type="text" placeholder="Ngân hàng" maxlength="{{100}}" value="{{value}}" onInput="_onInput" />
+  <input class="input" type="text" placeholder="{{placeHolder}}" maxlength="{{100}}" value="{{value}}" onInput="_onInput" />
   <button class="banks-selector-btn absolute flex justify-end items-center" onTap="onTap">
     <icon type="arrow_down" size="{{22}}" color="#999" />
   </button>

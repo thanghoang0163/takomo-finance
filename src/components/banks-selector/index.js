@@ -1,7 +1,7 @@
 Component({
   props: {
     label: "Ngân hàng:",
-    placeHolder: "Ngân hàng",
+    placeHolder: "Chọn ngân hàng",
     title: "Ngân hàng",
     list: [],
     isError: false,

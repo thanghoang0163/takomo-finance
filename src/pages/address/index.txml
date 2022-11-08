@@ -2,7 +2,7 @@
   <view class="address-content content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="input-section">
-      <address streetErrorMsg="{{streetErrorMsg}}" cityErrorMsg="{{cityErrorMsg}}"
+      <address streetPlaceholder="{{streetPlaceholder}}" streetErrorMsg="{{streetErrorMsg}}" cityErrorMsg="{{cityErrorMsg}}"
         districtErrorMsg="{{districtErrorMsg}}" wardErrorMsg="{{wardErrorMsg}}" cityPlaceLabel="{{cityPlaceLabel}}"
         cityPlaceholder="{{cityPlaceholder}}" districtPlaceLabel="{{districtPlaceLabel}}"
         districtPlaceholder="{{districtPlaceholder}}" wardPlaceLabel="{{wardPlaceLabel}}"

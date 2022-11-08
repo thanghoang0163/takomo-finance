@@ -12,8 +12,8 @@ Page({
     isError: false,
     errorText: "",
     input: "",
-    label: "Nhập số điện thoại để đăng ký:",
-    placeHolder: "Số điện thoại",
+    label: "Số điện thoại để đăng ký:",
+    placeHolder: "Nhập số điện thoại",
     type: "number",
     maxlength: 10,
     modal: {

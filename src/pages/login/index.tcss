@@ -6,7 +6,15 @@
   );
 }
 
-.login-header{
+.login .input-section{
+  padding-top: 10px;
+}
+
+.input-section .login-title {
+  color: #27272a;
+}
+
+.login-header {
   padding-top: 4.5vh;
 }
 
