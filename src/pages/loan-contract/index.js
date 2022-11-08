@@ -1,6 +1,6 @@
 Page({
   data: {
-    titleHeader: "Thông tin khoản vay",
+    titleHeader: "Ký hợp đồng vay",
     loanTime: 7,
     approvedMoney: 500000,
     paidMoney: 570000,

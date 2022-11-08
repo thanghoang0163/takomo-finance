@@ -1,6 +1,6 @@
 Page({
   data: {
-    titleHeader: "Thông tin tài khoản nhận tiền",
+    titleHeader: "Tài khoản nhận tiền",
     activeTab: 0,
     errorTextBank: "",
     selectedBank: "",

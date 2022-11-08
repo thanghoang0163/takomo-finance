@@ -1,3 +1,7 @@
+.bank-info {
+  position: relative;
+}
+
 .tu-tabs {
   padding: 10px 0;
 }
