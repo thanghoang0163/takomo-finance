@@ -11,7 +11,7 @@
           <view class="loan-info w-full">
             <view class="loan-info-time-and-day">
               <view class="loan-info-container">
-                <view class="loan-info-label">Thời gian vay:</view>
+                <view class="loan-info-label">Thời hạn vay:</view>
                 <view class="loan-info-content">{{loanTime}} ngày</view>
               </view>
               <view class="loan-info-container">

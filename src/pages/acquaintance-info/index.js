@@ -294,6 +294,13 @@ Page({
     }
 
     if (
+      !this.data.isErrorNameColleague &&
+      !this.data.isErrorNamePlusContact &&
+      !this.data.isErrorNameRelative &&
+      !this.data.isErrorPhoneColleague &&
+      !this.data.isErrorPhonePlusContact &&
+      !this.data.isErrorPhoneRelative &&
+      !this.data.isErrorRelationship &&
       inputNameRelative !== "" &&
       inputPhoneRelative !== "" &&
       inputNameColleague !== "" &&

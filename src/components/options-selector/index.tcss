@@ -1,5 +1,3 @@
-.options-selector-label text{
+.options-selector-label text {
   font-weight: 700;
 }
-
-

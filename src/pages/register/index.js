@@ -125,9 +125,9 @@ Page({
     }
 
     if (
-      !isErrorEmail &&
-      !isErrorPassword &&
-      !isErrorPasswordAgain &&
+      !this.data.isErrorEmail &&
+      !this.data.isErrorPassword &&
+      !this.data.isErrorPasswordAgain &&
       inputEmail !== "" &&
       inputPassword !== "" &&
       inputPasswordAgain !== ""
@@ -140,7 +140,7 @@ Page({
           email: inputEmail,
         },
       });
-      my.navigateTo({ url: "pages/customer-info/index" });
+      // my.navigateTo({ url: "pages/customer-info/index" });
     }
   },
 

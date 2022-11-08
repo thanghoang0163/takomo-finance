@@ -1,4 +1,5 @@
-export const isValidEmail =(email)=>{
-  let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  return !!email.match(regExp)
-}
+export const isValidEmail = (email) => {
+  let regExp =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return email.match(regExp);
+};

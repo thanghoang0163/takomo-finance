@@ -171,10 +171,10 @@ Page({
     }
 
     if (
-      !isErrorIdCard &&
-      !isErrorName &&
-      !isErrorBirthDay &&
-      !isErrorMaritalStatus &&
+      !!this.data.isErrorIdCard &&
+      !!this.data.isErrorName &&
+      !!this.data.isErrorBirthDay &&
+      !!this.data.isErrorMaritalStatus &&
       inputIdCard !== "" &&
       inputName !== ""
     ) {

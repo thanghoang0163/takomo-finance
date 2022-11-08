@@ -337,6 +337,12 @@ Page({
     }
 
     if (
+      !this.data.isErrorCompanyName &&
+      !this.data.isErrorIncome &&
+      !this.data.isErrorLastWorkPlace &&
+      !this.data.isErrorWorkField &&
+      !this.data.isErrorWorkForm &&
+      !this.data.isErrorPosition &&
       selectedLastWorkPlace !== "" &&
       selectedWorkField !== "" &&
       selectedWorkForm !== "" &&

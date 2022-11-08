@@ -161,6 +161,8 @@ Page({
     }
 
     if (
+      !this.data.isErrorApartment &&
+      !this.data.isErrorResidence &&
       city !== "" &&
       selectedResidence !== "" &&
       street !== "" &&
