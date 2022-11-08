@@ -2,12 +2,24 @@
   <view class="address-content content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="input-section">
-      <address streetPlaceholder="{{streetPlaceholder}}" streetErrorMsg="{{streetErrorMsg}}" cityErrorMsg="{{cityErrorMsg}}"
-        districtErrorMsg="{{districtErrorMsg}}" wardErrorMsg="{{wardErrorMsg}}" cityPlaceLabel="{{cityPlaceLabel}}"
-        cityPlaceholder="{{cityPlaceholder}}" districtPlaceLabel="{{districtPlaceLabel}}"
-        districtPlaceholder="{{districtPlaceholder}}" wardPlaceLabel="{{wardPlaceLabel}}"
-        wardPlaceholder="{{wardPlaceholder}}" showName="{{false}}" showPhone="{{false}}"
-        onChangeAddress="onChangeAddress" />
+      <view class="address-title title">Chọn nhanh</view>
+      <view class="select-address input">
+        <view class="select-address-content">
+          <image src="/assets/icons/address.svg" />
+          <text>Sổ địa chỉ Tiki</text>
+        </view>
+        <button onTap="onSelectAddress">
+          <icon type="arrow_right" size="{{25}}" color="#808089" />
+        </button>
+      </view>
+      <view class="separator">hoặc</view>
+      <view class="address-title title">Điền thông tin</view>
+      <address streetPlaceholder="{{streetPlaceholder}}" streetErrorMsg="{{streetErrorMsg}}"
+        cityErrorMsg="{{cityErrorMsg}}" districtErrorMsg="{{districtErrorMsg}}" wardErrorMsg="{{wardErrorMsg}}"
+        cityPlaceLabel="{{cityPlaceLabel}}" cityPlaceholder="{{cityPlaceholder}}"
+        districtPlaceLabel="{{districtPlaceLabel}}" districtPlaceholder="{{districtPlaceholder}}"
+        wardPlaceLabel="{{wardPlaceLabel}}" wardPlaceholder="{{wardPlaceholder}}" showName="{{false}}"
+        showPhone="{{false}}" onChangeAddress="onChangeAddress" />
       <input-item label="{{labelApartment}}" type="{{typeApartment}}" placeHolder="{{placeHolderApartment}}"
         maxlength="{{maxLengthApartment}}" isError="{{isErrorApartment}}" errorText="{{errorTextApartment}}"
         onInput="onInputApartment" />

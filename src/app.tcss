@@ -7,7 +7,7 @@
   --primary-color: #7209b7;
   --second-color: #f82486;
   --white-color: #ffffff;
-  --text-color: #000000;
+  --text-color: #27272A;
   --second-text-color: #999999;
   --error-message: red;
 }

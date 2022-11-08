@@ -1,7 +1,7 @@
 Page({
   data: {
     titleHeader: "Thông tin địa chỉ",
-    streetPlaceholder:"Nhập địa chỉ",
+    streetPlaceholder: "Nhập địa chỉ",
     cityPlaceLabel: "Tỉnh / Thành phố:",
     cityPlaceholder: "Chọn tỉnh / Thành phố",
     districtPlaceLabel: "Quận / Huyện:",
@@ -102,6 +102,17 @@ Page({
         isErrorResidence: false,
       });
     }
+  },
+
+  onSelectAddress() {
+    my.getAddress({
+      success: (res) => {
+        console.log("address: ", res);
+      },
+      fail: (res) => {
+        console.log(res.errorMessage);
+      },
+    });
   },
 
   onTapNextStep() {

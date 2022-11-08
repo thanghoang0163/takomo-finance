@@ -2,6 +2,12 @@
   padding-top: 10px;
 }
 
+.address-title {
+  width: 100%;
+  color: #27272a;
+  margin-bottom: 10px;
+}
+
 .address
   view:first-of-type
   .tu-label
@@ -10,13 +16,13 @@
   display: none;
 }
 
-.address .input-section view:first-of-type .tu-label .tu-label-inline view {
+.address .input-section view:nth-of-type(5) .tu-label .tu-label-inline view {
   position: relative;
 }
 
 .address
   .input-section
-  view:first-of-type
+  view:nth-of-type(5)
   .tu-label
   .tu-label-inline
   view::after {
@@ -24,41 +30,7 @@
   color: red;
   position: absolute;
   top: 0;
-  left: 48px;
-}
-
-.address .input-section view:nth-of-type(2) .tu-label .tu-label-inline view {
-  position: relative;
-}
-
-.address
-  .input-section
-  view:nth-of-type(2)
-  .tu-label
-  .tu-label-inline
-  view::after {
-  content: "*";
-  color: red;
-  position: absolute;
-  top: 0;
-  left: 115px;
-}
-
-.address .input-section view:nth-of-type(4) .tu-label .tu-label-inline view {
-  position: relative;
-}
-
-.address
-  .input-section
-  view:nth-of-type(4)
-  .tu-label
-  .tu-label-inline
-  view::after {
-  content: "*";
-  color: red;
-  position: absolute;
-  top: 0;
-  left: 95px;
+  left: 50px;
 }
 
 .address .input-section view:nth-of-type(6) .tu-label .tu-label-inline view {
@@ -75,5 +47,106 @@
   color: red;
   position: absolute;
   top: 0;
-  left: 87px;
+  left: 115px;
+}
+
+.address .input-section view:nth-of-type(8) .tu-label .tu-label-inline view {
+  position: relative;
+}
+
+.address
+  .input-section
+  view:nth-of-type(8)
+  .tu-label
+  .tu-label-inline
+  view::after {
+  content: "*";
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 95px;
+}
+
+.address .input-section view:nth-of-type(10) .tu-label .tu-label-inline view {
+  position: relative;
+}
+
+.address
+  .input-section
+  view:nth-of-type(10)
+  .tu-label
+  .tu-label-inline
+  view::after {
+  content: "*";
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 88px;
+}
+
+.select-address {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.select-address-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.select-address image {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.select-address button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+}
+
+.select-address button:hover {
+  background-color: transparent;
+}
+
+.separator {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.separator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 1px;
+  width: 42%;
+  background-color: #ebebf0;
+}
+
+.separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 42%;
+  background-color: #ebebf0;
 }
