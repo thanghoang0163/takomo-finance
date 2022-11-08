@@ -1,4 +1,4 @@
-<view class="success flex flex-col items-center w-full">
+<view class="success flex flex-col items-center justify-between w-full">
   <view class="success-content content flex flex-col">
     <view class="success-label text-center">Chúc mừng quý khách đã hoàn thành​ thủ tục đăng ký tại takomo.vn</view>
     <view class="success-text text-center">Vui lòng giữ liên lạc, kết quả của hồ sơ sẽ được nhân viên Takomo phản hồi
