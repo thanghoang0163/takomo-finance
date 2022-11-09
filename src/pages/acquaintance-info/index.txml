@@ -1,3 +1,5 @@
+<import-sjs name="{listRelationship}" from="./list.sjs"/>
+
 <view class="acquaintance-info container">
   <view class="acquaintance-info-container content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />

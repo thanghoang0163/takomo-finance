@@ -52,28 +52,6 @@ Page({
     inputPhonePlusContact: "",
     isErrorPhonePlusContact: false,
     btnText: "Tiếp tục bước 5/7",
-    listRelationship: [
-      {
-        id: 1,
-        name: "Vợ",
-      },
-      {
-        id: 2,
-        name: "Mẹ",
-      },
-      {
-        id: 3,
-        name: "Bố",
-      },
-      {
-        id: 4,
-        name: "Anh trai",
-      },
-      {
-        id: 5,
-        name: "Khác",
-      },
-    ],
   },
 
   itemInput(input) {
@@ -197,8 +175,10 @@ Page({
         isErrorNameColleague: true,
         errorTextNameColleague: "Vui lòng nhập họ và tên đồng nghiệp!",
       });
-    } else if (nameColleagueArray.length < 2 ||
-    !checkWhiteSpace(nameColleagueArray)) {
+    } else if (
+      nameColleagueArray.length < 2 ||
+      !checkWhiteSpace(nameColleagueArray)
+    ) {
       this.setData({
         isErrorNameColleague: true,
         errorTextNameColleague: "Định dạng họ và tên không đúng!",
@@ -211,7 +191,10 @@ Page({
           isErrorNamePlusContact: true,
           errorTextNamePlusContact: "Vui lòng nhập họ và tên người bổ sung!",
         });
-      } else if (namePlusContactArray.length < 2 || !checkWhiteSpace(namePlusContactArray)) {
+      } else if (
+        namePlusContactArray.length < 2 ||
+        !checkWhiteSpace(namePlusContactArray)
+      ) {
         this.setData({
           isErrorNamePlusContact: true,
           errorTextNamePlusContact: "Định dạng họ và tên không đúng!",

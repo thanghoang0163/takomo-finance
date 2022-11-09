@@ -34,24 +34,6 @@ Page({
       { name: "male", value: "Nam", checked: true },
       { name: "female", value: "Nữ" },
     ],
-    listMaritalStatus: [
-      {
-        id: 1,
-        name: "Kết hôn",
-      },
-      {
-        id: 2,
-        name: "Đã ly hôn",
-      },
-      {
-        id: 3,
-        name: "Độc thân",
-      },
-      {
-        id: 4,
-        name: "Góa vợ hoặc chồng",
-      },
-    ],
   },
 
   onInputName(value) {
@@ -204,5 +186,8 @@ Page({
 
   onLoad() {
     my.hideBackHome({ hide: true });
+    this.setData({
+      listMaritalStatus,
+    });
   },
 });

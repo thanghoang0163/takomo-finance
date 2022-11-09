@@ -1,3 +1,5 @@
+<import-sjs name="{tabsList, listLoanPurpose}" from="./list.sjs"/>
+
 <view class="bank-info container">
   <view class="bank-info-container content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />

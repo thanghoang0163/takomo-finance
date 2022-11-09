@@ -1,3 +1,5 @@
+<import-sjs name="{listWorkForm, listWorkField, listLastWorkPlace, listIncome}" from="./list.sjs" />
+
 <view class="job-info container">
   <view class="job-info-container content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
@@ -17,8 +19,7 @@
           errorText="{{errorTextPosition}}" onInput="onInputPosition" />
         <options-selector isRequired="{{true}}" list="{{listLastWorkPlace}}" title="{{titleLastWorkPlace}}"
           label="{{labelLastWorkPlace}}" placeHolder="{{placeHolderLastWorkPlace}}" isError="{{isErrorLastWorkPlace}}"
-          errorText="{{errorTextLastWorkPlace}}" value="{{selectedLastWorkPlace}}"
-          onSelect="onSelectLastWorkPlace" />
+          errorText="{{errorTextLastWorkPlace}}" value="{{selectedLastWorkPlace}}" onSelect="onSelectLastWorkPlace" />
         <options-selector isRequired="{{true}}" list="{{listIncome}}" title="{{titleIncome}}" label="{{labelIncome}}"
           placeHolder="{{placeHolderIncome}}" isError="{{isErrorIncome}}" errorText="{{errorTextIncome}}"
           value="{{selectedIncome}}" onSelect="onSelectIncome" />

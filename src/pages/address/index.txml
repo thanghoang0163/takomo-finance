@@ -1,3 +1,5 @@
+<import-sjs name="{listResidence}" from="./list.sjs"/>
+
 <view class="address container">
   <view class="address-content content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />

@@ -30,44 +30,6 @@ Page({
     isErrorPhoneMomo: false,
     isBank: true,
     btnText: "Tiếp tục bước 6/7",
-    tabsList: [
-      {
-        title: "Ngân hàng",
-      },
-      {
-        title: "Momo",
-      },
-    ],
-    listLoanPurpose: [
-      {
-        id: 1,
-        name: "Kinh doanh",
-      },
-      {
-        id: 2,
-        name: "Sửa xe máy",
-      },
-      {
-        id: 3,
-        name: "Du lịch",
-      },
-      {
-        id: 4,
-        name: "Cần gấp",
-      },
-      {
-        id: 5,
-        name: "Sự kiện quan trọng",
-      },
-      {
-        id: 6,
-        name: "Chăm sóc sức khỏe",
-      },
-      {
-        id: 7,
-        name: "Khác",
-      },
-    ],
   },
 
   onTabClick({ index, tabsName }) {
@@ -119,7 +81,8 @@ Page({
     if (inputLength === 0) {
       this.setData({
         isErrorPhoneMomo: true,
-        errorTextPhoneMomo: "Vui lòng nhập số điện thoại / số tài khoản ví Momo!",
+        errorTextPhoneMomo:
+          "Vui lòng nhập số điện thoại / số tài khoản ví Momo!",
       });
     } else if (inputLength < 10 && inputLength > 0) {
       this.setData({
