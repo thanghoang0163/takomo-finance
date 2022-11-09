@@ -175,8 +175,8 @@ Page({
     } = this.data;
 
     const nameRelativeArray = inputNameRelative.split(" ");
-    const nameColleagueArray = inputNameRelative.split(" ");
-    const namePlusContactArray = inputNameRelative.split(" ");
+    const nameColleagueArray = inputNameColleague.split(" ");
+    const namePlusContactArray = inputNamePlusContact.split(" ");
     if (inputNameRelative === 0) {
       this.setData({
         isErrorNameRelative: true,
