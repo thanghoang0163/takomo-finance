@@ -1,3 +1,5 @@
+import { isValidPhoneNumber } from "../../utils/common.sjs";
+
 Page({
   data: {
     titleHeader: "Tài khoản nhận tiền",
@@ -16,7 +18,8 @@ Page({
     placeHolderLoanPurpose: "Chọn mục đích vay",
     titleLoanPurpose: "Mục đích vay",
     errorTextLoanPurpose: "",
-    selectedLoan: "",
+    selectedLoanPurposeBank: "",
+    selectedLoanPurposeMono: "",
     isErrorLoanPurpose: false,
     labelPhoneMomo: "Số điện thoại:",
     placeHolderPhoneMomo: "Nhập số điện thoại",
@@ -90,14 +93,50 @@ Page({
     });
   },
 
-  onSelectLoan(value) {
+  onSelectLoanPurposeBank(value) {
     this.setData({
-      selectedLoan: value,
+      selectedLoanPurposeBank: value,
+    });
+  },
+
+  onInputPhoneMomo(value) {
+    this.setData({
+      inputPhoneMomo: value,
+    });
+  },
+
+  onSelectLoanPurposeMomo(value) {
+    this.setData({
+      selectedLoanPurposeMomo: value,
     });
   },
 
   onContinue() {
-    my.navigateTo({ url: "pages/take-photo/index" });
+    const { inputPhoneMomo } = this.data;
+    const itemInput = inputPhoneMomo.slice(0, 1);
+    const formatNumberinput = inputPhoneMomo.slice(0, 2);
+    const inputLength = inputPhoneMomo.length;
+    if (inputLength === 0) {
+      this.setData({
+        isErrorPhoneMomo: true,
+        errorTextPhoneMomo: "Vui lòng nhập số điện thoại / số tài khoản ví Momo!",
+      });
+    } else if (inputLength < 10 && inputLength > 0) {
+      this.setData({
+        isErrorPhoneMomo: true,
+        errorTextPhoneMomo: "Số điện thoại nhập không đủ!",
+      });
+    } else if (
+      (itemInput !== "0" && itemInput.length !== 0) ||
+      !isValidPhoneNumber(formatNumberinput)
+    ) {
+      this.setData({
+        isErrorPhoneMomo: true,
+        errorTextPhoneMomo: "Định dạng của số điện thoại không đúng!",
+      });
+    } else {
+      my.navigateTo({ url: "pages/take-photo/index" });
+    }
   },
 
   onLoad() {

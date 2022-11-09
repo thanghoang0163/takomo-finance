@@ -13,7 +13,7 @@
                 errorText="{{errorTextBankAcc}}" onInput="onInputBankAcc" />
               <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
                 label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurpose}}"
-                errorText="{{errorTextLoanPurpose}}" value="{{selectedLoan}}" onSelect="onSelectLoan" />
+                errorText="{{errorTextLoanPurpose}}" value="{{selectedLoanPurposeBank}}" onSelect="onSelectLoanPurposeBank" />
             </block>
             <block tiki:else>
               <input-item isRequired="{{true}}" label="{{labelPhoneMomo}}" type="{{typePhoneMomo}}"
@@ -21,7 +21,7 @@
                 isError="{{isErrorPhoneMomo}}" errorText="{{errorTextPhoneMomo}}" onInput="onInputPhoneMomo" />
               <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
                 label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurpose}}"
-                errorText="{{errorTextLoanPurpose}}" value="{{selectedLoan}}" onSelect="onSelectLoanMomo" />
+                errorText="{{errorTextLoanPurpose}}" value="{{selectedLoanPurposeMomo}}" onSelect="onSelectLoanPurposeMomo" />
             </block>
           </tab-content>
         </tabs>
