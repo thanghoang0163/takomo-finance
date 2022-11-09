@@ -41,6 +41,7 @@ Page({
     errorTextIncome: "",
     isErrorIncome: false,
     selectedIncome: "",
+    isDisabled: false,
     btnText: "Tiếp tục bước 4/7",
   },
 
@@ -73,6 +74,20 @@ Page({
     if (this.data.isErrorWorkForm) {
       this.setData({
         isErrorWorkForm: false,
+      });
+    }
+    if (value.name === "Thất nghiệp") {
+      this.setData({
+        isDisabled: true,
+        inputCompanyName: "",
+        inputPosition: "",
+        selectedIncome: "",
+        selectedLastWorkPlace: "",
+        selectedWorkField: "",
+      });
+    } else {
+      this.setData({
+        isDisabled: false,
       });
     }
   },

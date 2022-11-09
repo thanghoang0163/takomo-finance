@@ -6,6 +6,7 @@ Component({
     placeHolder: "",
     bottomSheetHeight: 200,
     isRequired: false,
+    isDisabled: false,
     list: [],
     value: "",
     errorMsg: "",
