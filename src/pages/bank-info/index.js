@@ -20,7 +20,8 @@ Page({
     errorTextLoanPurpose: "",
     selectedLoanPurposeBank: "",
     selectedLoanPurposeMono: "",
-    isErrorLoanPurpose: false,
+    isErrorLoanPurposeBank: false,
+    isErrorLoanPurposeMomo: false,
     labelPhoneMomo: "Số điện thoại:",
     placeHolderPhoneMomo: "Nhập số điện thoại",
     typePhoneMomo: "number",
@@ -59,22 +60,64 @@ Page({
     this.setData({
       selectedLoanPurposeBank: value,
     });
-  },
-
-  onInputPhoneMomo(value) {
-    this.setData({
-      inputPhoneMomo: value,
-    });
+    if (this.data.isErrorLoanPurposeBank) {
+      this.setData({
+        isErrorLoanPurposeBank: false,
+      });
+    }
   },
 
   onSelectLoanPurposeMomo(value) {
     this.setData({
       selectedLoanPurposeMomo: value,
     });
+    if (this.data.isErrorLoanPurposeMomo) {
+      this.setData({
+        isErrorLoanPurposeMomo: false,
+      });
+    }
+  },
+
+  onInputBankAcc(value) {
+    this.setData({
+      inputBankAcc: value,
+    });
+    if (this.data.isErrorBankAcc) {
+      this.setData({
+        isErrorBankAcc: false,
+      });
+    }
+  },
+
+  onInputPhoneMomo(value) {
+    this.setData({
+      inputPhoneMomo: value,
+    });
+    if (this.data.isErrorPhoneMomo) {
+      this.setData({
+        isErrorPhoneMomo: false,
+      });
+    }
+  },
+
+  onSelectLoanPurposeMomo(value) {
+    this.setData({
+      selectedLoanPurposeMomo: value,
+    });
+    if (this.data.isErrorLoanPurposeMomo) {
+      this.setData({
+        isErrorLoanPurposeMomo: false,
+      });
+    }
   },
 
   onContinue() {
-    const { inputPhoneMomo } = this.data;
+    const {
+      inputPhoneMomo,
+      inputBankAcc,
+      selectedLoanPurposeBank,
+      selectedLoanPurposeMomo,
+    } = this.data;
     const itemInput = inputPhoneMomo.slice(0, 1);
     const formatNumberinput = inputPhoneMomo.slice(0, 2);
     const inputLength = inputPhoneMomo.length;
@@ -97,9 +140,30 @@ Page({
         isErrorPhoneMomo: true,
         errorTextPhoneMomo: "Định dạng của số điện thoại không đúng!",
       });
-    } else {
     }
-    my.navigateTo({ url: "pages/take-photo/index" });
+
+    if (inputBankAcc === "") {
+      this.setData({
+        isErrorBankAcc: true,
+        errorTextBankAcc: "Vui lòng nhập số tài khoản ngân hàng nhận tiền!",
+      });
+    }
+
+    if (selectedLoanPurposeBank === "") {
+      this.setData({
+        isErrorLoanPurposeBank: true,
+        errorTextLoanPurposeBank: "Vui lòng chọn mục đích khi vay!",
+      });
+    }
+
+    if (selectedLoanPurposeMomo === "") {
+      this.setData({
+        isErrorLoanPurposeMomo: true,
+        errorTextLoanPurposeMomo: "Vui lòng chọn mục đích khi vay!",
+      });
+    }
+
+    // my.navigateTo({ url: "pages/take-photo/index" });
   },
 
   onLoad() {

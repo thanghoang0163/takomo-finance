@@ -14,16 +14,16 @@
                 placeHolder="{{placeHolderBankAcc}}" maxlength="{{maxLengthBankAcc}}" isError="{{isErrorBankAcc}}"
                 errorText="{{errorTextBankAcc}}" onInput="onInputBankAcc" />
               <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
-                label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurpose}}"
-                errorText="{{errorTextLoanPurpose}}" value="{{selectedLoanPurposeBank}}" onSelect="onSelectLoanPurposeBank" />
+                label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurposeBank}}"
+                errorText="{{errorTextLoanPurposeBank}}" value="{{selectedLoanPurposeBank}}" onSelect="onSelectLoanPurposeBank" />
             </block>
             <block tiki:else>
               <input-item isRequired="{{true}}" label="{{labelPhoneMomo}}" type="{{typePhoneMomo}}"
                 placeHolder="{{placeHolderPhoneMomo}}" maxlength="{{maxLengthPhoneMomo}}"
                 isError="{{isErrorPhoneMomo}}" errorText="{{errorTextPhoneMomo}}" onInput="onInputPhoneMomo" />
               <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
-                label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurpose}}"
-                errorText="{{errorTextLoanPurpose}}" value="{{selectedLoanPurposeMomo}}" onSelect="onSelectLoanPurposeMomo" />
+                label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurposeMomo}}"
+                errorText="{{errorTextLoanPurposeMomo}}" value="{{selectedLoanPurposeMomo}}" onSelect="onSelectLoanPurposeMomo" />
             </block>
           </tab-content>
         </tabs>
