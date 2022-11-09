@@ -1,3 +1,5 @@
+import { checkWhiteSpace } from "../../utils/common.sjs";
+
 Page({
   data: {
     titleHeader: "Thông tin công việc",
@@ -294,6 +296,8 @@ Page({
       inputPosition,
     } = this.data;
 
+    const companyNameArray = inputCompanyName.split(" ");
+    const positionArray = inputPosition.split(" ");
     if (selectedWorkForm.length === 0) {
       this.setData({
         isErrorWorkForm: true,
@@ -327,12 +331,22 @@ Page({
         isErrorCompanyName: true,
         errorTextCompanyName: "Vui lòng nhập tên công ty đang làm việc!",
       });
+    } else if (!checkWhiteSpace(companyNameArray)) {
+      this.setData({
+        isErrorCompanyName: true,
+        errorTextCompanyName: "Định dạng tên công ty không đúng!",
+      });
     }
 
     if (inputPosition.length === 0) {
       this.setData({
         isErrorPosition: true,
         errorTextPosition: "Vui lòng nhập chức vụ tại công ty!",
+      });
+    } else if (!checkWhiteSpace(positionArray)) {
+      this.setData({
+        isErrorPosition: true,
+        errorTextPosition: "Định dạng chức vụ không đúng!",
       });
     }
 
