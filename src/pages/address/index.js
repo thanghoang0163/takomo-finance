@@ -25,9 +25,9 @@ Page({
     selectedResidence: "",
     btnText: "Tiếp tục bước 3/7",
     street: "",
-    city: {},
-    district: {},
-    ward: {},
+    city: "",
+    district: "",
+    ward: "",
     streetErrorMsg: "",
     cityErrorMsg: "",
     districtErrorMsg: "",
@@ -38,13 +38,22 @@ Page({
     this.setData({
       street: value.street,
     });
-    if (value.city !== null && value.district !== null && value.ward !== null) {
+    if (value.city !== null) {
       this.setData({
         city: value.city.name,
+      });
+    }
+    if (value.district !== null) {
+      this.setData({
         district: value.district.name,
+      });
+    }
+    if (value.ward !== null) {
+      this.setData({
         ward: value.ward.name,
       });
     }
+
     if (this.data.streetErrorMsg) {
       this.setData({
         streetErrorMsg: "",
@@ -90,20 +99,8 @@ Page({
   },
 
   onTapNextStep() {
-    const {
-      street,
-      streetErrorMsg,
-      district,
-      districtErrorMsg,
-      city,
-      cityErrorMsg,
-      ward,
-      wardErrorMsg,
-      selectedItem,
-      address,
-      selectedResidence,
-      inputApartment,
-    } = this.data;
+    const { street, district, city, ward, selectedResidence, inputApartment } =
+      this.data;
 
     if (street === "" || !isValidStreet(street.split(" "))) {
       this.setData({
@@ -111,17 +108,21 @@ Page({
       });
     }
 
-    if (city === null) {
+    if (city === "") {
       this.setData({
         cityErrorMsg: "Vui lòng chọn tỉnh / thành phố cư trú!",
       });
     }
-    if (district === null) {
+
+    console.log(city);
+
+    if (district === "") {
       this.setData({
         districtErrorMsg: "Vui lòng chọn quận / huyện cư trú!",
       });
     }
-    if (ward === null) {
+
+    if (ward === "") {
       this.setData({
         wardErrorMsg: "Vui lòng chọn phường / xã / thị trấn cư trú!",
       });
