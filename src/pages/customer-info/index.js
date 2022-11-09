@@ -196,8 +196,5 @@ Page({
 
   onLoad() {
     my.hideBackHome({ hide: true });
-    this.setData({
-      listMaritalStatus,
-    });
   },
 });
