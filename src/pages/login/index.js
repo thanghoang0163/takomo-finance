@@ -47,23 +47,23 @@ Page({
     const itemInput = input.slice(0, 1);
     const formatNumberinput = input.slice(0, 2);
     const inputLength = input.length;
-    if (
-      (itemInput !== "0" && itemInput.length !== 0) ||
-      !isValidPhoneNumber(formatNumberinput)
-    ) {
+    if (inputLength === 0) {
       this.setData({
         isError: true,
-        errorText: "Định dạng của số điện thoại không đúng!",
+        errorText: "Vui lòng nhập số điện thoại để đăng ký!",
       });
     } else if (inputLength < 10 && inputLength > 0) {
       this.setData({
         isError: true,
         errorText: "Số điện thoại nhập không đủ!",
       });
-    } else if (inputLength === 0) {
+    } else if (
+      (itemInput !== "0" && itemInput.length !== 0) ||
+      !isValidPhoneNumber(formatNumberinput)
+    ) {
       this.setData({
         isError: true,
-        errorText: "Vui lòng nhập số điện thoại để đăng ký!",
+        errorText: "Định dạng của số điện thoại không đúng!",
       });
     } else {
       my.setStorage({

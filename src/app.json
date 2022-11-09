@@ -2,11 +2,11 @@
   "pages": [
     "pages/login/index",
     "pages/customer-info/index",
+    "pages/acquaintance-info/index",
+    "pages/register/index",
     "pages/address/index",
     "pages/thank-you/index",
-    "pages/acquaintance-info/index",
     "pages/job-info/index",
-    "pages/register/index",
     "pages/bank-info/index",
     "pages/loan-contract/index",
     "pages/take-photo/index"

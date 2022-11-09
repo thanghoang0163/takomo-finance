@@ -13,3 +13,24 @@ export const isValidPhoneNumber = (phoneNumber) => {
   var regex = ["09", "03", "07", "08", "05"];
   return regex.includes(phoneNumber.toString());
 };
+
+export const checkWhiteSpace = (text) => {
+  let count = 0;
+  if (text.length === 2) {
+    if (text[1] === "") {
+      return false;
+    }
+  } else {
+    text.map((item) => {
+      if (item === "") {
+        count++;
+      }
+    });
+  }
+
+  if (count >= 2) {
+    return false;
+  } else {
+    return true;
+  }
+};

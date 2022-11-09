@@ -1,3 +1,5 @@
+import { checkWhiteSpace } from "../../utils/common.sjs";
+
 Page({
   data: {
     titleHeader: "Thông tin khách hàng",
@@ -92,6 +94,7 @@ Page({
   },
 
   onSelectDate() {
+    my.hideKeyboard();
     my.datePicker({
       title: "Ngày sinh",
       confirmBackgroundColor: "#F82486",
@@ -135,11 +138,18 @@ Page({
         isErrorName: true,
         errorTextName: "Vui lòng nhập họ và tên!",
       });
-    } else if (inputNameArray.length < 2) {
+    } else if (inputNameArray.length < 2 || !checkWhiteSpace(inputNameArray)) {
       this.setData({
         isErrorName: true,
         errorTextName: "Định dạng họ và tên không đúng!",
       });
+    } else {
+      if (inputNameArray.includes(" ")) {
+        this.setData({
+          isErrorName: true,
+          errorTextName: "Định dạng họ và tên không đúng!",
+        });
+      }
     }
 
     if (inputIdCardLength === 0) {

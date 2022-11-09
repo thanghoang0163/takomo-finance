@@ -1,4 +1,4 @@
-import { isValidPhoneNumber } from "../../utils/common.sjs";
+import { isValidPhoneNumber, checkWhiteSpace } from "../../utils/common.sjs";
 
 Page({
   data: {
@@ -174,12 +174,18 @@ Page({
       selectedRelationship,
     } = this.data;
 
+    const nameRelativeArray = inputNameRelative.split(" ");
+    const nameColleagueArray = inputNameRelative.split(" ");
+    const namePlusContactArray = inputNameRelative.split(" ");
     if (inputNameRelative === 0) {
       this.setData({
         isErrorNameRelative: true,
         errorTextNameRelative: "Vui lòng nhập họ và tên người liên hệ!",
       });
-    } else if (inputNameRelative.split(" ").length < 2) {
+    } else if (
+      nameRelativeArray.length < 2 ||
+      !checkWhiteSpace(nameRelativeArray)
+    ) {
       this.setData({
         isErrorNameRelative: true,
         errorTextNameRelative: "Định dạng họ và tên không đúng!",
@@ -191,7 +197,8 @@ Page({
         isErrorNameColleague: true,
         errorTextNameColleague: "Vui lòng nhập họ và tên đồng nghiệp!",
       });
-    } else if (inputNameColleague.split(" ").length < 2) {
+    } else if (nameColleagueArray.length < 2 ||
+    !checkWhiteSpace(nameColleagueArray)) {
       this.setData({
         isErrorNameColleague: true,
         errorTextNameColleague: "Định dạng họ và tên không đúng!",
@@ -204,7 +211,7 @@ Page({
           isErrorNamePlusContact: true,
           errorTextNamePlusContact: "Vui lòng nhập họ và tên người bổ sung!",
         });
-      } else if (inputNamePlusContact.split(" ").length < 2) {
+      } else if (namePlusContactArray.length < 2 || !checkWhiteSpace(namePlusContactArray)) {
         this.setData({
           isErrorNamePlusContact: true,
           errorTextNamePlusContact: "Định dạng họ và tên không đúng!",
@@ -281,7 +288,8 @@ Page({
       } else if (inputPhonePlusContact.length === 0) {
         this.setData({
           isErrorPhonePlusContact: true,
-          errorTextPhonePlusContact: "Vui lòng nhập số điện thoại của người bổ sung!",
+          errorTextPhonePlusContact:
+            "Vui lòng nhập số điện thoại của người bổ sung!",
         });
       }
     }

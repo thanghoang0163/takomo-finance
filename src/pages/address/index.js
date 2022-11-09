@@ -83,9 +83,11 @@ Page({
   },
 
   onChangeAddress(value) {
+    this.setData({
+      street: value.street,
+    });
     if (value.city !== null && value.district !== null && value.ward !== null) {
       this.setData({
-        street: value.street,
         city: value.city.name,
         district: value.district.name,
         ward: value.ward.name,
@@ -156,6 +158,8 @@ Page({
         streetErrorMsg: "Vui lòng nhập địa chỉ cư trú!",
       });
     }
+
+    console.log(street);
 
     if (city === null) {
       this.setData({
