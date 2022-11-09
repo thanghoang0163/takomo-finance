@@ -1,3 +1,5 @@
+import { isValidStreet } from "../../utils/common.sjs";
+
 Page({
   data: {
     titleHeader: "Thông tin địa chỉ",
@@ -153,13 +155,11 @@ Page({
       inputApartment,
     } = this.data;
 
-    if (street === "") {
+    if (street === "" || !isValidStreet(street.split(" "))) {
       this.setData({
         streetErrorMsg: "Vui lòng nhập địa chỉ cư trú!",
       });
     }
-
-    console.log(street);
 
     if (city === null) {
       this.setData({

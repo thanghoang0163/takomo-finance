@@ -34,3 +34,11 @@ export const checkWhiteSpace = (text) => {
     return true;
   }
 };
+
+export const isValidStreet = (street) => {
+  if (street[0] === "") {
+    return false;
+  } else {
+    return true;
+  }
+};
