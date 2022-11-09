@@ -3,7 +3,7 @@
     <header title="{{titleHeader}}" />
     <view class="register-content">
       <view class="input-section">
-        <input-item isRequired="{{true}}" label="{{labelPassword}}" type="{{typePassword}}"
+        <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelPassword}}" type="{{typePassword}}"
           placeHolder="{{placeHolderPassword}}" maxlength="{{maxLengthPassword}}" isError="{{isErrorPassword}}"
           errorText="{{errorTextPassword}}" isPassword="{{true}}" onInput="onInputPassword" />
         <input-item isRequired="{{true}}" label="{{labelPasswordAgain}}" type="{{typePasswordAgain}}"

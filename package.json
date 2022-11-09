@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "tiki": {
     "appIdentifier": "vn.uway.tiniapp.ufood",
-    "buildNumber": 33,
+    "buildNumber": 35,
     "metadata": {
       "permissions": [
         "getAddress",

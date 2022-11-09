@@ -5,7 +5,7 @@
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="customer-info-content">
       <view class="input-section">
-        <input-item isRequired="{{true}}" label="{{labelName}}" type="{{typeName}}" placeHolder="{{placeHolderName}}"
+        <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelName}}" type="{{typeName}}" placeHolder="{{placeHolderName}}"
           maxlength="{{maxLengthName}}" isError="{{isErrorName}}" errorText="{{errorTextName}}" onInput="onInputName" />
         <input-item isRequired="{{true}}" label="{{labelIdCard}}" type="{{typeIdCard}}"
           placeHolder="{{placeHolderIdCard}}" maxlength="{{maxLengthIdCard}}" isError="{{isErrorIdCard}}"

@@ -10,6 +10,7 @@ Component({
     isRequired: false,
     isDisabled: false,
     isPassword: false,
+    isFocus: false,
     onInput: () => {},
   },
   methods: {

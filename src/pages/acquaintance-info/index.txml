@@ -7,7 +7,7 @@
       <view class="acquaintance-info">
         <view class="input-section">
           <view class="relative-info-label acquaintance-info-label">Thông tin người thân</view>
-          <input-item isRequired="{{true}}" label="{{labelNameRelative}}" type="{{typeNameRelative}}"
+          <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelNameRelative}}" type="{{typeNameRelative}}"
             placeHolder="{{placeHolderNameRelative}}" maxlength="{{maxLengthNameRelative}}"
             isError="{{isErrorNameRelative}}" errorText="{{errorTextNameRelative}}" onInput="onInputNameRelative" />
           <options-selector isRequired="{{true}}" list="{{listRelationship}}" title="{{titleRelationship}}"

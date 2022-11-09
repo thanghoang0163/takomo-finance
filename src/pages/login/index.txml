@@ -14,7 +14,7 @@
           <view class="login-content w-full">
             <view class="input-section">
               <text class="login-title title">TAKOMO xin chào !</text>
-              <input-item focus label="{{label}}" type="{{type}}" placeHolder="{{placeHolder}}"
+              <input-item focus label="{{label}}" isFocus="{{true}}" type="{{type}}" placeHolder="{{placeHolder}}"
                 maxlength="{{maxlength}}" isError="{{isError}}" errorText="{{errorText}}" onInput="onInputPhone" />
             </view>
             <view class="more-info flex justify-between items-center w-full">

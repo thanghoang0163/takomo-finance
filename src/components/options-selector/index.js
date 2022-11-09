@@ -15,6 +15,7 @@ Component({
   methods: {
     onSelect(e) {
       this.props.onSelect(e);
+      my.hideKeyboard();
     },
   },
 });
