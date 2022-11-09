@@ -42,6 +42,7 @@ Page({
     isErrorIncome: false,
     selectedIncome: "",
     isDisabled: false,
+    isNext: false,
     btnText: "Tiếp tục bước 4/7",
   },
 
@@ -84,6 +85,12 @@ Page({
         selectedIncome: "",
         selectedLastWorkPlace: "",
         selectedWorkField: "",
+        isErrorLastWorkPlace: false,
+        isErrorWorkField: false,
+        isErrorCompanyName: false,
+        isErrorPosition: false,
+        isErrorIncome: false,
+        isNext: true,
       });
     } else {
       this.setData({
@@ -133,6 +140,7 @@ Page({
       selectedLastWorkPlace,
       inputCompanyName,
       inputPosition,
+      isNext,
     } = this.data;
 
     const companyNameArray = inputCompanyName.split(" ");
@@ -141,6 +149,7 @@ Page({
       this.setData({
         isErrorWorkForm: true,
         errorTextWorkForm: "Vui lòng chọn hình thức công việc!",
+        isNext: false,
       });
     }
 
@@ -148,6 +157,7 @@ Page({
       this.setData({
         isErrorWorkField: true,
         errorTextWorkField: "Vui lòng chọn lĩnh vực công việc!",
+        isNext: false,
       });
     }
 
@@ -155,6 +165,7 @@ Page({
       this.setData({
         isErrorLastWorkPlace: true,
         errorTextLastWorkPlace: "Vui lòng chọn kinh nghiệm làm việc!",
+        isNext: false,
       });
     }
 
@@ -162,6 +173,7 @@ Page({
       this.setData({
         isErrorIncome: true,
         errorTextIncome: "Vui lòng chọn thu nhập hằng tháng!",
+        isNext: false,
       });
     }
 
@@ -169,11 +181,13 @@ Page({
       this.setData({
         isErrorCompanyName: true,
         errorTextCompanyName: "Vui lòng nhập tên công ty đang làm việc!",
+        isNext: false,
       });
     } else if (!checkWhiteSpace(companyNameArray)) {
       this.setData({
         isErrorCompanyName: true,
         errorTextCompanyName: "Định dạng tên công ty không đúng!",
+        isNext: false,
       });
     }
 
@@ -181,38 +195,52 @@ Page({
       this.setData({
         isErrorPosition: true,
         errorTextPosition: "Vui lòng nhập chức vụ tại công ty!",
+        isNext: false,
       });
     } else if (!checkWhiteSpace(positionArray)) {
       this.setData({
         isErrorPosition: true,
         errorTextPosition: "Định dạng chức vụ không đúng!",
+        isNext: false,
       });
     }
 
-    if (
-      !this.data.isErrorCompanyName &&
-      !this.data.isErrorIncome &&
-      !this.data.isErrorLastWorkPlace &&
-      !this.data.isErrorWorkField &&
-      !this.data.isErrorWorkForm &&
-      !this.data.isErrorPosition &&
-      selectedLastWorkPlace !== "" &&
-      selectedWorkField !== "" &&
-      selectedWorkForm !== "" &&
-      selectedIncome !== "" &&
-      inputCompanyName !== "" &&
-      inputPosition !== ""
-    ) {
-      my.setStorage({
-        key: "jobInfo",
-        data: {
-          workForm: selectedWorkForm,
-          workField: selectedWorkField,
-          lastWorkPlace: selectedLastWorkPlace,
-          income: selectedIncome,
-          companyName: inputCompanyName,
-          position: inputPosition,
-        },
+    if (!isNext) {
+      if (
+        !this.data.isErrorCompanyName &&
+        !this.data.isErrorIncome &&
+        !this.data.isErrorLastWorkPlace &&
+        !this.data.isErrorWorkField &&
+        !this.data.isErrorWorkForm &&
+        !this.data.isErrorPosition &&
+        selectedLastWorkPlace !== "" &&
+        selectedWorkField !== "" &&
+        selectedWorkForm !== "" &&
+        selectedIncome !== "" &&
+        inputCompanyName !== "" &&
+        inputPosition !== ""
+      ) {
+        my.setStorage({
+          key: "jobInfo",
+          data: {
+            workForm: selectedWorkForm,
+            workField: selectedWorkField,
+            lastWorkPlace: selectedLastWorkPlace,
+            income: selectedIncome,
+            companyName: inputCompanyName,
+            position: inputPosition,
+          },
+        });
+        my.navigateTo({ url: "pages/acquaintance-info/index" });
+      }
+    } else {
+      this.setData({
+        isErrorLastWorkPlace: false,
+        isErrorWorkField: false,
+        isErrorCompanyName: false,
+        isErrorPosition: false,
+        isErrorIncome: false,
+        isNext: true,
       });
       my.navigateTo({ url: "pages/acquaintance-info/index" });
     }
