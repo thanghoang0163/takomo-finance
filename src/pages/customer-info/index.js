@@ -83,7 +83,6 @@ Page({
   },
 
   onSelectDate() {
-    my.hideKeyboard();
     my.datePicker({
       title: "Ngày sinh",
       confirmBackgroundColor: "#F82486",
