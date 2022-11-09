@@ -5,6 +5,7 @@
     "input-item": "components/input-item/index",
     "options-selector": "components/options-selector/index",
     "birthday-input": "components/birthday-input/index",
-    "btn-footer": "components/btn-footer/index"
+    "btn-footer": "components/btn-footer/index",
+    "radio-button": "components/radio-button/index"
   }
 }

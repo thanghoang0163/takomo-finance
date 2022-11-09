@@ -1,4 +1,4 @@
-<import-sjs name="{listMaritalStatus}" from="./list.sjs"/>
+<import-sjs name="{listMaritalStatus}" from="./list.sjs" />
 
 <view class="customer-info container">
   <view class="customer-info-container content w-full">
@@ -13,15 +13,8 @@
         <birthday-input isRequired="{{true}}" placeHolder="{{placeHolderBirthDay}}" label="{{labelBirthDay}}"
           value="{{selectedDate}}" isError="{{isErrorBirthDay}}" errorText="{{errorTextBirthDay}}"
           onTapIcon="onSelectDate" />
-        <view class="gender">
-          <text class="label">Giới tính:</text>
-          <radio-group class="radio-group" onChange="onChange">
-            <view class="radio" tiki:for="{{items}}" key="radio-{{index}}">
-              <radio value="{{item.name}}" checked="{{item.checked}}" />
-              <text class="text-{{item.name}}">{{item.value}}</text>
-            </view>
-          </radio-group>
-        </view>
+        <radio-button isRequired="{{true}}" items="{{items}}" isError="{{isErrorGender}}" onChange="onChangeGender"
+          errorText="{{errorTextGender}}" onChange="onChangeGender" />
         <options-selector isRequired="{{true}}" list="{{listMaritalStatus}}" title="{{titleMaritalStatus}}"
           label="{{labelMaritalStatus}}" placeHolder="{{placeHolderMaritalStatus}}" isError="{{isErrorMaritalStatus}}"
           errorText="{{errorTextMaritalStatus}}" value="{{selectedMaritalStatus}}" onSelect="onSelectMaritalStatus" />

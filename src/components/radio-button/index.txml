@@ -1,0 +1,17 @@
+<view class="gender">
+  <view class="gender-label">
+    <text class="label" style="font-weight: 700;">{{label}}</text>
+    <block tiki:if="{{isRequired}}">
+      <text class="asterisk">*</text>
+    </block>
+  </view>
+  <radio-group class="radio-group" onChange="_onChange">
+    <view class="radio" tiki:for="{{items}}" key="radio-{{index}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />
+      <text class="text-{{item.name}}">{{item.value}}</text>
+    </view>
+  </radio-group>
+  <block tiki:if="{{isError}}">
+    <text class="error-message">{{errorText}}</text>
+  </block>
+</view>

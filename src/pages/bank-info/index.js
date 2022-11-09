@@ -98,8 +98,8 @@ Page({
         errorTextPhoneMomo: "Định dạng của số điện thoại không đúng!",
       });
     } else {
-      my.navigateTo({ url: "pages/take-photo/index" });
     }
+    my.navigateTo({ url: "pages/take-photo/index" });
   },
 
   onLoad() {

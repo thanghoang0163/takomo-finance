@@ -28,11 +28,13 @@ Page({
     errorTextMaritalStatus: "",
     selectedMaritalStatus: "",
     isErrorMaritalStatus: false,
-    gender: "male",
+    gender: "",
     btnText: "Tiếp tục bước 2/7",
+    errorTextGender: "",
+    isErrorGender: false,
     items: [
-      { name: "male", value: "Nam", checked: true },
-      { name: "female", value: "Nữ" },
+      { name: "male", value: "Nam", checked: false },
+      { name: "female", value: "Nữ", checked: false },
     ],
   },
 
@@ -69,10 +71,15 @@ Page({
     }
   },
 
-  onChange(e) {
+  onChangeGender(value) {
     this.setData({
-      gender: e.detail.value,
+      gender: value,
     });
+    if (this.data.isErrorGender) {
+      this.setData({
+        isErrorGender: false,
+      });
+    }
   },
 
   onSelectDate() {
@@ -101,12 +108,8 @@ Page({
 
   onContinue() {
     const {
-      isErrorIdCard,
       inputIdCard,
-      isErrorName,
       inputName,
-      isErrorBirthDay,
-      isErrorMaritalStatus,
       selectedMaritalStatus,
       selectedDate,
       gender,
@@ -159,6 +162,13 @@ Page({
       this.setData({
         isErrorMaritalStatus: true,
         errorTextMaritalStatus: "Vui lòng chọn tình trạng hôn nhân!",
+      });
+    }
+
+    if (gender === "") {
+      this.setData({
+        isErrorGender: true,
+        errorTextGender: "Vui lòng chọn giới tính!",
       });
     }
 
