@@ -1,9 +1,12 @@
 Page({
   data: {
     titleHeader: "Chụp ảnh đối chiếu",
-    imgFace:[],
-    imgFrontIdCard:[],
-    imgRearIdCard:[],
+    filePathsFace: "",
+    filePathsFrontIdCard: "",
+    filePathsRearIdCard: "",
+    imgFace: [],
+    imgFrontIdCard: [],
+    imgRearIdCard: [],
     dataset: "",
     btnText: "Tiếp tục",
     list: [
@@ -25,12 +28,37 @@ Page({
     ],
   },
 
+  getImageInfo(path) {
+    my.getImageInfo({
+      src: path,
+      success: (res) => {
+        console.log(res);
+      },
+      fail: (e) => {
+        console.log(e);
+      },
+    });
+  },
+
   onChooseFace() {
     my.chooseImage({
       count: 1,
       success: (res) => {
         this.setData({
           imgFace: res.filePaths,
+        });
+        my.compressImage({
+          filePaths: res.filePaths,
+          compressLevel: 0,
+          success: (res) => {
+            this.setData({
+              filePathsFace: res.filePaths[0],
+            });
+            this.getImageInfo(res.filePaths[0]);
+          },
+          fail: (e) => {
+            console.log(e);
+          },
         });
       },
       fail: (e) => {
@@ -46,6 +74,19 @@ Page({
         this.setData({
           imgFrontIdCard: res.filePaths,
         });
+        my.compressImage({
+          filePaths: res.filePaths,
+          compressLevel: 0,
+          success: (res) => {
+            this.setData({
+              filePathsFrontIdCard: res.filePaths[0],
+            });
+            this.getImageInfo(res.filePaths[0]);
+          },
+          fail: (e) => {
+            console.log(e);
+          },
+        });
       },
       fail: (e) => {
         console.log(e);
@@ -58,7 +99,20 @@ Page({
       count: 1,
       success: (res) => {
         this.setData({
-          imgFrontIdCard: res.filePaths,
+          imgRearIdCard: res.filePaths,
+        });
+        my.compressImage({
+          filePaths: res.filePaths,
+          compressLevel: 0,
+          success: (res) => {
+            this.setData({
+              filePathsRearIdCard: res.filePaths[0],
+            });
+            this.getImageInfo(res.filePaths[0]);
+          },
+          fail: (e) => {
+            console.log(e);
+          },
         });
       },
       fail: (e) => {
