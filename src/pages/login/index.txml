@@ -1,6 +1,6 @@
 <view class="login container">
   <view class="content">
-    <block tiki:if="{{isFirst}}">
+    <block tiki:if="{{false}}">
       <onboarding />
     </block>
     <block tiki:else>
@@ -9,7 +9,7 @@
           <image src="/assets/icons/logo.svg" />
           <text class="login-title title">TAKOMO</text>
         </view>
-        <image class="login-img w-full mt-x-small" src="/assets/images/banner-home.jpg" />
+        <image class="login-img w-full mt-x-small" src="/assets/images/banner-home.png" />
         <block tiki:if="{{!modal.isShow}}">
           <view class="login-content w-full">
             <view class="input-section">

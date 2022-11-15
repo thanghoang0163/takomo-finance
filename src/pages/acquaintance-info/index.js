@@ -168,6 +168,13 @@ Page({
         isErrorNameRelative: true,
         errorTextNameRelative: "Định dạng họ và tên không đúng!",
       });
+    } else {
+      if (nameRelativeArray.includes(" ") || !isValidName(inputNameRelative)) {
+        this.setData({
+          isErrorNameRelative: true,
+          errorTextNameRelative: "Định dạng họ và tên không đúng!",
+        });
+      }
     }
 
     if (inputNameColleague === 0) {
@@ -183,6 +190,16 @@ Page({
         isErrorNameColleague: true,
         errorTextNameColleague: "Định dạng họ và tên không đúng!",
       });
+    } else {
+      if (
+        nameColleagueArray.includes(" ") ||
+        !isValidName(inputNameColleague)
+      ) {
+        this.setData({
+          isErrorNameColleague: true,
+          errorTextNameColleague: "Định dạng họ và tên không đúng!",
+        });
+      }
     }
 
     if (inputNamePlusContact !== "") {
@@ -194,6 +211,16 @@ Page({
       } else if (
         namePlusContactArray.length < 2 ||
         !checkWhiteSpace(namePlusContactArray)
+      ) {
+        this.setData({
+          isErrorNamePlusContact: true,
+          errorTextNamePlusContact: "Định dạng họ và tên không đúng!",
+        });
+      }
+    } else {
+      if (
+        namePlusContactArray.includes(" ") ||
+        !isValidName(inputNamePlusContact)
       ) {
         this.setData({
           isErrorNamePlusContact: true,

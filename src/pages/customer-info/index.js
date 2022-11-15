@@ -1,5 +1,4 @@
-import { checkWhiteSpace } from "../../utils/common.sjs";
-import { isValidName } from "./index.sjs";
+import { checkWhiteSpace, isValidName } from "../../utils/common.sjs";
 
 Page({
   data: {
