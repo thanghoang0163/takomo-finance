@@ -1,9 +1,9 @@
 {
   "name": "takomo-finance",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "tiki": {
-    "appIdentifier": "com.takomo.uway.tiniapp",
-    "buildNumber": 3,
+    "appIdentifier": "vn.uway.tiniapp.ufood",
+    "buildNumber": 40,
     "metadata": {
       "permissions": [
         "getAddress",
