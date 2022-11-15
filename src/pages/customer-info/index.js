@@ -1,4 +1,5 @@
 import { checkWhiteSpace } from "../../utils/common.sjs";
+import { isValidName } from "./index.sjs";
 
 Page({
   data: {
@@ -128,7 +129,7 @@ Page({
         errorTextName: "Định dạng họ và tên không đúng!",
       });
     } else {
-      if (inputNameArray.includes(" ")) {
+      if (inputNameArray.includes(" ") || !isValidName(inputName)) {
         this.setData({
           isErrorName: true,
           errorTextName: "Định dạng họ và tên không đúng!",
