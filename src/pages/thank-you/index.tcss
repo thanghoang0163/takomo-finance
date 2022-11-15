@@ -27,3 +27,6 @@
 .success .large-btn{
   margin: 20px 0;
 }
+.success image{
+  margin-bottom: 20px;
+}
