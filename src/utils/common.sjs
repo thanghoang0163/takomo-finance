@@ -44,7 +44,7 @@ export const isValidStreet = (street) => {
 };
 
 export const isValidName = (name) => {
-  let regExp = /^[a-zA-Z]+ [a-zA-Z]+$/;
+  let regExp = /\d+/g;
   return name.match(regExp);
 };
 

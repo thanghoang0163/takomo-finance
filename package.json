@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "tiki": {
     "appIdentifier": "com.takomo.uway.tiniapp",
-    "buildNumber": 1,
+    "buildNumber": 3,
     "metadata": {
       "permissions": [
         "getAddress",

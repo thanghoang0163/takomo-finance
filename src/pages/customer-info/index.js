@@ -128,7 +128,7 @@ Page({
         errorTextName: "Định dạng họ và tên không đúng!",
       });
     } else {
-      if (inputNameArray.includes(" ") || !isValidName(inputName)) {
+      if (inputNameArray.includes(" ") || isValidName(inputName)) {
         this.setData({
           isErrorName: true,
           errorTextName: "Định dạng họ và tên không đúng!",

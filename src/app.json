@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/thank-you/index",
     "pages/login/index",
     "pages/customer-info/index",
     "pages/register/index",
+    "pages/thank-you/index",
     "pages/take-photo/index",
     "pages/address/index",
     "pages/bank-info/index",
