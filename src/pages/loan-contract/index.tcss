@@ -36,6 +36,7 @@
 .verification-code{
   background-color: var(--white-color);
   padding: 10px;
+  margin: 0 -10px;
 }
 
 .loan-contract-complete-text{
