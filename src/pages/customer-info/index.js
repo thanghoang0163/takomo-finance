@@ -1,4 +1,9 @@
-import { checkWhiteSpace, isValidName, getAge } from "../../utils/common.sjs";
+import {
+  checkWhiteSpace,
+  isValidName,
+  getAge,
+  hasSpecialCharater,
+} from "../../utils/common.sjs";
 
 Page({
   data: {
@@ -86,7 +91,7 @@ Page({
     my.datePicker({
       title: "Ngày sinh",
       confirmBackgroundColor: "#F82486",
-      startDate:"01-01-1960",
+      startDate: "01-01-1960",
       success: (res) => {
         this.setData({
           selectedDate: res.date,
@@ -129,7 +134,11 @@ Page({
         errorTextName: "Định dạng họ và tên không đúng!",
       });
     } else {
-      if (inputNameArray.includes(" ") || isValidName(inputName)) {
+      if (
+        inputNameArray.includes(" ") ||
+        isValidName(inputName) ||
+        hasSpecialCharater(inputName)
+      ) {
         this.setData({
           isErrorName: true,
           errorTextName: "Định dạng họ và tên không đúng!",

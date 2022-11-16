@@ -1,4 +1,9 @@
-import { isValidPhoneNumber, checkWhiteSpace } from "../../utils/common.sjs";
+import {
+  isValidPhoneNumber,
+  checkWhiteSpace,
+  isValidName,
+  hasSpecialCharater,
+} from "../../utils/common.sjs";
 
 Page({
   data: {
@@ -84,6 +89,20 @@ Page({
         isErrorPhoneRelative: false,
       });
     }
+    if (this.data.inputPhoneRelative === this.data.inputPhoneColleague) {
+      this.setData({
+        isErrorPhoneRelative: true,
+        errorTextPhoneRelative: "Số điện thoại bị trùng với đồng nghiệp!",
+      });
+    }
+    if (
+      this.data.inputPhoneRelative === "" &&
+      this.data.inputPhoneColleague === ""
+    ) {
+      this.setData({
+        isErrorPhoneRelative: false,
+      });
+    }
   },
 
   onInputNameColleague(value) {
@@ -102,6 +121,21 @@ Page({
       inputPhoneColleague: value,
     });
     if (this.data.isErrorPhoneColleague) {
+      this.setData({
+        isErrorPhoneColleague: false,
+      });
+    }
+
+    if (this.data.inputPhoneColleague === this.data.inputPhoneRelative) {
+      this.setData({
+        isErrorPhoneColleague: true,
+        errorTextPhoneColleague: "Số điện thoại bị trùng với người thân!",
+      });
+    }
+    if (
+      this.data.inputPhoneColleague === "" &&
+      this.data.inputPhoneRelative === ""
+    ) {
       this.setData({
         isErrorPhoneColleague: false,
       });
@@ -155,7 +189,7 @@ Page({
     const nameRelativeArray = inputNameRelative.split(" ");
     const nameColleagueArray = inputNameColleague.split(" ");
     const namePlusContactArray = inputNamePlusContact.split(" ");
-    if (inputNameRelative === 0) {
+    if (inputNameRelative.length === 0) {
       this.setData({
         isErrorNameRelative: true,
         errorTextNameRelative: "Vui lòng nhập họ và tên người liên hệ!",
@@ -169,7 +203,11 @@ Page({
         errorTextNameRelative: "Định dạng họ và tên không đúng!",
       });
     } else {
-      if (nameRelativeArray.includes(" ") || !isValidName(inputNameRelative)) {
+      if (
+        nameRelativeArray.includes(" ") ||
+        isValidName(inputNameRelative) ||
+        hasSpecialCharater(inputNameRelative)
+      ) {
         this.setData({
           isErrorNameRelative: true,
           errorTextNameRelative: "Định dạng họ và tên không đúng!",
@@ -177,7 +215,7 @@ Page({
       }
     }
 
-    if (inputNameColleague === 0) {
+    if (inputNameColleague.length === 0) {
       this.setData({
         isErrorNameColleague: true,
         errorTextNameColleague: "Vui lòng nhập họ và tên đồng nghiệp!",
@@ -193,7 +231,8 @@ Page({
     } else {
       if (
         nameColleagueArray.includes(" ") ||
-        !isValidName(inputNameColleague)
+        isValidName(inputNameColleague) ||
+        hasSpecialCharater(inputNameColleague)
       ) {
         this.setData({
           isErrorNameColleague: true,
@@ -203,7 +242,7 @@ Page({
     }
 
     if (inputNamePlusContact !== "") {
-      if (inputNamePlusContact === 0) {
+      if (inputNamePlusContact.length === 0) {
         this.setData({
           isErrorNamePlusContact: true,
           errorTextNamePlusContact: "Vui lòng nhập họ và tên người bổ sung!",
@@ -220,7 +259,8 @@ Page({
     } else {
       if (
         namePlusContactArray.includes(" ") ||
-        !isValidName(inputNamePlusContact)
+        isValidName(inputNamePlusContact) ||
+        hasSpecialCharater(inputNamePlusContact)
       ) {
         this.setData({
           isErrorNamePlusContact: true,
@@ -229,7 +269,20 @@ Page({
       }
     }
 
-    if (
+    if (inputPhoneRelative.length === 0) {
+      this.setData({
+        isErrorPhoneRelative: true,
+        errorTextPhoneRelative: "Vui lòng nhập số điện thoại của người thân!",
+      });
+    } else if (
+      inputPhoneRelative.length < 10 &&
+      inputPhoneRelative.length > 0
+    ) {
+      this.setData({
+        isError: true,
+        errorText: "Số điện thoại nhập không đủ!",
+      });
+    } else if (
       (this.itemInput(inputPhoneRelative) !== "0" &&
         inputPhoneRelative.length !== 0) ||
       !isValidPhoneNumber(this.formatNumberinput(inputPhoneRelative))
@@ -238,22 +291,14 @@ Page({
         isErrorPhoneRelative: true,
         errorTextPhoneRelative: "Định dạng số điện thoại không đúng!",
       });
-    } else if (
-      inputPhoneRelative.length < 10 &&
-      inputPhoneRelative.length > 0
-    ) {
-      this.setData({
-        isErrorPhoneRelative: true,
-        errorTextPhoneRelative: "Số điện thoại nhập không đủ!",
-      });
-    } else if (inputPhoneRelative.length === 0) {
-      this.setData({
-        isErrorPhoneRelative: true,
-        errorTextPhoneRelative: "Vui lòng nhập số điện thoại của người thân!",
-      });
     }
 
-    if (
+    if (inputPhoneColleague.length === 0) {
+      this.setData({
+        isErrorPhoneColleague: true,
+        errorTextPhoneColleague: "Vui lòng nhập số điện thoại của đồng nghiệp!",
+      });
+    } else if (
       (this.itemInput(inputPhoneColleague) !== "0" &&
         inputPhoneColleague.length !== 0) ||
       !isValidPhoneNumber(this.formatNumberinput(inputPhoneColleague))
@@ -270,15 +315,16 @@ Page({
         isErrorPhoneColleague: true,
         errorTextPhoneColleague: "Số điện thoại nhập không đủ!",
       });
-    } else if (inputPhoneColleague.length === 0) {
-      this.setData({
-        isErrorPhoneColleague: true,
-        errorTextPhoneColleague: "Vui lòng nhập số điện thoại của đồng nghiệp!",
-      });
     }
 
     if (inputPhonePlusContact !== "") {
-      if (
+      if (inputPhonePlusContact.length === 0) {
+        this.setData({
+          isErrorPhonePlusContact: true,
+          errorTextPhonePlusContact:
+            "Vui lòng nhập số điện thoại của người bổ sung!",
+        });
+      } else if (
         (this.itemInput(inputPhonePlusContact) !== "0" &&
           inputPhonePlusContact.length !== 0) ||
         !isValidPhoneNumber(this.formatNumberinput(inputPhonePlusContact))
@@ -294,12 +340,6 @@ Page({
         this.setData({
           isErrorPhonePlusContact: true,
           errorTextPhonePlusContact: "Số điện thoại nhập không đủ!",
-        });
-      } else if (inputPhonePlusContact.length === 0) {
-        this.setData({
-          isErrorPhonePlusContact: true,
-          errorTextPhonePlusContact:
-            "Vui lòng nhập số điện thoại của người bổ sung!",
         });
       }
     }
