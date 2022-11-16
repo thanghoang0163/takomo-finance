@@ -1,4 +1,4 @@
-import { isValidStreet } from "../../utils/common.sjs";
+import { isValidStreet, hasSpecialCharater } from "../../utils/common.sjs";
 
 Page({
   data: {
@@ -106,6 +106,12 @@ Page({
       this.setData({
         streetErrorMsg: "Vui lòng nhập địa chỉ cư trú!",
       });
+    } else {
+      if (hasSpecialCharater(street)) {
+        this.setData({
+          streetErrorMsg: "Định dạng địa chỉ không đúng!",
+        });
+      }
     }
 
     if (city === "") {
@@ -113,8 +119,6 @@ Page({
         cityErrorMsg: "Vui lòng chọn tỉnh / thành phố cư trú!",
       });
     }
-
-    console.log(city);
 
     if (district === "") {
       this.setData({

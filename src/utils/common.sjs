@@ -60,3 +60,9 @@ export const getAge = (dateString) => {
 
   return age;
 };
+
+export const hasSpecialCharater = (string) => {
+  var regExp = /[~`!@#$%^&()_={}[\]:;,.<>+\?-]/;
+
+  return string.match(regExp);
+};

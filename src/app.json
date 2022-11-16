@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/address/index",
     "pages/loan-contract/index",
     "pages/bank-info/index",
-    "pages/address/index",
     "pages/customer-info/index",
     "pages/register/index",
     "pages/login/index",
