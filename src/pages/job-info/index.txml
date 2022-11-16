@@ -1,28 +1,31 @@
-<import-sjs name="{listWorkForm, listWorkField, listLastWorkPlace, listIncome}" from="./list.sjs" />
+<import-sjs name="{listJobType, listJobField, listLastWorkPlace, listIncome}" from="./list.sjs" />
 
 <view class="job-info container">
   <view class="job-info-container content w-full">
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="job-info-content w-full">
       <view class="input-section">
-        <options-selector isRequired="{{true}}" list="{{listWorkForm}}" title="{{titleWorkForm}}"
-          label="{{labelWorkForm}}" placeHolder="{{placeHolderWorkForm}}" isError="{{isErrorWorkForm}}"
-          errorText="{{errorTextWorkForm}}" value="{{selectedWorkForm}}" onSelect="onSelectWorkForm" />
-        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listWorkField}}" title="{{titleWorkField}}"
-          label="{{labelWorkField}}" placeHolder="{{placeHolderWorkField}}" isError="{{isErrorWorkField}}"
-          errorText="{{errorTextWorkField}}" value="{{selectedWorkField}}" onSelect="onSelectWorkField" />
-        <input-item isRequired="{{true}}" isFocus="{{true}}" isDisabled="{{isDisabled}}" label="{{labelCompanyName}}" type="{{typeCompanyName}}"
-          placeHolder="{{placeHolderCompanyName}}" maxlength="{{maxLengthCompanyName}}" isError="{{isErrorCompanyName}}"
-          errorText="{{errorTextCompanyName}}" onInput="onInputCompanyName" />
+        <options-selector isRequired="{{true}}" list="{{listJobType}}" title="{{titleJobType}}" label="{{labelJobType}}"
+          placeHolder="{{placeHolderJobType}}" isError="{{isErrorJobType}}" errorText="{{errorTextJobType}}"
+          value="{{selectedJobType}}" onSelect="onSelectJobType" />
+        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listJobField}}"
+          title="{{titleJobField}}" label="{{labelJobField}}" placeHolder="{{placeHolderJobField}}"
+          isError="{{isErrorJobField}}" errorText="{{errorTextJobField}}" value="{{selectedJobField}}"
+          onSelect="onSelectJobField" />
+        <input-item isRequired="{{true}}" isFocus="{{true}}" isDisabled="{{isDisabled}}" label="{{labelCompanyName}}"
+          type="{{typeCompanyName}}" placeHolder="{{placeHolderCompanyName}}" maxlength="{{maxLengthCompanyName}}"
+          isError="{{isErrorCompanyName}}" errorText="{{errorTextCompanyName}}" onInput="onInputCompanyName" />
         <input-item isRequired="{{true}}" isDisabled="{{isDisabled}}" label="{{labelPosition}}" type="{{typePosition}}"
           placeHolder="{{placeHolderPosition}}" maxlength="{{maxLengthPosition}}" isError="{{isErrorPosition}}"
           errorText="{{errorTextPosition}}" onInput="onInputPosition" />
-        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listLastWorkPlace}}" title="{{titleLastWorkPlace}}"
-          label="{{labelLastWorkPlace}}" placeHolder="{{placeHolderLastWorkPlace}}" isError="{{isErrorLastWorkPlace}}"
-          errorText="{{errorTextLastWorkPlace}}" value="{{selectedLastWorkPlace}}" onSelect="onSelectLastWorkPlace" />
-        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listIncome}}" title="{{titleIncome}}" label="{{labelIncome}}"
-          placeHolder="{{placeHolderIncome}}" isError="{{isErrorIncome}}" errorText="{{errorTextIncome}}"
-          value="{{selectedIncome}}" onSelect="onSelectIncome" />
+        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listLastWorkPlace}}"
+          title="{{titleLastWorkPlace}}" label="{{labelLastWorkPlace}}" placeHolder="{{placeHolderLastWorkPlace}}"
+          isError="{{isErrorLastWorkPlace}}" errorText="{{errorTextLastWorkPlace}}" value="{{selectedLastWorkPlace}}"
+          onSelect="onSelectLastWorkPlace" />
+        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listIncome}}"
+          title="{{titleIncome}}" label="{{labelIncome}}" placeHolder="{{placeHolderIncome}}"
+          isError="{{isErrorIncome}}" errorText="{{errorTextIncome}}" value="{{selectedIncome}}"
+          onSelect="onSelectIncome" />
       </view>
     </view>
   </view>

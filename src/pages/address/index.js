@@ -98,6 +98,17 @@ Page({
     });
   },
 
+  onInputApartment(value) {
+    this.setData({
+      inputApartment: value,
+    });
+    if (this.data.isErrorApartment) {
+      this.setData({
+        isErrorApartment: false,
+      });
+    }
+  },
+
   onTapNextStep() {
     const { street, district, city, ward, selectedResidence, inputApartment } =
       this.data;
@@ -137,6 +148,18 @@ Page({
         isErrorResidence: true,
         errorTextResidence: "Vui lòng chọn thời gian cư trú!",
       });
+    }
+
+    if (inputApartment !== "") {
+      if (
+        hasSpecialCharater(inputApartment) ||
+        !isValidStreet(inputApartment.split(" "))
+      ) {
+        this.setData({
+          isErrorApartment: true,
+          errorTextApartment: "Định dạng số căn hộ chưa đúng!",
+        });
+      }
     }
 
     if (

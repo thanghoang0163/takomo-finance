@@ -1,4 +1,4 @@
-export const listWorkForm = [
+export const listJobType = [
   {
     id: 1,
     name: "Toàn thời gian",
@@ -25,7 +25,7 @@ export const listWorkForm = [
   },
 ];
 
-export const listWorkField = [
+export const listJobField = [
   {
     id: 1,
     name: "Cảnh sát",

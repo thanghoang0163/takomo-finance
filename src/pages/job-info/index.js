@@ -1,20 +1,20 @@
-import { checkWhiteSpace } from "../../utils/common.sjs";
+import { checkWhiteSpace, hasSpecialCharater } from "../../utils/common.sjs";
 
 Page({
   data: {
     titleHeader: "Thông tin công việc",
-    labelWorkForm: "Hình thức công việc:",
-    placeHolderWorkForm: "Hình thức công việc",
-    titleWorkForm: "Hình thức công việc",
-    errorTextWorkForm: "",
-    isErrorWorkForm: false,
-    selectedWorkForm: "",
-    labelWorkField: "Lĩnh vực công việc:",
-    placeHolderWorkField: "Lĩnh vực công việc",
-    titleWorkField: "Lĩnh vực công việc",
-    errorTextWorkField: "",
-    isErrorWorkField: false,
-    selectedWorkField: "",
+    labelJobType: "Hình thức công việc:",
+    placeHolderJobType: "Hình thức công việc",
+    titleJobType: "Hình thức công việc",
+    errorTextJobType: "",
+    isErrorJobType: false,
+    selectedJobType: "",
+    labelJobField: "Lĩnh vực công việc:",
+    placeHolderJobField: "Lĩnh vực công việc",
+    titleJobField: "Lĩnh vực công việc",
+    errorTextJobField: "",
+    isErrorJobField: false,
+    selectedJobField: "",
     labelCompanyName: "Tên công ty:",
     placeHolderCompanyName: "Tên công ty",
     typeCompanyName: "text",
@@ -68,13 +68,13 @@ Page({
     }
   },
 
-  onSelectWorkForm(value) {
+  onSelectJobType(value) {
     this.setData({
-      selectedWorkForm: value,
+      selectedJobType: value,
     });
-    if (this.data.isErrorWorkForm) {
+    if (this.data.isErrorJobType) {
       this.setData({
-        isErrorWorkForm: false,
+        isErrorJobType: false,
       });
     }
     if (value.name === "Thất nghiệp") {
@@ -84,9 +84,9 @@ Page({
         inputPosition: "",
         selectedIncome: "",
         selectedLastWorkPlace: "",
-        selectedWorkField: "",
+        selectedJobField: "",
         isErrorLastWorkPlace: false,
-        isErrorWorkField: false,
+        isErrorJobField: false,
         isErrorCompanyName: false,
         isErrorPosition: false,
         isErrorIncome: false,
@@ -99,13 +99,13 @@ Page({
     }
   },
 
-  onSelectWorkField(value) {
+  onSelectJobField(value) {
     this.setData({
-      selectedWorkField: value,
+      selectedJobField: value,
     });
-    if (this.data.isErrorWorkField) {
+    if (this.data.isErrorJobField) {
       this.setData({
-        isErrorWorkField: false,
+        isErrorJobField: false,
       });
     }
   },
@@ -134,8 +134,8 @@ Page({
 
   onContinue() {
     const {
-      selectedWorkForm,
-      selectedWorkField,
+      selectedJobType,
+      selectedJobField,
       selectedIncome,
       selectedLastWorkPlace,
       inputCompanyName,
@@ -145,18 +145,18 @@ Page({
 
     const companyNameArray = inputCompanyName.split(" ");
     const positionArray = inputPosition.split(" ");
-    if (selectedWorkForm.length === 0) {
+    if (selectedJobType.length === 0) {
       this.setData({
-        isErrorWorkForm: true,
-        errorTextWorkForm: "Vui lòng chọn hình thức công việc!",
+        isErrorJobType: true,
+        errorTextJobType: "Vui lòng chọn hình thức công việc!",
         isNext: false,
       });
     }
 
-    if (selectedWorkField.length === 0) {
+    if (selectedJobField.length === 0) {
       this.setData({
-        isErrorWorkField: true,
-        errorTextWorkField: "Vui lòng chọn lĩnh vực công việc!",
+        isErrorJobField: true,
+        errorTextJobField: "Vui lòng chọn lĩnh vực công việc!",
         isNext: false,
       });
     }
@@ -183,7 +183,10 @@ Page({
         errorTextCompanyName: "Vui lòng nhập tên công ty đang làm việc!",
         isNext: false,
       });
-    } else if (!checkWhiteSpace(companyNameArray)) {
+    } else if (
+      !checkWhiteSpace(companyNameArray) ||
+      hasSpecialCharater(inputCompanyName)
+    ) {
       this.setData({
         isErrorCompanyName: true,
         errorTextCompanyName: "Định dạng tên công ty không đúng!",
@@ -197,7 +200,10 @@ Page({
         errorTextPosition: "Vui lòng nhập chức vụ tại công ty!",
         isNext: false,
       });
-    } else if (!checkWhiteSpace(positionArray)) {
+    } else if (
+      !checkWhiteSpace(positionArray) ||
+      hasSpecialCharater(inputPosition)
+    ) {
       this.setData({
         isErrorPosition: true,
         errorTextPosition: "Định dạng chức vụ không đúng!",
@@ -210,12 +216,12 @@ Page({
         !this.data.isErrorCompanyName &&
         !this.data.isErrorIncome &&
         !this.data.isErrorLastWorkPlace &&
-        !this.data.isErrorWorkField &&
-        !this.data.isErrorWorkForm &&
+        !this.data.isErrorJobField &&
+        !this.data.isErrorJobType &&
         !this.data.isErrorPosition &&
         selectedLastWorkPlace !== "" &&
-        selectedWorkField !== "" &&
-        selectedWorkForm !== "" &&
+        selectedJobField !== "" &&
+        selectedJobType !== "" &&
         selectedIncome !== "" &&
         inputCompanyName !== "" &&
         inputPosition !== ""
@@ -223,8 +229,8 @@ Page({
         my.setStorage({
           key: "jobInfo",
           data: {
-            workForm: selectedWorkForm,
-            workField: selectedWorkField,
+            JobType: selectedJobType,
+            JobField: selectedJobField,
             lastWorkPlace: selectedLastWorkPlace,
             income: selectedIncome,
             companyName: inputCompanyName,
@@ -236,7 +242,7 @@ Page({
     } else {
       this.setData({
         isErrorLastWorkPlace: false,
-        isErrorWorkField: false,
+        isErrorJobField: false,
         isErrorCompanyName: false,
         isErrorPosition: false,
         isErrorIncome: false,

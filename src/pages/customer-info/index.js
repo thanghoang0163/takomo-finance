@@ -86,6 +86,7 @@ Page({
     my.datePicker({
       title: "Ngày sinh",
       confirmBackgroundColor: "#F82486",
+      startDate:"01-01-1960",
       success: (res) => {
         this.setData({
           selectedDate: res.date,
