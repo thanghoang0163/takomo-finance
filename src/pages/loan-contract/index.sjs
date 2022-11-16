@@ -17,8 +17,8 @@ export const countDate = () => {
   var mm = futureDay.getMonth() + 1; // 0 is January, so we must add 1
   var yyyy = futureDay.getFullYear();
 
-  var dateString = dd + "/" + mm + "/" + yyyy;
-
+  var dateString =
+    (dd < 10 ? "0" + dd : dd) + "/" + (mm < 10 ? "0" + mm : mm) + "/" + yyyy;
 
   return dateString;
 };
