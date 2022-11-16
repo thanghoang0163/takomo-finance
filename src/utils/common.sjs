@@ -48,3 +48,15 @@ export const isValidName = (name) => {
   return name.match(regExp);
 };
 
+export const getAge = (dateString) => {
+  var today = getDate();
+  var birthDate = dateString.split("-");
+  var age = today.getFullYear() - birthDate[2];
+  var month = today.getMonth() + 1 - birthDate[1];
+  var day = today.getDate() - birthDate[0];
+  if (month < 0) {
+    age--;
+  }
+
+  return age;
+};

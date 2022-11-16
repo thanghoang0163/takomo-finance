@@ -1,4 +1,4 @@
-import { checkWhiteSpace, isValidName } from "../../utils/common.sjs";
+import { checkWhiteSpace, isValidName, getAge } from "../../utils/common.sjs";
 
 Page({
   data: {
@@ -155,6 +155,13 @@ Page({
         isErrorBirthDay: true,
         errorTextBirthDay: "Vui lòng chọn ngày sinh!",
       });
+    } else {
+      if (getAge(selectedDate) < 22 || getAge(selectedDate) > 60) {
+        this.setData({
+          isErrorBirthDay: true,
+          errorTextBirthDay: "Độ tuổi vừa nhập không phù hợp (từ 22-60 tuổi)!",
+        });
+      }
     }
 
     if (selectedMaritalStatus === "") {

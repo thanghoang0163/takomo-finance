@@ -10,11 +10,15 @@ export const randomNumber = () => {
 export const countDate = () => {
   var targetDate = getDate();
 
-  var dd = targetDate.getDate() + 7;
-  var mm = targetDate.getMonth() + 1; // 0 is January, so we must add 1
-  var yyyy = targetDate.getFullYear();
+  var futureDay = getDate(targetDate);
+  futureDay.setDate(targetDate.getDate() + 7);
+
+  var dd = futureDay.getDate();
+  var mm = futureDay.getMonth() + 1; // 0 is January, so we must add 1
+  var yyyy = futureDay.getFullYear();
 
   var dateString = dd + "/" + mm + "/" + yyyy;
+
 
   return dateString;
 };
