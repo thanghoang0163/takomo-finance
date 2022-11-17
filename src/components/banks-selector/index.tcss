@@ -17,6 +17,11 @@
   background-color: transparent;
 }
 
+.banks-selector-btn view{
+  background-color: var(--white-color);
+  height: 100%;
+}
+
 .banks-selector .tu-bottom-sheet-wrapper .tu-textfield-inline {
   margin: 10px 0;
 }

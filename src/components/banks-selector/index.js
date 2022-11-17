@@ -7,15 +7,16 @@ Component({
     isError: false,
     isRequired: true,
     isBank: true,
+    isShow: false,
     errorText: "",
     value: "",
     bankList: [],
     onInput: () => {},
     onSearch: () => {},
-    onSelectbank: () => {},
+    onSelectBank: () => {},
+    onOpenBottomSheet: () => {},
   },
   data: {
-    isShow: false,
   },
   methods: {
     _onInput() {
@@ -24,18 +25,16 @@ Component({
     _onSearch() {
       this.props.onSearch();
     },
-    onOpenBottomSheet() {
-      this.setData({
-        isShow: true,
-      });
+    _onOpenBottomSheet() {
+      this.props.onOpenBottomSheet();
     },
     _onClose() {
       this.setData({
         isShow: false,
       });
     },
-    _onSelectbank() {
-      this.props.onSelectbank();
+    _onSelectBank(e) {
+      this.props.onSelectBank(e.target.dataset.name);
     },
   },
 });

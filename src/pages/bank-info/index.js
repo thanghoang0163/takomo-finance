@@ -30,6 +30,7 @@ Page({
     inputPhoneMomo: "",
     isErrorPhoneMomo: false,
     isBank: true,
+    isShow: false,
     btnText: "Tiếp tục bước 6/7",
   },
 
@@ -100,16 +101,45 @@ Page({
     }
   },
 
+  onInputBank() {},
+
+  onOpenBottomSheet() {
+    this.setData({
+      isShow: true,
+    });
+  },
+
+  onSelectBank(value) {
+    this.setData({
+      selectedBank: value,
+      isShow: false,
+    });
+    if (this.data.isErrorBank) {
+      this.setData({
+        isErrorBank: false,
+      });
+    }
+  },
+
   onContinue() {
     const {
       inputPhoneMomo,
       inputBankAcc,
       selectedLoanPurposeBank,
       selectedLoanPurposeMomo,
+      selectedBank,
     } = this.data;
     const itemInput = inputPhoneMomo.slice(0, 1);
     const formatNumberinput = inputPhoneMomo.slice(0, 2);
     const inputLength = inputPhoneMomo.length;
+
+    if (selectedBank === "") {
+      this.setData({
+        isErrorBank: true,
+        errorTextBank: "Vui lòng chọn ngân hàng để nhận tiền!",
+      });
+    }
+
     if (inputLength === 0) {
       this.setData({
         isErrorPhoneMomo: true,
@@ -152,7 +182,20 @@ Page({
       });
     }
 
-    // my.navigateTo({ url: "pages/take-photo/index" });
+    if (
+      (selectedBank !== "" &&
+        inputBankAcc !== "" &&
+        selectedLoanPurposeBank !== "" &&
+        !this.data.isErrorBank &&
+        !this.data.isErrorBankAcc &&
+        !this.data.isErrorLoanPurposeBank) ||
+      (inputPhoneMomo !== "" &&
+        selectedLoanPurposeMomo !== "" &&
+        !this.data.isErrorPhoneMomo &&
+        !this.data.isErrorLoanPurposeMomo)
+    ) {
+      my.navigateTo({ url: "pages/take-photo/index" });
+    }
   },
 
   onLoad() {
