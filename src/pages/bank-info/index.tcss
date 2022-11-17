@@ -14,3 +14,38 @@
 .tu-tabs-content-wrap {
   padding-top: 10px;
 }
+
+.banks-selector-tab {
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.bank-item {
+  margin: 0 10px;
+}
+
+.bank-item-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.bank-item-content {
+  flex: 1;
+  border-bottom: solid 1px #ebebf0;
+  padding: 10px 0;
+}
+
+.bank-item-title {
+  font-weight: 600;
+}
+
+.bank-item-name {
+  font-size: 11px;
+  color: var(--second-text-color);
+}
+
+.tu-textfield.tu-search-bar {
+  padding: 0 10px;
+}

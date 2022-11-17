@@ -6,11 +6,13 @@ Component({
     list: [],
     isError: false,
     isRequired: true,
+    isBank: true,
     errorText: "",
     value: "",
     bankList: [],
     onInput: () => {},
     onSearch: () => {},
+    onSelectbank: () => {},
   },
   data: {
     isShow: false,
@@ -22,7 +24,7 @@ Component({
     _onSearch() {
       this.props.onSearch();
     },
-    onTap() {
+    onOpenBottomSheet() {
       this.setData({
         isShow: true,
       });
@@ -31,6 +33,9 @@ Component({
       this.setData({
         isShow: false,
       });
+    },
+    _onSelectbank() {
+      this.props.onSelectbank();
     },
   },
 });

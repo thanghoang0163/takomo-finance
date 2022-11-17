@@ -4,7 +4,7 @@ Component({
     label: "",
     title: "",
     placeHolder: "",
-    bottomSheetHeight: 300,
+    bottomSheetHeight: 250,
     isRequired: false,
     isDisabled: false,
     list: [],

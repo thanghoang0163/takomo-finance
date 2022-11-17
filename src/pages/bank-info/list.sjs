@@ -1,12 +1,3 @@
-export const tabsList = [
-  {
-    title: "Ngân hàng",
-  },
-  {
-    title: "Momo",
-  },
-];
-
 export const listLoanPurpose = [
   {
     id: 1,
@@ -35,5 +26,272 @@ export const listLoanPurpose = [
   {
     id: 7,
     name: "Khác",
+  },
+];
+
+export const listBank = [
+  {
+    id: 1,
+    title: "ABBANK",
+    name: "ABBANK - NH An Bình",
+    image: "/assets/bank-icons/ABBank.png",
+  },
+  {
+    id: 2,
+    title: "ACB",
+    name: "ACB - NH Á Châu",
+    image: "/assets/bank-icons/ACB.png",
+  },
+  {
+    id: 3,
+    title: "AGRIBANK",
+    name: "AGRIBANK - NH Nông nghiệp và Phát triển Nông thôn Việt Nam",
+    image: "/assets/bank-icons/AGRIBank.png",
+  },
+  {
+    id: 4,
+    title: "BAB",
+    name: "BAB - NH Bắc Á",
+    image: "/assets/bank-icons/BAB.png",
+  },
+  {
+    id: 5,
+    title: "BAOVIET Bank",
+    name: "BAOVIET Bank - NH Bảo Việt",
+    image: "/assets/bank-icons/BaoVietBank.png",
+  },
+  {
+    id: 6,
+    title: "BIDV",
+    name: "BIDV - NH Đầu tư và Phát triển Việt Nam",
+    image: "/assets/bank-icons/BIDV.png",
+  },
+  {
+    id: 7,
+    title: "CIMB Bank",
+    name: "CIMB Bank - NH CIMB Việt Nam",
+    image: "/assets/bank-icons/CIMB.png",
+  },
+  {
+    id: 8,
+    title: "CO",
+    name: "CO - NH Hợp tác xã Việt Nam",
+    image: "/assets/bank-icons/COOPBank.png",
+  },
+  {
+    id: 9,
+    title: "DongA Bank",
+    name: "DongA Bank - NH Đông Á",
+    image: "/assets/bank-icons/DongABank.png",
+  },
+  {
+    id: 10,
+    title: "EximBank",
+    name: "EximBank - NH Xuất Nhập Khẩu",
+    image: "/assets/bank-icons/EximBank.png",
+  },
+  {
+    id: 11,
+    title: "GPBank",
+    name: "GPBank - NH Dầu khí toàn cầu",
+    image: "/assets/bank-icons/GPBank.png",
+  },
+  {
+    id: 12,
+    title: "HDBank",
+    name: "HDBank - NH Phát triển thành phố Hồ Chí Minh",
+    image: "/assets/bank-icons/HDbank.png",
+  },
+  {
+    id: 13,
+    title: "HLB",
+    name: "HLB - NH Hong Leong Việt Nam",
+    image: "/assets/bank-icons/HLbank.png",
+  },
+  {
+    id: 14,
+    title: "IBK",
+    name: "IBK - NH Công nghiệp Hàn Quốc",
+    image: "/assets/bank-icons/IBK.png",
+  },
+  {
+    id: 15,
+    title: "IVB",
+    name: "IVB - NH Indovina",
+    image: "/assets/bank-icons/IVB.png",
+  },
+  {
+    id: 16,
+    title: "Kienlong Bank",
+    name: "Kienlong Bank - NH Kiên Long",
+    image: "/assets/bank-icons/KienlongBank.png",
+  },
+  {
+    id: 17,
+    title: "LienVietPostBank",
+    name: "LienVietPostBank - NH Bưu điện Liên Việt",
+    image: "/assets/bank-icons/LienVietPostBank.png",
+  },
+  {
+    id: 18,
+    title: "MB",
+    name: "MB - NH Quân Đội",
+    image: "/assets/bank-icons/MBbank.png",
+  },
+  {
+    id: 19,
+    title: "MSB",
+    name: "MSB - NH Hàng Hải",
+    image: "/assets/bank-icons/MSB.png",
+  },
+  {
+    id: 20,
+    title: "Nam A Bank",
+    name: "Nam A Bank - NH Nam Á",
+    image: "/assets/bank-icons/NamABank.png",
+  },
+  {
+    id: 21,
+    title: "NCB",
+    name: "NCB - NH Quốc dân",
+    image: "/assets/bank-icons/NCB.png",
+  },
+  {
+    id: 22,
+    title: "OCB",
+    name: "OCB - NH Phương Đông",
+    image: "/assets/bank-icons/OCBbank.png",
+  },
+  {
+    id: 23,
+    title: "OceanBank",
+    name: "OceanBank - NH Đại Dương",
+    image: "/assets/bank-icons/OceanBank.png",
+  },
+  {
+    id: 24,
+    title: "PG Bank",
+    name: "PG Bank - NH Xăng dầu Petrolimex",
+    image: "/assets/bank-icons/PGBank.png",
+  },
+  {
+    id: 25,
+    title: "PUBLIC Bank",
+    name: "PUBLIC Bank - NH Public Bank Việt Nam",
+    image: "/assets/bank-icons/PUBLICbank.png",
+  },
+  {
+    id: 26,
+    title: "PVcomBank",
+    name: "PVcomBank - NH Đại Chúng Việt Nam",
+    image: "/assets/bank-icons/PVcombank.png",
+  },
+  {
+    id: 27,
+    title: "Sacombank",
+    name: "Sacombank - NH Sài Gòn Thương Tín",
+    image: "/assets/bank-icons/Sacombank.png",
+  },
+  {
+    id: 28,
+    title: "Saigon Bank",
+    name: "Saigon Bank - NH Sài gòn Công Thương",
+    image: "/assets/bank-icons/SaigonBank.png",
+  },
+  {
+    id: 29,
+    title: "SCB",
+    name: "SCB - NH Sài Gòn",
+    image: "/assets/bank-icons/SCBbank.png",
+  },
+  {
+    id: 30,
+    title: "SeABank",
+    name: "SeABank - NH Đông Nam Á",
+    image: "/assets/bank-icons/SeABank.png",
+  },
+  {
+    id: 31,
+    title: "SHB",
+    name: "SHB - NH Sài Gòn – Hà Nội",
+    image: "/assets/bank-icons/SHB.png",
+  },
+  {
+    id: 32,
+    title: "Shinhan Bank",
+    name: "Shinhan Bank - NH Shinhan Việt Nam",
+    image: "/assets/bank-icons/ShinhanBank.png",
+  },
+  {
+    id: 33,
+    title: "Techcombank",
+    name: "Techcombank - NH Kỹ Thương",
+    image: "/assets/bank-icons/Techcombank.png",
+  },
+  {
+    id: 34,
+    title: "TPBank",
+    name: "TPBank - NH Tiên Phong",
+    image: "/assets/bank-icons/TPbank.png",
+  },
+  {
+    id: 35,
+    title: "UOB",
+    name: "UOB - NH UOB Việt Nam",
+    image: "/assets/bank-icons/UOB.png",
+  },
+  {
+    id: 36,
+    title: "VIB",
+    name: "VIB - NH Quốc Tế",
+    image: "/assets/bank-icons/VIB.png",
+  },
+  {
+    id: 37,
+    title: "Viet Capital Bank",
+    name: "Viet Capital Bank - NH Bản Việt",
+    image: "/assets/bank-icons/VietCapitalBank.png",
+  },
+  {
+    id: 38,
+    title: "VIETABANK",
+    name: "VIETABANK - NH Việt Á",
+    image: "/assets/bank-icons/VIETABANk.png",
+  },
+  {
+    id: 39,
+    title: "Vietbank",
+    name: "Vietbank - NH Việt Nam Thương Tín",
+    image: "/assets/bank-icons/Vietbank.png",
+  },
+  {
+    id: 40,
+    title: "Vietcombank",
+    name: "Vietcombank - NH Ngoại thương Việt Nam",
+    image: "/assets/bank-icons/Vietcombank.png",
+  },
+  {
+    id: 41,
+    title: "VietinBank",
+    name: "VietinBank - NH Công thương Việt Nam",
+    image: "/assets/bank-icons/Vietinbank.png",
+  },
+  {
+    id: 42,
+    title: "VPBank",
+    name: "VPBank - NH Việt Nam Thịnh Vượng",
+    image: "/assets/bank-icons/VPbank.png",
+  },
+  {
+    id: 43,
+    title: "VRB",
+    name: "VRB - NH Việt – Nga",
+    image: "/assets/bank-icons/VRB.png",
+  },
+  {
+    id: 44,
+    title: "Woori Bank",
+    name: "Woori Bank - NH Woori Việt Nam",
+    image: "/assets/bank-icons/WooriBank.png",
   },
 ];

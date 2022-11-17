@@ -33,26 +33,15 @@ Page({
     btnText: "Tiếp tục bước 6/7",
   },
 
-  onTabClick({ index, tabsName }) {
+  onTapBank() {
     this.setData({
-      [tabsName]: index,
+      isBank: true,
     });
-    if (index === 1) {
-      this.setData({
-        isBank: false,
-        activeTab: 1,
-      });
-    } else {
-      this.setData({
-        isBank: true,
-        activeTab: 0,
-      });
-    }
   },
 
-  onChangeTab({ index, tabsName }) {
+  onTapMomo() {
     this.setData({
-      [tabsName]: index,
+      isBank: false,
     });
   },
 

@@ -3,7 +3,7 @@
 }
 
 .banks-selector-btn {
-  top: 15%;
+  top: 37px;
   left: 0;
   width: 100%;
   height: 40px;
