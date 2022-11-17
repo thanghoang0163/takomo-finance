@@ -34,7 +34,7 @@ export const listBank = [
     id: 1,
     title: "ABBANK",
     name: "ABBANK - NH An Bình",
-    image: "/assets/bank-icons/ABBank.png",
+    image: "/assets/bank-icons/ABbank.png",
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ export const listBank = [
     id: 3,
     title: "AGRIBANK",
     name: "AGRIBANK - NH Nông nghiệp và Phát triển Nông thôn Việt Nam",
-    image: "/assets/bank-icons/AGRIBank.png",
+    image: "/assets/bank-icons/AGRIbank.png",
   },
   {
     id: 4,
@@ -76,7 +76,7 @@ export const listBank = [
     id: 8,
     title: "CO",
     name: "CO - NH Hợp tác xã Việt Nam",
-    image: "/assets/bank-icons/COOPBank.png",
+    image: "/assets/bank-icons/COOPbank.png",
   },
   {
     id: 9,
@@ -172,7 +172,7 @@ export const listBank = [
     id: 24,
     title: "PG Bank",
     name: "PG Bank - NH Xăng dầu Petrolimex",
-    image: "/assets/bank-icons/PGBank.png",
+    image: "/assets/bank-icons/PGbank.png",
   },
   {
     id: 25,
@@ -256,7 +256,7 @@ export const listBank = [
     id: 38,
     title: "VIETABANK",
     name: "VIETABANK - NH Việt Á",
-    image: "/assets/bank-icons/VIETABANk.png",
+    image: "/assets/bank-icons/VIETABANK.png",
   },
   {
     id: 39,
