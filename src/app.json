@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/take-photo/index",
     "pages/login/index",
+    "pages/take-photo/index",
     "pages/bank-info/index",
     "pages/loan-contract/index",
     "pages/acquaintance-info/index",

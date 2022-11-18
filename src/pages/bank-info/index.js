@@ -1,4 +1,4 @@
-import { isValidPhoneNumber, isValidNumber } from "../../utils/common.sjs";
+import { isValidPhoneNumber, isNumber } from "../../utils/common.sjs";
 
 Page({
   data: {

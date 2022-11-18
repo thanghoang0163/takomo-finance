@@ -1,6 +1,6 @@
 import { decode } from "html-entities";
 import parse from "@tiki.vn/mini-html-parser2";
-import { isValidPhoneNumber, isValidNumber } from "../../utils/common.sjs";
+import { isValidPhoneNumber, isNumber } from "../../utils/common.sjs";
 
 Page({
   data: {
