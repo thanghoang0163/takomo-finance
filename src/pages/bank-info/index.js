@@ -159,7 +159,8 @@ Page({
       });
     } else if (
       (itemInput !== "0" && itemInput.length !== 0) ||
-      !isValidPhoneNumber(formatNumberinput)
+      !isValidPhoneNumber(formatNumberinput) ||
+      !isNumber(inputPhoneMomo)
     ) {
       this.setData({
         isErrorPhoneMomo: true,
@@ -176,7 +177,7 @@ Page({
       if (!isNumber(inputBankAcc)) {
         this.setData({
           isErrorBankAcc: true,
-          errorTextBankAcc: "Định dạng số điện thoại không đúng!",
+          errorTextBankAcc: "Định dạng số tài khoản không đúng!",
         });
       }
     }
