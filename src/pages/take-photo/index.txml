@@ -3,11 +3,11 @@
     <header isShowBtn="{{true}}" title="{{titleHeader}}" />
     <view class="photo-content w-full">
       <comparison-image label="{{list[0].label}}" imgUrl="{{filePathsFace ? filePathsFace : list[0].img}}"
-        onTap="onChooseFace" />
+        onTap="onChooseFace" isError="{{isErrorFace}}" errorText="{{errorTextFace}}" />
       <comparison-image label="{{list[1].label}}" imgUrl="{{filePathsFrontIdCard ? filePathsFrontIdCard : list[1].img}}"
-        onTap="onChooseFrontIdCard" />
+        onTap="onChooseFrontIdCard" isError="{{isErrorFrontIdCard}}" errorText="{{errorTextFrontIdCard}}" />
       <comparison-image label="{{list[2].label}}" imgUrl="{{filePathsRearIdCard ? filePathsRearIdCard : list[2].img}}"
-        onTap="onChooseRearIdCard" />
+        onTap="onChooseRearIdCard" isError="{{isErrorRearIdCard}}" errorText="{{errorTextRearIdCard}}" />
     </view>
   </view>
   <btn-footer onTap="onContinue" btnText="{{btnText}}" />

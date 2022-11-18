@@ -2,6 +2,8 @@ Component({
   props: {
     label: "",
     imgUrl: "",
+    isError: false,
+    errorText: "",
     onTap: () => {},
   },
   methods: {

@@ -8,6 +8,12 @@ Page({
     imgFrontIdCard: [],
     imgRearIdCard: [],
     dataset: "",
+    isErrorFace: false,
+    errorTextFace: "",
+    isErrorFrontIdCard: false,
+    errorTextFrontIdCard: "",
+    isErrorRearIdCard: false,
+    errorTextRearIdCard: "",
     btnText: "Tiếp tục",
     list: [
       {
@@ -65,6 +71,11 @@ Page({
         console.log(e);
       },
     });
+    if (this.data.isErrorFace) {
+      this.setData({
+        isErrorFace: false,
+      });
+    }
   },
 
   onChooseFrontIdCard() {
@@ -92,6 +103,11 @@ Page({
         console.log(e);
       },
     });
+    if (this.data.isErrorFrontIdCard) {
+      this.setData({
+        isErrorFrontIdCard: false,
+      });
+    }
   },
 
   onChooseRearIdCard() {
@@ -119,10 +135,48 @@ Page({
         console.log(e);
       },
     });
+    if (this.data.isErrorRearIdCard) {
+      this.setData({
+        isErrorRearIdCard: false,
+      });
+    }
   },
 
   onContinue() {
-    my.navigateTo({ url: "pages/loan-contract/index" });
+    const { filePathsFace, filePathsFrontIdCard, filePathsRearIdCard } =
+      this.data;
+
+    if (filePathsFace === "") {
+      this.setData({
+        isErrorFace: true,
+        errorTextFace: "Vui lòng chụp khuôn mặt!",
+      });
+    }
+
+    if (filePathsFrontIdCard === "") {
+      this.setData({
+        isErrorFrontIdCard: true,
+        errorTextFrontIdCard: "Vui lòng chụp mặt trước CMND / CCCD!",
+      });
+    }
+
+    if (filePathsRearIdCard === "") {
+      this.setData({
+        isErrorRearIdCard: true,
+        errorTextRearIdCard: "Vui lòng chụp mặt sau CMND / CCCD!",
+      });
+    }
+
+    if (
+      filePathsFace !== "" &&
+      filePathsFrontIdCard !== "" &&
+      filePathsRearIdCard !== "" &&
+      !this.data.isErrorFace &&
+      !this.data.isErrorFrontIdCard &&
+      !this.data.isErrorRearIdCard
+    ) {
+      my.navigateTo({ url: "pages/loan-contract/index" });
+    }
   },
 
   onLoad() {

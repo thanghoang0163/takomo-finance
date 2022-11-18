@@ -6,4 +6,7 @@
   <view class="photo-img-container" onTap="_onTap">
     <image class="w-full h-full" src="{{imgUrl}}" />
   </view>
+  <block tiki:if="{{isError}}">
+    <text class="error-message">{{errorText}}</text>
+  </block>
 </view>
