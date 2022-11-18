@@ -3,6 +3,7 @@ import {
   checkWhiteSpace,
   isValidName,
   hasSpecialCharater,
+  isNumber,
 } from "../../utils/common.sjs";
 
 Page({
@@ -285,7 +286,8 @@ Page({
     } else if (
       (this.itemInput(inputPhoneRelative) !== "0" &&
         inputPhoneRelative.length !== 0) ||
-      !isValidPhoneNumber(this.formatNumberinput(inputPhoneRelative))
+      !isValidPhoneNumber(this.formatNumberinput(inputPhoneRelative)) ||
+      !isNumber(inputPhoneRelative)
     ) {
       this.setData({
         isErrorPhoneRelative: true,
@@ -301,7 +303,8 @@ Page({
     } else if (
       (this.itemInput(inputPhoneColleague) !== "0" &&
         inputPhoneColleague.length !== 0) ||
-      !isValidPhoneNumber(this.formatNumberinput(inputPhoneColleague))
+      !isValidPhoneNumber(this.formatNumberinput(inputPhoneColleague)) ||
+      !isNumber(inputPhoneColleague)
     ) {
       this.setData({
         isErrorPhoneColleague: true,
@@ -327,7 +330,8 @@ Page({
       } else if (
         (this.itemInput(inputPhonePlusContact) !== "0" &&
           inputPhonePlusContact.length !== 0) ||
-        !isValidPhoneNumber(this.formatNumberinput(inputPhonePlusContact))
+        !isValidPhoneNumber(this.formatNumberinput(inputPhonePlusContact)) ||
+        !isNumber(inputPhonePlusContact)
       ) {
         this.setData({
           isErrorPhonePlusContact: true,

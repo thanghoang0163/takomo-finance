@@ -1,4 +1,4 @@
-import { isValidPhoneNumber } from "../../utils/common.sjs";
+import { isValidPhoneNumber, isValidNumber } from "../../utils/common.sjs";
 
 Page({
   data: {
@@ -172,6 +172,13 @@ Page({
         isErrorBankAcc: true,
         errorTextBankAcc: "Vui lòng nhập số tài khoản ngân hàng nhận tiền!",
       });
+    } else {
+      if (!isNumber(inputBankAcc)) {
+        this.setData({
+          isErrorBankAcc: true,
+          errorTextBankAcc: "Định dạng số điện thoại không đúng!",
+        });
+      }
     }
 
     if (selectedLoanPurposeBank === "") {

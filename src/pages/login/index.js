@@ -1,6 +1,6 @@
 import { decode } from "html-entities";
 import parse from "@tiki.vn/mini-html-parser2";
-import { isValidPhoneNumber } from "../../utils/common.sjs";
+import { isValidPhoneNumber, isValidNumber } from "../../utils/common.sjs";
 
 Page({
   data: {
@@ -59,11 +59,12 @@ Page({
       });
     } else if (
       (itemInput !== "0" && itemInput.length !== 0) ||
-      !isValidPhoneNumber(formatNumberinput)
+      !isValidPhoneNumber(formatNumberinput) ||
+      !isNumber(itemInput)
     ) {
       this.setData({
         isError: true,
-        errorText: "Định dạng của số điện thoại không đúng!",
+        errorText: "Định dạng số điện thoại không đúng!",
       });
     } else {
       my.setStorage({
@@ -87,9 +88,6 @@ Page({
   },
 
   onLoad() {
-    my.hideBackHome({
-      hide: true,
-    });
     my.getStorage({
       key: "isFirst",
       success: (res) => {
@@ -113,5 +111,11 @@ Page({
     //   }
     // );
     // console.log(this.data.htmlNodes);
+  },
+
+  onReady() {
+    my.hideBackHome({
+      hide: true,
+    });
   },
 });

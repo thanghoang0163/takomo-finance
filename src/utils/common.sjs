@@ -43,6 +43,11 @@ export const isValidStreet = (street) => {
   }
 };
 
+export const isNumber = (number) => {
+  let isnum = /^\d+$/.test(number);
+  return isnum;
+};
+
 export const isValidName = (name) => {
   let regExp = /\d+/g;
   return name.match(regExp);
