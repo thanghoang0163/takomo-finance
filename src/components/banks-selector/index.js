@@ -29,9 +29,7 @@ Component({
       this.props.onOpenBottomSheet();
     },
     _onClose() {
-      this.setData({
-        isShow: false,
-      });
+      this.props.onClose();
     },
     _onSelectBank(e) {
       this.props.onSelectBank(e.target.dataset.name);

@@ -19,7 +19,7 @@
           <banks-selector value="{{selectedBank}}" isError="{{isErrorBank}}" errorText="{{errorTextBank}}"
             list="{{listBank}}" onInput="onInputBank" onSearch="onSearchBank" onTapBank="onTapBank"
             onTapMomo="onTapMomo" onTapMomo="onTapMomo" onSelectBank="onSelectBank"
-            onOpenBottomSheet="onOpenBottomSheet" isBank="{{isBank}}" isShow="{{isShow}}" />
+            onOpenBottomSheet="onOpenBottomSheet" onClose="onCloseBottomSheet" isBank="{{isBank}}" isShow="{{isShow}}" />
           <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelBankAcc}}" type="{{typeBankAcc}}"
             placeHolder="{{placeHolderBankAcc}}" maxlength="{{maxLengthBankAcc}}" isError="{{isErrorBankAcc}}"
             errorText="{{errorTextBankAcc}}" onInput="onInputBankAcc" />

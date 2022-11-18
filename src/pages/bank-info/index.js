@@ -101,11 +101,17 @@ Page({
     }
   },
 
-  onInputBank() {},
+  onSearchBank() {},
 
   onOpenBottomSheet() {
     this.setData({
       isShow: true,
+    });
+  },
+
+  onCloseBottomSheet() {
+    this.setData({
+      isShow: false,
     });
   },
 
