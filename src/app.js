@@ -1,7 +1,5 @@
 App({
-  onLoad() {
-    my.hideBackHome({ hide: true });
-  },
+  onLoad() {},
 
   onLaunch(options) {
     console.log("App onLaunch");
