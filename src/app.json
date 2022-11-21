@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/job-info/index",
-    "pages/login/index",
     "pages/register/index",
+    "pages/login/index",
+    "pages/job-info/index",
     "pages/take-photo/index",
     "pages/loan-contract/index",
     "pages/customer-info/index",
@@ -13,6 +13,7 @@
   ],
   "window": {
     "defaultTitle": "",
-    "backgroundColor": "#fff"
+    "backgroundColor": "#fff",
+    "titleBarColor": "#000"
   }
 }

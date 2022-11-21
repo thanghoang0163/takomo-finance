@@ -31,7 +31,7 @@ Page({
     isErrorPosition: false,
     labelLastWorkPlace: "Kinh nghiệm tại nơi làm việc cuối cùng:",
     placeHolderLastWorkPlace: "Kinh nghiệm tại nơi làm việc cuối cùng",
-    titleLastWorkPlace: "Kinh nghiệm tại nơi làm việc cuối cùng",
+    titleLastWorkPlace: "Kinh nghiệm",
     errorTextLastWorkPlace: "",
     isErrorLastWorkPlace: false,
     selectedLastWorkPlace: "",
