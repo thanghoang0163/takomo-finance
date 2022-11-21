@@ -36,8 +36,7 @@
       </view>
     </block>
   </view>
-  <modal className="modal text-center" isShow="{{modal.isShow}}" text="{{modal.text}}" onHide="onHide" />
   <btn-footer style={{modal.isShow ? "background: #7209b7" : "" }} btnText="{{btnText}}" onTap="onLogin" />
-
-  <bottom-sheet isShow="{{isShow}}" isAboutUs="{{isAboutUs}}" onClose="onClose" />
+  <modal className="modal text-center" isShow="{{modal.isShow}}" text="{{modal.text}}" onHide="onHide" />
 </view>
+<bottom-sheet isShow="{{isShow}}" isAboutUs="{{isAboutUs}}" onClose="onClose" />

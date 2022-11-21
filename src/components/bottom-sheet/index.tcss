@@ -11,3 +11,7 @@
 .bottom-sheet-text {
   margin-bottom: 10px;
 }
+
+.bottom-sheet .tu-bottom-sheet-footer button {
+  display: none;
+}
