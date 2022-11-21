@@ -12,6 +12,6 @@
   margin-bottom: 10px;
 }
 
-.bottom-sheet .tu-bottom-sheet-footer button {
+.bottom-sheet .tu-bottom-sheet-footer {
   display: none;
 }
