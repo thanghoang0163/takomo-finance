@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/job-info/index",
     "pages/login/index",
     "pages/register/index",
     "pages/take-photo/index",
     "pages/loan-contract/index",
-    "pages/job-info/index",
     "pages/customer-info/index",
     "pages/bank-info/index",
     "pages/address/index",

@@ -1,6 +1,6 @@
 <import-sjs from="./index.sjs" name="{listABoutUs}"></import-sjs>
 
-<template name="about-us">
+<template name="questions">
   <bottom-sheet show="{{isShow}}" title="Giới thiệu về chúng tôi" onClose="_onClose">
     <view class="bottom-sheet-content">
       <block tiki:for="{{listABoutUs}}" tiki:key="{{item.id}}">
@@ -12,7 +12,7 @@
     </view>
   </bottom-sheet>
 </template>
-<template name="questions">
+<template name="about-us">
   <bottom-sheet show="{{isShow}}" title="Những câu hỏi thường gặp" onClose="_onClose">
     <view class="">1. Vay tiền nhanh online Takomo là gì?</view>
   </bottom-sheet>
