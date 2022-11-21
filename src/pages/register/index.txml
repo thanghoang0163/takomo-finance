@@ -1,6 +1,7 @@
 <view class="register container">
-  <view class="register-container content w-full">
-    <header title="{{titleHeader}}" />
+  <view class="register-container content w-full mt">
+    <header />
+    <text class="title">{{titleHeader}}</text>
     <view class="register-content">
       <view class="input-section">
         <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelPassword}}" type="{{typePassword}}"
@@ -8,7 +9,8 @@
           errorText="{{errorTextPassword}}" isPassword="{{true}}" onInput="onInputPassword" />
         <input-item isRequired="{{true}}" label="{{labelPasswordAgain}}" type="{{typePasswordAgain}}"
           placeHolder="{{placeHolderPasswordAgain}}" maxlength="{{maxLengthPasswordAgain}}"
-          isError="{{isErrorPasswordAgain}}" errorText="{{errorTextPasswordAgain}}" isPassword="{{true}}" onInput="onInputPasswordAgain" />
+          isError="{{isErrorPasswordAgain}}" errorText="{{errorTextPasswordAgain}}" isPassword="{{true}}"
+          onInput="onInputPasswordAgain" />
         <input-item isRequired="{{true}}" label="{{labelEmail}}" type="{{typeEmail}}" placeHolder="{{placeHolderEmail}}"
           maxlength="{{maxLengthEmail}}" isError="{{isErrorEmail}}" errorText="{{errorTextEmail}}"
           onInput="onInputEmail" />

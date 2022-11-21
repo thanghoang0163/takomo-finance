@@ -17,7 +17,7 @@
   background-color: transparent;
 }
 
-.banks-selector-btn view{
+.banks-selector-btn view {
   background-color: var(--white-color);
   height: 100%;
 }
@@ -28,4 +28,13 @@
 
 .banks-selector .tu-bottom-sheet-footer {
   display: none;
+}
+
+.banks-selector .bank-item:first-child {
+  padding-top: 50px;
+}
+
+.search-bar {
+  position: fixed;
+  width: 100%;
 }

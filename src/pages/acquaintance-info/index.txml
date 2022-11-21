@@ -1,9 +1,10 @@
-<import-sjs name="{listRelationship}" from="./list.sjs"/>
+<import-sjs name="{listRelationship}" from="./list.sjs" />
 
 <view class="acquaintance-info container">
   <view class="acquaintance-info-container content w-full">
-    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
-    <view class="acquaintance-info-content w-full mb-x-small">
+    <header isShowBtn="{{true}}" />
+    <view class="acquaintance-info-content w-full mb-x-small mt">
+      <text class="title">{{titleHeader}}</text>
       <view class="acquaintance-info">
         <view class="input-section">
           <view class="relative-info-label acquaintance-info-label">Thông tin người thân</view>
@@ -14,8 +15,8 @@
             label="{{labelRelationship}}" placeHolder="{{placeHolderRelationship}}" isError="{{isErrorRelationship}}"
             errorText="{{errorTextRelationship}}" value="{{selectedRelationship}}" onSelect="onSelectRelationship" />
           <input-item isRequired="{{true}}" label="{{labelPhoneRelative}}" type="{{typePhoneRelative}}"
-            placeHolder="{{placeHolderPhoneRelative}}" maxlength="{{maxLengthPhoneRelative}}" isError="{{isErrorPhoneRelative}}"
-            errorText="{{errorTextPhoneRelative}}" onInput="onInputPhoneRelative" />
+            placeHolder="{{placeHolderPhoneRelative}}" maxlength="{{maxLengthPhoneRelative}}"
+            isError="{{isErrorPhoneRelative}}" errorText="{{errorTextPhoneRelative}}" onInput="onInputPhoneRelative" />
         </view>
       </view>
       <view class="colleague-info">
@@ -30,7 +31,7 @@
             onInput="onInputPhoneColleague" />
         </view>
       </view>
-      <view class="plus-contact-info">
+      <!-- <view class="plus-contact-info">
         <view class="input-section">
           <view class="plus-contact-info-label acquaintance-info-label">Người liên hệ bổ sung <view>Không bắt buộc</view></view>
           <input-item label="{{labelNamePlusContact}}" type="{{typeNamePlusContact}}"
@@ -41,7 +42,7 @@
             isError="{{isErrorPhonePlusContact}}" errorText="{{errorTextPhonePlusContact}}"
             onInput="onInputPhonePlusContact" />
         </view>
-      </view>
+      </view> -->
     </view>
   </view>
   <btn-footer onTap="onContinue" btnText="{{btnText}}" />

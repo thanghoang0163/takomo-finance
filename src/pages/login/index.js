@@ -10,6 +10,8 @@ Page({
     htmlNodesText: "",
     isFirst: true,
     isError: false,
+    isShow: false,
+    isAboutUs: false,
     errorText: "",
     input: "",
     label: "Số điện thoại để đăng ký:",
@@ -31,6 +33,26 @@ Page({
         isError: false,
       });
     }
+  },
+
+  onOpenAboutUs() {
+    this.setData({
+      isShow: true,
+      isAboutUs: true,
+    });
+  },
+
+  onOpenQuestions() {
+    this.setData({
+      isShow: true,
+      isAboutUs: false,
+    });
+  },
+
+  onClose() {
+    this.setData({
+      isShow: false,
+    });
   },
 
   onLogin() {

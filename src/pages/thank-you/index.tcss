@@ -4,7 +4,7 @@
 }
 
 .success-content {
-  margin-top: 15vh;
+  margin-top: 10vh;
   width: 95vw;
 }
 

@@ -1,0 +1,13 @@
+.bottom-sheet-content {
+  padding: 10px;
+  text-align: justify;
+}
+
+.bottom-sheet-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.bottom-sheet-text {
+  margin-bottom: 10px;
+}

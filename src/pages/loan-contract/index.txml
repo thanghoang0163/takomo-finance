@@ -2,8 +2,9 @@
 <import-sjs name="{randomNumber, countDate}" from="./index.sjs" />
 
 <view class="loan-contract container">
-  <view class="loan-contract-container content w-full">
-    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
+  <view class="loan-contract-container content w-full mt">
+    <header isShowBtn="{{true}}" />
+    <text class="title">{{titleHeader}}</text>
     <view class="loan-contract-content w-full">
       <view class="loan-info-container">
         <view class="input-section">
@@ -45,7 +46,8 @@
     <view class="verification-code">
       <text class="loan-contract-label loan-contract-complete-label">Hoàn tất đăng ký</text>
       <view class="">
-        <view class="loan-contract-complete-text">Vui lòng nhấn vào nút “Xác nhận” bên dưới để hoàn tất đăng ký hồ sơ vay.</view>
+        <view class="loan-contract-complete-text">Vui lòng nhấn vào nút “Xác nhận” bên dưới để hoàn tất đăng ký hồ sơ
+          vay.</view>
         <view class="verification flex items-center justify-between">
           <text class="verification-text">Mã xác nhận:</text>
           <view class="loan-info-content">{{randomNumber()}}</view>

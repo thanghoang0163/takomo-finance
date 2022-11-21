@@ -1,16 +1,16 @@
 .loan-contract .input-section {
   padding: 10px;
-  margin: 10px 0;
+  /* margin: 10px 0; */
+}
+
+.loan-contract .title {
+  margin-bottom: 0;
 }
 
 .loan-contract-label {
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
-}
-
-.loan-contract-content{
-  padding: 0 10px;
 }
 
 .loan-info {
@@ -33,18 +33,18 @@
   margin-top: 10px;
 }
 
-.verification-code{
+.verification-code {
   background-color: var(--white-color);
   padding: 10px;
   margin: 0 -10px;
 }
 
-.loan-contract-complete-text{
+.loan-contract-complete-text {
   margin: 10px 0;
 }
 
-.verification{
+.verification {
   padding: 10px;
-  border: 1px solid #DDDDE3;
+  border: 1px solid #dddde3;
   border-radius: 20px;
 }

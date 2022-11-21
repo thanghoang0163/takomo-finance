@@ -18,13 +18,13 @@
                 maxlength="{{maxlength}}" isError="{{isError}}" errorText="{{errorText}}" onInput="onInputPhone" />
             </view>
             <view class="more-info flex justify-between items-center w-full">
-              <view class="about-us">
+              <view class="about-us" onTap="onOpenAboutUs">
                 <view class="more-info-img-container">
                   <image class="more-info-img" src="/assets/icons/info.svg" />
                 </view>
                 <text class="more-info-text">Giới thiệu về chúng tôi</text>
               </view>
-              <view class="questions">
+              <view class="questions" onTap="onOpenQuestions">
                 <view class="more-info-img-container">
                   <image class="more-info-img" src="/assets/icons/question-mark.svg" />
                 </view>
@@ -38,4 +38,6 @@
   </view>
   <modal className="modal text-center" isShow="{{modal.isShow}}" text="{{modal.text}}" onHide="onHide" />
   <btn-footer style={{modal.isShow ? "background: #7209b7" : "" }} btnText="{{btnText}}" onTap="onLogin" />
+
+  <bottom-sheet isShow="{{isShow}}" isAboutUs="{{isAboutUs}}" onClose="onClose" />
 </view>

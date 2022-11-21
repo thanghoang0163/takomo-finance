@@ -1,0 +1,23 @@
+<import-sjs from="./index.sjs" name="{listABoutUs}"></import-sjs>
+
+<template name="about-us">
+  <bottom-sheet show="{{isShow}}" title="Giới thiệu về chúng tôi" onClose="_onClose">
+    <view class="bottom-sheet-content">
+      <block tiki:for="{{listABoutUs}}" tiki:key="{{item.id}}">
+        <view class="bottom-sheet-title">{{item.title}}</view>
+        <view class="bottom-sheet-text">{{item.text}}</view>
+      </block>
+      <view class="about-us-hotline">Hotline: 1900866614</view>
+      <view class="about-us-email">Email: hotro@takomo.vn</view>
+    </view>
+  </bottom-sheet>
+</template>
+<template name="questions">
+  <bottom-sheet show="{{isShow}}" title="Những câu hỏi thường gặp" onClose="_onClose">
+    <view class="">1. Vay tiền nhanh online Takomo là gì?</view>
+  </bottom-sheet>
+</template>
+
+<view class="bottom-sheet">
+  <template is={{isAboutUs ? "about-us" : "questions"}} data="{{isShow}}" />
+</view>

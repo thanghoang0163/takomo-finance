@@ -4,6 +4,7 @@
     "input-item": "components/input-item/index",
     "modal": "components/modal/index",
     "onboarding": "components/onboarding/index",
-    "btn-footer": "components/btn-footer/index"
+    "btn-footer": "components/btn-footer/index",
+    "bottom-sheet": "components/bottom-sheet/index"
   }
 }

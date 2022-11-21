@@ -6,13 +6,13 @@ Page({
     labelPassword: "Mật khẩu:",
     placeHolderPassword: "Mật khẩu",
     typePassword: "number",
-    maxLengthPassword: 6,
+    maxLengthPassword: 8,
     errorTextPassword: "",
     inputPassword: "",
     labelPasswordAgain: "Nhập lại mật khẩu:",
     placeHolderPasswordAgain: "Nhập lại mật khẩu",
     typePasswordAgain: "number",
-    maxLengthPasswordAgain: 6,
+    maxLengthPasswordAgain: 8,
     errorTextPasswordAgain: "",
     inputPasswordAgain: "",
     labelEmail: "Email:",
@@ -70,9 +70,6 @@ Page({
 
   onRegister() {
     const {
-      isErrorEmail,
-      isErrorPassword,
-      isErrorPasswordAgain,
       inputPassword,
       inputPasswordAgain,
       inputEmail,

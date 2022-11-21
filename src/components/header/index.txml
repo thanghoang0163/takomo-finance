@@ -4,5 +4,8 @@
       <icon type="arrow_left" size="20" color="#fff" />
     </button>
   </block>
-  <text class="title">{{title}}</text>
+  <view class="header-logo">
+    <image src="/assets/icons/logo.svg" />
+  </view>
+  <!-- <text class="title">{{title}}</text> -->
 </view>

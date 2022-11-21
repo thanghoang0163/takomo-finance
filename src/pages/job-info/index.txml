@@ -1,8 +1,9 @@
 <import-sjs name="{listJobType, listJobField, listLastWorkPlace, listIncome}" from="./list.sjs" />
 
 <view class="job-info container">
-  <view class="job-info-container content w-full">
-    <header isShowBtn="{{true}}" title="{{titleHeader}}" />
+  <view class="job-info-container content w-full mt">
+    <header isShowBtn="{{true}}" />
+    <text class="title">{{titleHeader}}</text>
     <view class="job-info-content w-full">
       <view class="input-section">
         <options-selector isRequired="{{true}}" list="{{listJobType}}" title="{{titleJobType}}" label="{{labelJobType}}"

@@ -6,7 +6,7 @@
   );
 }
 
-.login .input-section{
+.login .input-section {
   padding-top: 10px;
 }
 
@@ -15,7 +15,10 @@
 }
 
 .login-header {
-  padding-top: 4.5vh;
+  position: fixed;
+  top: 0;
+  left: 10px;
+  padding-top: 95rpx;
 }
 
 .login-header image {
@@ -24,8 +27,13 @@
   margin-right: 10px;
 }
 
+.login-title {
+  margin-bottom: 0;
+}
+
 .login-img {
   height: 200px;
+  margin-top: 80px;
 }
 
 .modal {
@@ -54,4 +62,8 @@
   width: 24px;
   height: 24px;
   margin-right: 10px;
+}
+
+.login .tu-bottom-sheet-footer button {
+  display: none;
 }
