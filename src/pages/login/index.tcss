@@ -18,7 +18,8 @@
   position: fixed;
   top: 0;
   left: 10px;
-  padding-top: 95rpx;
+  padding-top: 85rpx;
+  background-color: #7209b7;
 }
 
 .login-header image {
