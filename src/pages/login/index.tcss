@@ -20,6 +20,7 @@
   left: 10px;
   padding-top: 85rpx;
   background-color: #7209b7;
+  z-index: 1;
 }
 
 .login-header image {

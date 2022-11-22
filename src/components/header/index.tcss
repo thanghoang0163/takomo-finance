@@ -6,6 +6,7 @@
   background-color: var(--primary-color);
   padding-top: 6vh;
   padding-bottom: 10px;
+  z-index: 1;
 }
 
 .header-btn {
