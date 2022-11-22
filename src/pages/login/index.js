@@ -68,18 +68,18 @@ Page({
   },
 
   onLogin() {
-    // this.data.modal = {
-    //   ...this.data.modal,
-    //   isShowModal: true,
-    //   desc: [
-    //     "Để đăng nhập quản trị tài khoản hoặc vay thêm. quý khách vui lòng truy cập ứng dụng di động hoặc website takomo.vn để tiếp tục",
-    //   ],
-    //   header: ["Tài khoản đã tồn tại"],
-    //   btnTextModal: "Đã hiểu",
-    // };
-    // this.setData({
-    //   modal: this.data.modal,
-    // });
+    this.data.modal = {
+      ...this.data.modal,
+      isShowModal: true,
+      desc: [
+        "Để đăng nhập quản trị tài khoản hoặc vay thêm. quý khách vui lòng truy cập ứng dụng di động hoặc website takomo.vn để tiếp tục",
+      ],
+      header: ["Tài khoản đã tồn tại"],
+      btnTextModal: "Đã hiểu",
+    };
+    this.setData({
+      modal: this.data.modal,
+    });
 
     const { input } = this.data;
     const itemInput = input.slice(0, 1);
