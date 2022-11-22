@@ -14,3 +14,18 @@
 .bottom-sheet .tu-bottom-sheet-footer {
   display: none;
 }
+
+/* .tu-bottom-sheet-header-title,
+.bottom-sheet-content {
+  background-color: #7209b7;
+}
+
+.tu-bottom-sheet-header .tu-bottom-sheet-header-close-button,
+.tu-bottom-sheet-header .tu-bottom-sheet-header-title,
+.bottom-sheet-content,
+.bottom-sheet-title,
+.bottom-sheet-text,
+.questions-hotline,
+.questions-email {
+  color: #fff;
+} */

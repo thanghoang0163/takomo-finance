@@ -14,7 +14,7 @@
 </template>
 <template name="about-us">
   <bottom-sheet show="{{isShow}}" title="Giới thiệu về chúng tôi" onClose="_onClose">
-    <view class="bottom-sheet-content"><text style="color: #7209B7; margin-right: 5px;">Takomo</text> cung cấp sản phẩm tài chính đa dạng, giúp khách hàng dễ dàng tiếp cận các công ty hoặc tổ chức
+    <view class="bottom-sheet-content"><text style="color: #F82486; margin-right: 5px;">Takomo</text> cung cấp sản phẩm tài chính đa dạng, giúp khách hàng dễ dàng tiếp cận các công ty hoặc tổ chức
       cho vay uy tín, thông qua công nghệ đăng ký và đánh giá khả năng tín dụng hiện đại. Giúp khách hàng hoàn tất mọi
       thủ tục và nhận được kết quả nhanh chóng, dễ dàng hơn bao giờ hết.</view>
   </bottom-sheet>
