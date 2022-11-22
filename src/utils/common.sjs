@@ -36,11 +36,7 @@ export const checkWhiteSpace = (text) => {
 };
 
 export const isValidStreet = (street) => {
-  if (street[0] === "") {
-    return false;
-  } else {
-    return true;
-  }
+  return street[0] === "" ? false : true;
 };
 
 export const isNumber = (number) => {
