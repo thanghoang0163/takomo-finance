@@ -43,20 +43,6 @@ Page({
     errorTextPhoneColleague: "",
     inputPhoneColleague: "",
     isErrorPhoneColleague: false,
-    labelNamePlusContact: "Họ và tên:",
-    placeHolderNamePlusContact: "Nhập họ và tên",
-    typeNamePlusContact: "text",
-    maxLengthNamePlusContact: 100,
-    errorTextNamePlusContact: "",
-    inputNamePlusContact: "",
-    isErrorNamePlusContact: false,
-    labelPhonePlusContact: "Số điện thoại:",
-    placeHolderPhonePlusContact: "Nhập số điện thoại",
-    typePhonePlusContact: "number",
-    maxLengthPhonePlusContact: 10,
-    errorTextPhonePlusContact: "",
-    inputPhonePlusContact: "",
-    isErrorPhonePlusContact: false,
     btnText: "Tiếp tục bước 5/7",
   },
 
@@ -143,28 +129,6 @@ Page({
     }
   },
 
-  onInputNamePlusContact(value) {
-    this.setData({
-      inputNamePlusContact: value,
-    });
-    if (this.data.isErrorNamePlusContact) {
-      this.setData({
-        isErrorNamePlusContact: false,
-      });
-    }
-  },
-
-  onInputPhonePlusContact(value) {
-    this.setData({
-      inputPhonePlusContact: value,
-    });
-    if (this.data.isErrorPhonePlusContact) {
-      this.setData({
-        isErrorPhonePlusContact: false,
-      });
-    }
-  },
-
   onSelectRelationship(value) {
     this.setData({
       selectedRelationship: value,
@@ -182,14 +146,11 @@ Page({
       inputPhoneRelative,
       inputNameColleague,
       inputPhoneColleague,
-      inputNamePlusContact,
-      inputPhonePlusContact,
       selectedRelationship,
     } = this.data;
 
     const nameRelativeArray = inputNameRelative.split(" ");
     const nameColleagueArray = inputNameColleague.split(" ");
-    const namePlusContactArray = inputNamePlusContact.split(" ");
     if (inputNameRelative.length === 0) {
       this.setData({
         isErrorNameRelative: true,
@@ -238,34 +199,6 @@ Page({
         this.setData({
           isErrorNameColleague: true,
           errorTextNameColleague: "Định dạng họ và tên không đúng!",
-        });
-      }
-    }
-
-    if (inputNamePlusContact !== "") {
-      if (inputNamePlusContact.length === 0) {
-        this.setData({
-          isErrorNamePlusContact: true,
-          errorTextNamePlusContact: "Vui lòng nhập họ và tên người bổ sung!",
-        });
-      } else if (
-        namePlusContactArray.length < 2 ||
-        !checkWhiteSpace(namePlusContactArray)
-      ) {
-        this.setData({
-          isErrorNamePlusContact: true,
-          errorTextNamePlusContact: "Định dạng họ và tên không đúng!",
-        });
-      }
-    } else {
-      if (
-        namePlusContactArray.includes(" ") ||
-        isValidName(inputNamePlusContact) ||
-        hasSpecialCharater(inputNamePlusContact)
-      ) {
-        this.setData({
-          isErrorNamePlusContact: true,
-          errorTextNamePlusContact: "Định dạng họ và tên không đúng!",
         });
       }
     }
@@ -320,34 +253,6 @@ Page({
       });
     }
 
-    if (inputPhonePlusContact !== "") {
-      if (inputPhonePlusContact.length === 0) {
-        this.setData({
-          isErrorPhonePlusContact: true,
-          errorTextPhonePlusContact:
-            "Vui lòng nhập số điện thoại của người bổ sung!",
-        });
-      } else if (
-        (this.itemInput(inputPhonePlusContact) !== "0" &&
-          inputPhonePlusContact.length !== 0) ||
-        !isValidPhoneNumber(this.formatNumberinput(inputPhonePlusContact)) ||
-        !isNumber(inputPhonePlusContact)
-      ) {
-        this.setData({
-          isErrorPhonePlusContact: true,
-          errorTextPhonePlusContact: "Định dạng số điện thoại không đúng!",
-        });
-      } else if (
-        inputPhonePlusContact.length < 10 &&
-        inputPhonePlusContact.length > 0
-      ) {
-        this.setData({
-          isErrorPhonePlusContact: true,
-          errorTextPhonePlusContact: "Số điện thoại nhập không đủ!",
-        });
-      }
-    }
-
     if (selectedRelationship === "") {
       this.setData({
         isErrorRelationship: true,
@@ -357,10 +262,8 @@ Page({
 
     if (
       !this.data.isErrorNameColleague &&
-      !this.data.isErrorNamePlusContact &&
       !this.data.isErrorNameRelative &&
       !this.data.isErrorPhoneColleague &&
-      !this.data.isErrorPhonePlusContact &&
       !this.data.isErrorPhoneRelative &&
       !this.data.isErrorRelationship &&
       inputNameRelative !== "" &&
@@ -376,8 +279,6 @@ Page({
           phoneRelative: inputPhoneRelative,
           nameColleague: inputNameColleague,
           phoneColleague: inputPhoneColleague,
-          namePlusContact: inputNamePlusContact,
-          phonePlusContact: inputPhonePlusContact,
           relationship: selectedRelationship,
         },
       });

@@ -31,18 +31,6 @@
             onInput="onInputPhoneColleague" />
         </view>
       </view>
-      <!-- <view class="plus-contact-info">
-        <view class="input-section">
-          <view class="plus-contact-info-label acquaintance-info-label">Người liên hệ bổ sung <view>Không bắt buộc</view></view>
-          <input-item label="{{labelNamePlusContact}}" type="{{typeNamePlusContact}}"
-            placeHolder="{{placeHolderNamePlusContact}}" maxlength="{{maxLengthNamePlusContact}}"
-            isError="{{isErrorNamePlusContact}}" errorText="{{errorTextNamePlusContact}}" onInput="onInputNamePlusContact" />
-          <input-item label="{{labelPhonePlusContact}}" type="{{typePhonePlusContact}}"
-            placeHolder="{{placeHolderPhonePlusContact}}" maxlength="{{maxLengthPhonePlusContact}}"
-            isError="{{isErrorPhonePlusContact}}" errorText="{{errorTextPhonePlusContact}}"
-            onInput="onInputPhonePlusContact" />
-        </view>
-      </view> -->
     </view>
   </view>
   <btn-footer onTap="onContinue" btnText="{{btnText}}" />
