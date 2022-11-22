@@ -1,3 +1,21 @@
-.tu-modal .tu-modal-content {
-  margin-bottom: 0;
+.tu-modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-btn {
+  width: 70vw;
+  background-color: var(--second-color);
+  border-radius: 4px;
+  border: none;
+  margin: 0 10px;
+}
+
+.modal-btn:hover {
+  background-color: var(--second-color);
+}
+
+.modal-text {
+  text-align: justify;
 }

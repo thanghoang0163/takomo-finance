@@ -19,8 +19,10 @@ Page({
     type: "number",
     maxlength: 10,
     modal: {
-      isShow: false,
-      text: [],
+      isShowModal: false,
+      desc: [],
+      header: [],
+      btnTextModal: "",
     },
   },
 
@@ -55,11 +57,25 @@ Page({
     });
   },
 
+  onCloseModal() {
+    this.data.modal = {
+      ...this.data.modal,
+      isShowModal: false,
+    };
+    this.setData({
+      modal: this.data.modal,
+    });
+  },
+
   onLogin() {
     // this.data.modal = {
     //   ...this.data.modal,
-    //   isShow: true,
-    //    text:["ĐỂ ĐĂNG NHẬP QUẢN TRỊ TÀI KHOẢN HOẶC VAY THÊM. QUÝ KHÁCH VUI LÒNG TRUY CẬP <text style='background:#7209B7'>ỨNG DỤNG DI ĐỘNG<text> HOẶC <text style='background:#7209B7'>WEBSITE<text> CỦA <text style='background:#7209B7'>TAKOMO.VN<text> ĐỂ TIẾP TỤC",]
+    //   isShowModal: true,
+    //   desc: [
+    //     "Để đăng nhập quản trị tài khoản hoặc vay thêm. quý khách vui lòng truy cập ứng dụng di động hoặc website takomo.vn để tiếp tục",
+    //   ],
+    //   header: ["Tài khoản đã tồn tại"],
+    //   btnTextModal: "Đã hiểu",
     // };
     // this.setData({
     //   modal: this.data.modal,

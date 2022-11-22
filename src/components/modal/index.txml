@@ -1,6 +1,10 @@
-<modal className="{{className}}" show="{{isShow}}" mask="{{true}}" showClose onModalClose="_onHide">
+<modal className="{{className}}" show="{{isShow}}" mask="{{true}}">
+  <view slot="header">{{header}}</view>
   <view slot="description">
     <!-- <rich-text nodes="{{text}}" /> -->
-    <text tiki:for="{{text}}" tiki:key="*this">{{item}}</text>
+    <text class="modal-text" tiki:for="{{desc}}" tiki:key="*this">{{item}}</text>
+  </view>
+  <view slot="footer">
+    <button class="modal-btn" onTap="_onCloseModal">{{btnText}}</button>
   </view>
 </modal>

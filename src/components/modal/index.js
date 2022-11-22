@@ -1,12 +1,14 @@
 Component({
   props: {
     isShow: false,
-    text: [],
-    onHide: () => {},
+    desc: [],
+    header: [],
+    btnText: "",
+    onCloseModal: () => {},
   },
   methods: {
-    _onHide() {
-      this.props.onHide();
+    _onCloseModal() {
+      this.props.onCloseModal();
     },
   },
 });
