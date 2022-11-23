@@ -18,7 +18,7 @@
     </block>
   </view>
   <bottom-sheet show="{{isShow}}" title="Ngân hàng" onClose="_onClose">
-    <search-bar className="search-bar" placeholder="Tìm kiếm ngân hàng" onInput="_onSearch" />
+    <search-bar className="search-bar" placeholder="Tìm kiếm ngân hàng" value="{{valueSearch}}" focus onInput="_onSearch" />
     <block tiki:if="{{!isEmpty}}">
       <view class="bank-item flex items-center" tiki:for="{{list}}" tiki:key="{{item.id}}" data-name="{{item.name}}"
         onTap="_onSelectBank">

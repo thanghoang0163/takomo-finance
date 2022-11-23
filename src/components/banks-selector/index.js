@@ -11,7 +11,7 @@ Component({
     isEmpty: false,
     errorText: "",
     value: "",
-    bankList: [],
+    valueSearch: "",
     onInput: () => {},
     onSearch: () => {},
     onSelectBank: () => {},

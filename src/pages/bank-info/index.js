@@ -34,6 +34,7 @@ Page({
     isShow: false,
     isEmpty: false,
     listBank: [],
+    valueSearch: "",
     btnText: "Tiếp tục bước 6/7",
   },
 
@@ -104,14 +105,10 @@ Page({
     }
   },
 
-  onSearchBank(e) {
-    const value = e.toLowerCase();
-
+  onSearchBank(value) {
     let filterBank = this.data.listBank.filter(
-      (bank) => bank.name.toLowerCase().indexOf(value) > -1
+      (bank) => bank.name.toLowerCase().indexOf(value.toLowerCase()) > -1
     );
-
-    console.log(filterBank);
 
     if (value === "") {
       this.setData({
