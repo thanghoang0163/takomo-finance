@@ -17,8 +17,9 @@
 .login-header {
   position: fixed;
   top: 0;
-  left: 10px;
+  left: 0;
   padding-top: 85rpx;
+  padding-left: 10px;
   background-color: #7209b7;
   z-index: 1;
 }
