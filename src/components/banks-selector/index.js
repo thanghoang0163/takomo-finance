@@ -8,6 +8,7 @@ Component({
     isRequired: true,
     isBank: true,
     isShow: false,
+    isEmpty: false,
     errorText: "",
     value: "",
     bankList: [],
@@ -16,14 +17,14 @@ Component({
     onSelectBank: () => {},
     onOpenBottomSheet: () => {},
   },
-  data: {
-  },
+  data: {},
   methods: {
     _onInput() {
       this.props.onInput();
     },
-    _onSearch() {
-      this.props.onSearch();
+    _onSearch(e) {
+      const value = e.detail.value;
+      this.props.onSearch(value);
     },
     _onOpenBottomSheet() {
       this.props.onOpenBottomSheet();

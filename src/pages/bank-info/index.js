@@ -1,4 +1,5 @@
 import { isValidPhoneNumber, isNumber } from "../../utils/common.sjs";
+import { listBank } from "./list.sjs";
 
 Page({
   data: {
@@ -31,6 +32,8 @@ Page({
     isErrorPhoneMomo: false,
     isBank: true,
     isShow: false,
+    isEmpty: false,
+    listBank: [],
     btnText: "Tiếp tục bước 6/7",
   },
 
@@ -101,7 +104,32 @@ Page({
     }
   },
 
-  onSearchBank() {},
+  onSearchBank(e) {
+    const value = e.toLowerCase();
+
+    let filterBank = this.data.listBank.filter(
+      (bank) => bank.name.toLowerCase().indexOf(value) > -1
+    );
+
+    console.log(filterBank);
+
+    if (value === "") {
+      this.setData({
+        listBank: listBank,
+      });
+    } else {
+      if (filterBank.length !== 0) {
+        this.setData({
+          listBank: filterBank,
+          isEmpty: false,
+        });
+      } else {
+        this.setData({
+          isEmpty: true,
+        });
+      }
+    }
+  },
 
   onOpenBottomSheet() {
     this.setData({
@@ -214,5 +242,8 @@ Page({
 
   onLoad() {
     my.hideBackHome({ hide: true });
+    this.setData({
+      listBank: listBank,
+    });
   },
 });

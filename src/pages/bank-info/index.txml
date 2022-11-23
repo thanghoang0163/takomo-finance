@@ -1,4 +1,4 @@
-<import-sjs name="{tabsList, listLoanPurpose, listBank}" from="./list.sjs" />
+<import-sjs name="{tabsList, listLoanPurpose}" from="./list.sjs" />
 
 <view class="bank-info container">
   <view class="bank-info-container content w-full mt">
@@ -21,7 +21,7 @@
             list="{{listBank}}" onInput="onInputBank" onSearch="onSearchBank" onTapBank="onTapBank"
             onTapMomo="onTapMomo" onTapMomo="onTapMomo" onSelectBank="onSelectBank"
             onOpenBottomSheet="onOpenBottomSheet" onClose="onCloseBottomSheet" isBank="{{isBank}}"
-            isShow="{{isShow}}" />
+            isShow="{{isShow}}" isEmpty="{{isEmpty}}" />
           <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelBankAcc}}" type="{{typeBankAcc}}"
             placeHolder="{{placeHolderBankAcc}}" maxlength="{{maxLengthBankAcc}}" isError="{{isErrorBankAcc}}"
             errorText="{{errorTextBankAcc}}" onInput="onInputBankAcc" />
