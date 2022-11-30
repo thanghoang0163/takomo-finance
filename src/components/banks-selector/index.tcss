@@ -41,10 +41,14 @@
   z-index: 1;
 }
 
-.bank-non-item{
-  height: 70vh;
+.bank-non-item {
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--text-color);
+}
+
+.tu-bottom-sheet-wrapper {
+  height: 80vh;
 }

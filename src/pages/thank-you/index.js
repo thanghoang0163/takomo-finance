@@ -7,7 +7,7 @@ Page({
     my.navigateTo({ url: "pages/login/index" });
   },
 
-  onLoad() {
+  onShow() {
     my.hideBackHome({ hide: true });
   },
 });

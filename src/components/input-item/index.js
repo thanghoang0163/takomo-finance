@@ -12,11 +12,16 @@ Component({
     isPassword: false,
     isFocus: false,
     onInput: () => {},
+    onConfirm: () => {},
   },
   methods: {
     _onInput(e) {
       var value = e.detail.value;
       this.props.onInput(value);
+    },
+
+    _onConfirm() {
+      this.props.onConfirm();
     },
   },
 });

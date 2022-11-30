@@ -6,12 +6,12 @@ Component({
     errorText: "",
     isRequired: false,
     isError: false,
-    value:"",
-    onTapIcon: () => {},
+    value: "",
+    _onTap: () => {},
   },
   methods: {
-    onTapIcon() {
-      this.props.onTapIcon();
+    _onTap() {
+      this.props.onTap();
     },
   },
 });

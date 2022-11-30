@@ -1,5 +1,9 @@
 App({
-  onLoad() {},
+  onLoad() {
+    my.setCanPullDown({
+      canPullDown: false,
+    });
+  },
 
   onLaunch(options) {
     console.log("App onLaunch");

@@ -5,7 +5,13 @@
       <text class="asterisk">*</text>
     </block>
   </view>
-  <textfield placeholder="{{placeHolder}}" trailingIcon="calendar" iconColor="#000" value="{{value}}" onTapTrailingIcon="onTapIcon" />
+  <input class="input" type="text" placeholder="{{placeHolder}}" maxlength="{{100}}" value="{{value}}"
+    onInput="_onInput" />
+  <button class="birthday-selector-btn absolute flex justify-end items-center" onTap="_onTap">
+    <view class="flex items-center justify-center">
+      <icon type="calendar" size="{{22}}" color="#808089" />
+    </view>
+  </button> 
   <block tiki:if="{{isError}}">
     <text class="error-message">{{errorText}}</text>
   </block>

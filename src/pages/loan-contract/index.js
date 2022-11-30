@@ -28,7 +28,7 @@ Page({
     my.navigateTo({ url: "pages/thank-you/index" });
   },
 
-  onLoad() {
+  onShow() {
     my.hideBackHome({ hide: true });
   },
 });

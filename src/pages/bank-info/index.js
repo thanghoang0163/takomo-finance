@@ -237,7 +237,7 @@ Page({
     }
   },
 
-  onLoad() {
+  onShow() {
     my.hideBackHome({ hide: true });
     this.setData({
       listBank: listBank,

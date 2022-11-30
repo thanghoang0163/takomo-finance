@@ -286,7 +286,7 @@ Page({
     }
   },
 
-  onLoad() {
+  onShow() {
     my.hideBackHome({ hide: true });
   },
 });

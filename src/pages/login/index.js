@@ -151,7 +151,7 @@ Page({
     // console.log(this.data.htmlNodes);
   },
 
-  onReady() {
+  onShow() {
     my.hideBackHome({
       hide: true,
     });
