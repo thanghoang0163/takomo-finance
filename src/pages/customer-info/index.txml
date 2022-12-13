@@ -6,10 +6,10 @@
     <text class="title">{{titleHeader}}</text>
     <view class="customer-info-content">
       <view class="input-section">
-        <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelName}}" type="{{typeName}}"
+        <input-item isRequired="{{true}}" isFocus="{{isFocusName}}" label="{{labelName}}" type="{{typeName}}"
           placeHolder="{{placeHolderName}}" maxlength="{{maxLengthName}}" isError="{{isErrorName}}"
-          errorText="{{errorTextName}}" onInput="onInputName" />
-        <input-item isRequired="{{true}}" label="{{labelIdCard}}" type="{{typeIdCard}}"
+          errorText="{{errorTextName}}" onInput="onInputName" onConfirm="onConfirmName" />
+        <input-item isRequired="{{true}}" isFocus="{{isFocusIdCard}}" label="{{labelIdCard}}" type="{{typeIdCard}}"
           placeHolder="{{placeHolderIdCard}}" maxlength="{{maxLengthIdCard}}" isError="{{isErrorIdCard}}"
           errorText="{{errorTextIdCard}}" onInput="onInputIdCard" />
         <birthday-input isRequired="{{true}}" placeHolder="{{placeHolderBirthDay}}" label="{{labelBirthDay}}"

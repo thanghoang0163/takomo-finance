@@ -25,14 +25,23 @@ Page({
     isErrorEmail: false,
     isErrorPassword: false,
     isErrorPasswordAgain: false,
+    isFocusPassword: true,
+    isFocusPasswordAgain: false,
+    isFocusEmail: false,
   },
 
-  handleIsError() {
-    if (this.data.isError) {
-      this.setData({
-        isError: false,
-      });
-    }
+  onConfirmPassword() {
+    this.setData({
+      isFocusPassword: false,
+      isFocusPasswordAgain: true,
+    });
+  },
+
+  onConfirmPasswordAgain() {
+    this.setData({
+      isFocusPasswordAgain: false,
+      isFocusEmail: true,
+    });
   },
 
   onInputPassword(value) {
@@ -69,11 +78,7 @@ Page({
   },
 
   onRegister() {
-    const {
-      inputPassword,
-      inputPasswordAgain,
-      inputEmail,
-    } = this.data;
+    const { inputPassword, inputPasswordAgain, inputEmail } = this.data;
     const inputPasswordLength = inputPassword.length;
     const inputPasswordAgainLength = inputPasswordAgain.length;
     const inputEmailLength = inputEmail.length;

@@ -35,7 +35,7 @@
 }
 
 .login-img {
-  height: 200px;
+  height: 30vh;
   margin-top: 80px;
 }
 

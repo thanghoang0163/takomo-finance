@@ -43,7 +43,30 @@ Page({
     errorTextPhoneColleague: "",
     inputPhoneColleague: "",
     isErrorPhoneColleague: false,
+    isFocusNameRelative: true,
+    isFocusPhoneRelative: false,
+    isFocusNameColleague: false,
+    isFocusPhoneColleague: false,
     btnText: "Tiếp tục bước 5/7",
+  },
+
+  onConfirmNameRelative() {
+    this.setData({
+      isFocusNameRelative: false,
+      isFocusPhoneRelative: true,
+    });
+  },
+  onConfirmPhoneRelative() {
+    this.setData({
+      isFocusPhoneRelative: false,
+      isFocusNameColleague: true,
+    });
+  },
+  onConfirmNameColleague() {
+    this.setData({
+      isFocusNameColleague: false,
+      isFocusPhoneColleague: true,
+    });
   },
 
   itemInput(input) {

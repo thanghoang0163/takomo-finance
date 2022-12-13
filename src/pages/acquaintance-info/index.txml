@@ -8,27 +8,30 @@
       <view class="acquaintance-info">
         <view class="input-section">
           <view class="relative-info-label acquaintance-info-label">Thông tin người thân</view>
-          <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelNameRelative}}" type="{{typeNameRelative}}"
-            placeHolder="{{placeHolderNameRelative}}" maxlength="{{maxLengthNameRelative}}"
-            isError="{{isErrorNameRelative}}" errorText="{{errorTextNameRelative}}" onInput="onInputNameRelative" />
+          <input-item isRequired="{{true}}" isFocus="{{isFocusNameRelative}}" label="{{labelNameRelative}}"
+            type="{{typeNameRelative}}" placeHolder="{{placeHolderNameRelative}}" maxlength="{{maxLengthNameRelative}}"
+            isError="{{isErrorNameRelative}}" errorText="{{errorTextNameRelative}}" onInput="onInputNameRelative"
+            onConfirm="onConfirmNameRelative" />
           <options-selector isRequired="{{true}}" list="{{listRelationship}}" title="{{titleRelationship}}"
             label="{{labelRelationship}}" placeHolder="{{placeHolderRelationship}}" isError="{{isErrorRelationship}}"
             errorText="{{errorTextRelationship}}" value="{{selectedRelationship}}" onSelect="onSelectRelationship" />
-          <input-item isRequired="{{true}}" label="{{labelPhoneRelative}}" type="{{typePhoneRelative}}"
-            placeHolder="{{placeHolderPhoneRelative}}" maxlength="{{maxLengthPhoneRelative}}"
-            isError="{{isErrorPhoneRelative}}" errorText="{{errorTextPhoneRelative}}" onInput="onInputPhoneRelative" />
+          <input-item isRequired="{{true}}" isFocus="{{isFocusPhoneRelative}}" label="{{labelPhoneRelative}}"
+            type="{{typePhoneRelative}}" placeHolder="{{placeHolderPhoneRelative}}"
+            maxlength="{{maxLengthPhoneRelative}}" isError="{{isErrorPhoneRelative}}"
+            errorText="{{errorTextPhoneRelative}}" onInput="onInputPhoneRelative" onConfirm="onConfirmPhoneRelative" />
         </view>
       </view>
       <view class="colleague-info">
         <view class="input-section">
           <view class="colleague-info-label acquaintance-info-label">Thông tin đồng nghiệp</view>
-          <input-item isRequired="{{true}}" label="{{labelNameColleague}}" type="{{typeNameColleague}}"
-            placeHolder="{{placeHolderNameColleague}}" maxlength="{{maxLengthNameColleague}}"
-            isError="{{isErrorNameColleague}}" errorText="{{errorTextNameColleague}}" onInput="onInputNameColleague" />
-          <input-item isRequired="{{true}}" label="{{labelPhoneColleague}}" type="{{typePhoneColleague}}"
-            placeHolder="{{placeHolderPhoneColleague}}" maxlength="{{maxLengthPhoneColleague}}"
-            isError="{{isErrorPhoneColleague}}" errorText="{{errorTextPhoneColleague}}"
-            onInput="onInputPhoneColleague" />
+          <input-item isRequired="{{true}}" isFocus="{{isFocusNameColleague}}" label="{{labelNameColleague}}"
+            type="{{typeNameColleague}}" placeHolder="{{placeHolderNameColleague}}"
+            maxlength="{{maxLengthNameColleague}}" isError="{{isErrorNameColleague}}"
+            errorText="{{errorTextNameColleague}}" onInput="onInputNameColleague" onConfirm="onConfirmNameColleague" />
+          <input-item isRequired="{{true}}" isFocus="{{isFocusPhoneColleague}}" label="{{labelPhoneColleague}}"
+            type="{{typePhoneColleague}}" placeHolder="{{placeHolderPhoneColleague}}"
+            maxlength="{{maxLengthPhoneColleague}}" isError="{{isErrorPhoneColleague}}"
+            errorText="{{errorTextPhoneColleague}}" onInput="onInputPhoneColleague" />
         </view>
       </view>
     </view>

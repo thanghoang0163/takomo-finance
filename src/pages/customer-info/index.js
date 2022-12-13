@@ -37,10 +37,19 @@ Page({
     btnText: "Tiếp tục bước 2/7",
     errorTextGender: "",
     isErrorGender: false,
+    isFocusName: true,
+    isFocusIdCard: false,
     items: [
       { name: "male", value: "Nam", checked: false },
       { name: "female", value: "Nữ", checked: false },
     ],
+  },
+
+  onConfirmName() {
+    this.setData({
+      isFocusName: false,
+      isFocusIdCard: true,
+    });
   },
 
   onInputName(value) {
