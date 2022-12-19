@@ -184,8 +184,4 @@ Page({
       my.navigateTo({ url: "pages/job-info/index" });
     }
   },
-
-  onShow() {
-    my.hideBackHome({ hide: true });
-  },
 });
