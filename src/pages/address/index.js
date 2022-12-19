@@ -2,7 +2,6 @@ import { isValidStreet, hasSpecialCharater } from "../../utils/common.sjs";
 
 Page({
   data: {
-    titleHeader: "Thông tin địa chỉ",
     streetPlaceholder: "Nhập địa chỉ",
     cityPlaceLabel: "Tỉnh / Thành phố:",
     cityPlaceholder: "Chọn tỉnh / Thành phố",

@@ -1,9 +1,7 @@
 <import-sjs name="{listMaritalStatus}" from="./list.sjs" />
 
 <view class="customer-info container">
-  <view class="customer-info-container content w-full mt">
-    <header isShowBtn="{{true}}" />
-    <text class="title">{{titleHeader}}</text>
+  <view class="customer-info-container content w-full">
     <view class="customer-info-content">
       <view class="input-section">
         <input-item isRequired="{{true}}" isFocus="{{isFocusName}}" label="{{labelName}}" type="{{typeName}}"

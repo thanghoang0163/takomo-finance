@@ -2,9 +2,7 @@
 
 <view class="acquaintance-info container">
   <view class="acquaintance-info-container content w-full">
-    <header isShowBtn="{{true}}" />
-    <view class="acquaintance-info-content w-full mb-x-small mt">
-      <text class="title">{{titleHeader}}</text>
+    <view class="acquaintance-info-content w-full mb-x-small">
       <view class="acquaintance-info">
         <view class="input-section">
           <view class="relative-info-label acquaintance-info-label">Thông tin người thân</view>

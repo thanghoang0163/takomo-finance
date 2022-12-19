@@ -1,6 +1,5 @@
 Page({
   data: {
-    titleHeader: "Ký hợp đồng vay",
     loanTime: 7,
     approvedMoney: 500000,
     paidMoney: 570000,
@@ -26,9 +25,5 @@ Page({
 
   onConfirm() {
     my.navigateTo({ url: "pages/thank-you/index" });
-  },
-
-  onShow() {
-    my.hideBackHome({ hide: true });
   },
 });

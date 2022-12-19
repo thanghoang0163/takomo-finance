@@ -1,7 +1,5 @@
 <view class="photo container">
-  <view class="photo-container content w-full mt">
-    <header isShowBtn="{{true}}" />
-    <text class="title">{{titleHeader}}</text>
+  <view class="photo-container content w-full">
     <view class="photo-content w-full">
       <comparison-image label="{{list[0].label}}" imgUrl="{{filePathsFace ? filePathsFace : list[0].img}}"
         onTap="onChooseFace" isError="{{isErrorFace}}" errorText="{{errorTextFace}}" />

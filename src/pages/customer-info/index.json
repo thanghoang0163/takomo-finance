@@ -1,7 +1,7 @@
 {
-  "transparentTitle": "always",
+  "defaultTitle":"Thông tin khách hàng",
+  "titleBarColor": "#7209b7",
   "usingComponents": {
-    "header": "components/header/index",
     "input-item": "components/input-item/index",
     "options-selector": "components/options-selector/index",
     "birthday-input": "components/birthday-input/index",

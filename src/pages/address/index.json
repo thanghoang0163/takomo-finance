@@ -1,7 +1,7 @@
 {
-  "transparentTitle": "always",
+  "defaultTitle":"Thông tin địa chỉ",
+  "titleBarColor": "#7209b7",
   "usingComponents": {
-    "header": "components/header/index",
     "input-item": "components/input-item/index",
     "options-selector": "components/options-selector/index",
     "btn-footer": "components/btn-footer/index",

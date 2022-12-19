@@ -7,7 +7,6 @@ import {
 
 Page({
   data: {
-    titleHeader: "Thông tin khách hàng",
     labelName: "Họ và tên:",
     placeHolderName: "Nhập họ và tên",
     typeName: "text",
@@ -217,9 +216,5 @@ Page({
       });
       my.navigateTo({ url: "pages/address/index" });
     }
-  },
-
-  onShow() {
-    my.hideBackHome({ hide: true });
   },
 });

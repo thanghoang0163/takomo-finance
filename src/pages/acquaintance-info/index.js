@@ -8,7 +8,6 @@ import {
 
 Page({
   data: {
-    titleHeader: "Thông tin người liên hệ",
     labelNameRelative: "Họ và tên:",
     placeHolderNameRelative: "Nhập họ và tên",
     typeNameRelative: "text",
@@ -307,9 +306,5 @@ Page({
       });
       my.navigateTo({ url: "pages/bank-info/index" });
     }
-  },
-
-  onShow() {
-    my.hideBackHome({ hide: true });
   },
 });

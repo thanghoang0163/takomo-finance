@@ -2,7 +2,6 @@ import { checkWhiteSpace, hasSpecialCharater } from "../../utils/common.sjs";
 
 Page({
   data: {
-    titleHeader: "Thông tin công việc",
     labelJobType: "Hình thức công việc:",
     placeHolderJobType: "Hình thức công việc",
     titleJobType: "Hình thức công việc",
@@ -250,9 +249,5 @@ Page({
       });
       my.navigateTo({ url: "pages/acquaintance-info/index" });
     }
-  },
-
-  onShow() {
-    my.hideBackHome({ hide: true });
   },
 });

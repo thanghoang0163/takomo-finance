@@ -3,7 +3,6 @@ import { listBank } from "./list.sjs";
 
 Page({
   data: {
-    titleHeader: "Tài khoản nhận tiền",
     activeTab: 0,
     errorTextBank: "",
     selectedBank: "",
@@ -238,7 +237,6 @@ Page({
   },
 
   onShow() {
-    my.hideBackHome({ hide: true });
     this.setData({
       listBank: listBank,
     });

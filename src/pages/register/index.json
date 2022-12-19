@@ -1,7 +1,7 @@
 {
-  "transparentTitle": "always",
+  "defaultTitle":"Tạo tài khoản Takomo",
+  "titleBarColor": "#7209b7",
   "usingComponents": {
-    "header": "components/header/index",
     "input-item": "components/input-item/index",
     "modal": "components/modal/index",
     "btn-footer": "components/btn-footer/index"

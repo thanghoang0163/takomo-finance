@@ -1,7 +1,7 @@
 {
-  "transparentTitle": "always",
+  "defaultTitle":"Chụp ảnh đối chiếu",
+  "titleBarColor": "#7209b7",
   "usingComponents": {
-    "header": "components/header/index",
     "btn-footer": "components/btn-footer/index",
     "comparison-image": "components/comparison-image/index",
     "button": "@tiki.vn/tini-ui/es/tu-button/index"

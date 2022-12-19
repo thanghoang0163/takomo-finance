@@ -1,7 +1,7 @@
 {
-  "transparentTitle": "always",
+  "defaultTitle":"Tài khoản nhận tiền",
+  "titleBarColor": "#7209b7",
   "usingComponents": {
-    "header": "components/header/index",
     "input-item": "components/input-item/index",
     "options-selector": "components/options-selector/index",
     "banks-selector": "components/banks-selector/index",

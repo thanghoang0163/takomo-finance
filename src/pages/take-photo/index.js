@@ -1,6 +1,5 @@
 Page({
   data: {
-    titleHeader: "Chụp ảnh đối chiếu",
     filePathsFace: "",
     filePathsFrontIdCard: "",
     filePathsRearIdCard: "",
@@ -177,9 +176,5 @@ Page({
     ) {
       my.navigateTo({ url: "pages/loan-contract/index" });
     }
-  },
-
-  onShow() {
-    my.hideBackHome({ hide: true });
   },
 });

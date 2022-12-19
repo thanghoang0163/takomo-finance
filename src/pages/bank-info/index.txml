@@ -1,9 +1,7 @@
 <import-sjs name="{tabsList, listLoanPurpose}" from="./list.sjs" />
 
 <view class="bank-info container">
-  <view class="bank-info-container content w-full mt">
-    <header isShowBtn="{{true}}" />
-    <text class="title">{{titleHeader}}</text>
+  <view class="bank-info-container content w-full">
     <view class="bank-info-content">
       <view class="input-section">
         <view class="banks-selector-tabs flex justify-around">

@@ -1,7 +1,5 @@
 <view class="register container">
-  <view class="register-container content w-full mt">
-    <header />
-    <text class="title">{{titleHeader}}</text>
+  <view class="register-container content w-full">
     <view class="register-content">
       <view class="input-section">
         <input-item isRequired="{{true}}" isFocus="{{isFocusPassword}}" label="{{labelPassword}}"

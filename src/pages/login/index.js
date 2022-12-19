@@ -1,5 +1,6 @@
 import { decode } from "html-entities";
 import parse from "@tiki.vn/mini-html-parser2";
+import { registerApis } from "../../services/apis/index";
 import { isValidPhoneNumber, isNumber } from "../../utils/common.sjs";
 
 Page({
@@ -108,10 +109,11 @@ Page({
       my.setStorage({
         key: "login",
         data: {
-          phone: input,
+          phone: this.data.input,
         },
       });
-      my.navigateTo({ url: "pages/register/index" });
+      registerApis.register({ phone: this.data.input });
+      // my.navigateTo({ url: "pages/register/index" });
     }
   },
 

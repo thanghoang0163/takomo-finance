@@ -1,9 +1,7 @@
 <import-sjs name="{listResidence}" from="./list.sjs" />
 
 <view class="address container">
-  <view class="address-content content w-full mt">
-    <header isShowBtn="{{true}}" />
-    <text class="title">{{titleHeader}}</text>
+  <view class="address-content content w-full">
     <view class="input-section">
       <view class="address-title title">Chọn nhanh</view>
       <view class="select-address input">
