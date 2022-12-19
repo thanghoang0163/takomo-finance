@@ -98,10 +98,15 @@ Page({
         isErrorPhoneRelative: false,
       });
     }
+
     if (this.data.inputPhoneRelative === this.data.inputPhoneColleague) {
       this.setData({
         isErrorPhoneRelative: true,
         errorTextPhoneRelative: "Số điện thoại bị trùng với đồng nghiệp!",
+      });
+    } else {
+      this.setData({
+        isErrorPhoneColleague: false,
       });
     }
     if (
@@ -132,6 +137,7 @@ Page({
     if (this.data.isErrorPhoneColleague) {
       this.setData({
         isErrorPhoneColleague: false,
+        isErrorPhoneRelative: false,
       });
     }
 
@@ -139,6 +145,10 @@ Page({
       this.setData({
         isErrorPhoneColleague: true,
         errorTextPhoneColleague: "Số điện thoại bị trùng với người thân!",
+      });
+    }else {
+      this.setData({
+        isErrorPhoneRelative: false,
       });
     }
     if (
