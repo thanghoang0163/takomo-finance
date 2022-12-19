@@ -68,20 +68,7 @@ Page({
     });
   },
 
-  onLogin() {
-    // this.data.modal = {
-    //   ...this.data.modal,
-    //   isShowModal: true,
-    //   desc: [
-    //     "Để đăng nhập quản trị tài khoản hoặc vay thêm. quý khách vui lòng truy cập ứng dụng di động hoặc website takomo.vn để tiếp tục",
-    //   ],
-    //   header: ["Tài khoản đã tồn tại"],
-    //   btnTextModal: "Đã hiểu",
-    // };
-    // this.setData({
-    //   modal: this.data.modal,
-    // });
-
+  async onLogin() {
     const { input } = this.data;
     const itemInput = input.slice(0, 1);
     const formatNumberinput = input.slice(0, 2);
@@ -112,8 +99,30 @@ Page({
           phone: this.data.input,
         },
       });
-      registerApis.register({ phone: this.data.input });
-      // my.navigateTo({ url: "pages/register/index" });
+      const res = await registerApis.checkExistence({ phone: this.data.input });
+      if (res.success) {
+        this.data.modal = {
+          ...this.data.modal,
+          isShowModal: true,
+          desc: this.data.htmlNodes,
+          header: ["Tài khoản đã tồn tại"],
+          btnTextModal: "Đã hiểu",
+        };
+        this.setData({
+          modal: this.data.modal,
+        });
+      } else {
+        this.data.modal = {
+          ...this.data.modal,
+          isShowModal: true,
+          desc: this.data.htmlNodes,
+          header: ["Tài khoản đã tồn tại"],
+          btnTextModal: "Đã hiểu",
+        };
+        this.setData({
+          modal: this.data.modal,
+        });
+      }
     }
   },
 
@@ -128,29 +137,15 @@ Page({
   },
 
   onLoad() {
-    my.getStorage({
-      key: "isFirst",
-      success: (res) => {
+    const html = `Để đăng nhập quản trị tài khoản hoặc vay thêm, quý khách vui lòng truy cập <span style="color: #7209b7">ứng dụng di động</span> hoặc website <span style="color: #7209b7">takomo.vn</span> để tiếp tục`;
+    parse(html, (err, htmlNodes) => {
+      if (!err) {
         this.setData({
-          isFirst: res.data.title,
+          htmlNodes,
+          htmlNodesText: JSON.stringify(htmlNodes, null, 2),
         });
-      },
-      failed: (err) => {
-        console.log(err);
-      },
+      }
     });
-    // parse(
-    //   decode(this.data.modal.text ? this.data.modal.text : ""),
-    //   (err, htmlNodes) => {
-    //     if (!err) {
-    //       this.setData({
-    //         htmlNodes,
-    //         htmlNodesText: JSON.stringify(htmlNodes, null, 2),
-    //       });
-    //     }
-    //   }
-    // );
-    // console.log(this.data.htmlNodes);
   },
 
   onShow() {
