@@ -112,16 +112,8 @@ Page({
           modal: this.data.modal,
         });
       } else {
-        this.data.modal = {
-          ...this.data.modal,
-          isShowModal: true,
-          desc: this.data.htmlNodes,
-          header: ["Tài khoản đã tồn tại"],
-          btnTextModal: "Đã hiểu",
-        };
-        this.setData({
-          modal: this.data.modal,
-        });
+        // my.navigateTo({ url: "pages/register/index" });
+        console.log(res);
       }
     }
   },

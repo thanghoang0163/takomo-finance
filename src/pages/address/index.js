@@ -1,4 +1,5 @@
 import { isValidStreet, hasSpecialCharater } from "../../utils/common.sjs";
+import { directoryApis } from "../../services/apis/index";
 
 Page({
   data: {
@@ -182,6 +183,16 @@ Page({
         },
       });
       my.navigateTo({ url: "pages/job-info/index" });
+    }
+  },
+
+  async onLoad() {
+    const res = await directoryApis.directory();
+    const data = res.data;
+    if (res.success) {
+      this.setData({
+        listResidence: data.StagePeriod.items.map((item) => item.title),
+      });
     }
   },
 });

@@ -1,5 +1,5 @@
 import { isValidPhoneNumber, isNumber } from "../../utils/common.sjs";
-import { listBank } from "./list.sjs";
+import { directoryApis } from "../../services/apis/index";
 
 Page({
   data: {
@@ -106,7 +106,7 @@ Page({
 
   onSearchBank(value) {
     let filterBank = this.data.listBank.filter(
-      (bank) => bank.name.toLowerCase().indexOf(value.toLowerCase()) > -1
+      (bank) => bank.title.toLowerCase().indexOf(value.toLowerCase()) > -1
     );
 
     if (value === "") {
@@ -236,9 +236,17 @@ Page({
     }
   },
 
-  onShow() {
-    this.setData({
-      listBank: listBank,
+  async onLoad() {
+    const res = await directoryApis.directory();
+    const data = res.data;
+    const listBank = data.FinInstrumentBank.items.map((item) => {
+      return { ...item, bigTitle: item.title.split("-")[0] };
     });
+    if (res.success) {
+      this.setData({
+        listLoanPurpose: data.CreditTarget.items.map((item) => item.title),
+        listBank: listBank,
+      });
+    }
   },
 });

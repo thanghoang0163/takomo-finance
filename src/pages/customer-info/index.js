@@ -4,6 +4,7 @@ import {
   getAge,
   hasSpecialCharater,
 } from "../../utils/common.sjs";
+import { directoryApis } from "../../services/apis/index";
 
 Page({
   data: {
@@ -38,10 +39,7 @@ Page({
     isErrorGender: false,
     isFocusName: true,
     isFocusIdCard: false,
-    items: [
-      { name: "male", value: "Nam", checked: false },
-      { name: "female", value: "Nữ", checked: false },
-    ],
+    genders: [],
   },
 
   onConfirmName() {
@@ -75,7 +73,7 @@ Page({
 
   onSelectMaritalStatus(value) {
     this.setData({
-      selectedMaritalStatus: value.name,
+      selectedMaritalStatus: value,
     });
     if (this.data.isErrorMaritalStatus) {
       this.setData({
@@ -215,6 +213,17 @@ Page({
         },
       });
       my.navigateTo({ url: "pages/address/index" });
+    }
+  },
+
+  async onLoad() {
+    const res = await directoryApis.directory();
+    const data = res.data;
+    if (res.success) {
+      this.setData({
+        genders: data.Gender.items,
+        listMaritalStatus: data.MaritalStatus.items.map((item) => item.title),
+      });
     }
   },
 });

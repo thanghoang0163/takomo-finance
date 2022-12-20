@@ -20,12 +20,12 @@
   <bottom-sheet show="{{isShow}}" title="Ngân hàng" onClose="_onClose">
     <search-bar className="search-bar" placeholder="Tìm kiếm ngân hàng" value="{{valueSearch}}" focus onInput="_onSearch" />
     <block tiki:if="{{!isEmpty}}">
-      <view class="bank-item flex items-center" tiki:for="{{list}}" tiki:key="{{item.id}}" data-name="{{item.name}}"
+      <view class="bank-item flex items-center" tiki:for="{{list}}" tiki:key="{{item.id}}" data-name="{{item.title}}"
         onTap="_onSelectBank">
-        <image class="bank-item-img" src="{{item.image}}" />
+        <image class="bank-item-img" src="{{item.icon}}" />
         <view class="bank-item-content">
-          <view class="bank-item-title">{{item.title}}</view>
-          <view class="bank-item-name">{{item.name}}</view>
+          <view class="bank-item-title">{{item.bigTitle}}</view>
+          <view class="bank-item-name">{{item.title}}</view>
         </view>
       </view>
     </block>

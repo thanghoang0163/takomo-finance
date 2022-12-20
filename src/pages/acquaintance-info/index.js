@@ -5,6 +5,7 @@ import {
   hasSpecialCharater,
   isNumber,
 } from "../../utils/common.sjs";
+import { directoryApis } from "../../services/apis/index";
 
 Page({
   data: {
@@ -146,7 +147,7 @@ Page({
         isErrorPhoneColleague: true,
         errorTextPhoneColleague: "Số điện thoại bị trùng với người thân!",
       });
-    }else {
+    } else {
       this.setData({
         isErrorPhoneRelative: false,
       });
@@ -315,6 +316,16 @@ Page({
         },
       });
       my.navigateTo({ url: "pages/bank-info/index" });
+    }
+  },
+
+  async onLoad() {
+    const res = await directoryApis.directory();
+    const data = res.data;
+    if (res.success) {
+      this.setData({
+        listRelationship: data.Kinship.items.map((item) => item.title),
+      });
     }
   },
 });

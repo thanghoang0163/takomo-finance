@@ -7,8 +7,8 @@
   </view>
   <radio-group class="radio-group" onChange="_onChange">
     <view class="radio" tiki:for="{{items}}" key="radio-{{index}}">
-      <radio value="{{item.name}}" checked="{{item.checked}}" />
-      <text class="text-{{item.name}}">{{item.value}}</text>
+      <radio value="{{item.alias}}" checked="{{item.checked}}" />
+      <text class="text-{{item.alias}}">{{item.title}}</text>
     </view>
   </radio-group>
   <block tiki:if="{{isError}}">

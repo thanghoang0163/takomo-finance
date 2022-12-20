@@ -1,5 +1,3 @@
-<import-sjs name="{tabsList, listLoanPurpose}" from="./list.sjs" />
-
 <view class="bank-info container">
   <view class="bank-info-container content w-full">
     <view class="bank-info-content">
@@ -16,10 +14,10 @@
         </view>
         <block tiki:if="{{isBank}}">
           <banks-selector value="{{selectedBank}}" isError="{{isErrorBank}}" errorText="{{errorTextBank}}"
-            list="{{listBank}}" valueSearch="{{valueSearch}}" onInput="onInputBank" onSearch="onSearchBank" onTapBank="onTapBank"
-            onTapMomo="onTapMomo" onTapMomo="onTapMomo" onSelectBank="onSelectBank"
-            onOpenBottomSheet="onOpenBottomSheet" onClose="onCloseBottomSheet" isBank="{{isBank}}"
-            isShow="{{isShow}}" isEmpty="{{isEmpty}}" />
+            list="{{listBank}}" valueSearch="{{valueSearch}}" onInput="onInputBank" onSearch="onSearchBank"
+            onTapBank="onTapBank" onTapMomo="onTapMomo" onTapMomo="onTapMomo" onSelectBank="onSelectBank"
+            onOpenBottomSheet="onOpenBottomSheet" onClose="onCloseBottomSheet" isBank="{{isBank}}" isShow="{{isShow}}"
+            isEmpty="{{isEmpty}}" />
           <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelBankAcc}}" type="{{typeBankAcc}}"
             placeHolder="{{placeHolderBankAcc}}" maxlength="{{maxLengthBankAcc}}" isError="{{isErrorBankAcc}}"
             errorText="{{errorTextBankAcc}}" onInput="onInputBankAcc" />

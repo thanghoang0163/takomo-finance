@@ -1,4 +1,5 @@
 import { checkWhiteSpace, hasSpecialCharater } from "../../utils/common.sjs";
+import { directoryApis } from "../../services/apis/index";
 
 Page({
   data: {
@@ -76,7 +77,7 @@ Page({
         isErrorJobType: false,
       });
     }
-    if (value.name === "Thất nghiệp") {
+    if (value === "Thất nghiệp") {
       this.setData({
         isDisabled: true,
         inputCompanyName: "",
@@ -248,6 +249,19 @@ Page({
         isNext: true,
       });
       my.navigateTo({ url: "pages/acquaintance-info/index" });
+    }
+  },
+
+  async onLoad() {
+    const res = await directoryApis.directory();
+    const data = res.data;
+    if (res.success) {
+      this.setData({
+        listJobType: data.Employment.items.map((item) => item.title),
+        listJobField: data.EmployerType.items.map((item) => item.title),
+        listLastWorkPlace: data.StagePeriod.items.map((item) => item.title),
+        listIncome: data.IncomeAmount.items.map((item) => item.title).splice(1),
+      });
     }
   },
 });

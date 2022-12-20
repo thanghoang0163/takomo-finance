@@ -1,5 +1,4 @@
-import * as homeApis from "./home";
-import * as productApis from "./product";
-import * as searchApis from "./search";
+import * as registerApis from "./register";
+import * as directoryApis from "./directory";
 
-export { homeApis, productApis, searchApis };
+export { registerApis, directoryApis };

@@ -1,5 +1,3 @@
-<import-sjs name="{listResidence}" from="./list.sjs" />
-
 <view class="address container">
   <view class="address-content content w-full">
     <view class="input-section">

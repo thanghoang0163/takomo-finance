@@ -1,5 +1,3 @@
-<import-sjs name="{listJobType, listJobField, listLastWorkPlace, listIncome}" from="./list.sjs" />
-
 <view class="job-info container">
   <view class="job-info-container content w-full">
     <view class="job-info-content w-full">

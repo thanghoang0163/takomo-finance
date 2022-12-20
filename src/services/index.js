@@ -1,11 +1,17 @@
-export const BASE_URL = "https://gaspa.vn/wp-json/wp/v2";
+export const BASE_URL = "https://ppmob.takomo.vn/v1/4";
 
-export const request = async ({ method = "GET", headers = {}, data }) => {
+export const request = async ({
+  method = "POST",
+  headers = {},
+  data,
+  path = "",
+}) => {
   return new Promise((resolve, reject) => {
     my.request({
-      url: BASE_URL,
+      url: `${BASE_URL}${path}`,
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
         ...headers,
       },
       method,

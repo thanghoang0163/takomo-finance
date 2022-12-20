@@ -1,5 +1,3 @@
-<import-sjs name="{listMaritalStatus}" from="./list.sjs" />
-
 <view class="customer-info container">
   <view class="customer-info-container content w-full">
     <view class="customer-info-content">
@@ -13,7 +11,7 @@
         <birthday-input isRequired="{{true}}" placeHolder="{{placeHolderBirthDay}}" label="{{labelBirthDay}}"
           value="{{selectedDate}}" isError="{{isErrorBirthDay}}" errorText="{{errorTextBirthDay}}"
           onTap="onSelectDate" />
-        <radio-button isRequired="{{true}}" items="{{items}}" isError="{{isErrorGender}}" onChange="onChangeGender"
+        <radio-button isRequired="{{true}}" items="{{genders}}" isError="{{isErrorGender}}" onChange="onChangeGender"
           errorText="{{errorTextGender}}" onChange="onChangeGender" />
         <options-selector isRequired="{{true}}" list="{{listMaritalStatus}}" title="{{titleMaritalStatus}}"
           label="{{labelMaritalStatus}}" placeHolder="{{placeHolderMaritalStatus}}" isError="{{isErrorMaritalStatus}}"
