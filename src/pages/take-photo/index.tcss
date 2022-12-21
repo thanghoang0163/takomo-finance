@@ -11,6 +11,16 @@
   height: 100%;
 }
 
-.photo .input-section {
+.id-card-img {
+}
+
+.id-card-img .input-section {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.photo-content > .input-section {
   margin-bottom: 20px;
 }

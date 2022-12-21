@@ -3,10 +3,14 @@
     <view class="photo-content w-full">
       <comparison-image label="{{list[0].label}}" imgUrl="{{filePathsFace ? filePathsFace : list[0].img}}"
         onTap="onChooseFace" isError="{{isErrorFace}}" errorText="{{errorTextFace}}" filePath="{{filePathsFace}}" />
-      <comparison-image label="{{list[1].label}}" imgUrl="{{filePathsFrontIdCard ? filePathsFrontIdCard : list[1].img}}"
-        onTap="onChooseFrontIdCard" isError="{{isErrorFrontIdCard}}" errorText="{{errorTextFrontIdCard}}" filePath="{{filePathsFrontIdCard}}" />
-      <comparison-image label="{{list[2].label}}" imgUrl="{{filePathsRearIdCard ? filePathsRearIdCard : list[2].img}}"
-        onTap="onChooseRearIdCard" isError="{{isErrorRearIdCard}}" errorText="{{errorTextRearIdCard}}" filePath="{{filePathsRearIdCard}}" />
+      <view class="id-card-img input-section">
+        <comparison-image label="{{list[1].label}}"
+          imgUrl="{{filePathsFrontIdCard ? filePathsFrontIdCard : list[1].img}}" onTap="onChooseFrontIdCard"
+          isError="{{isErrorFrontIdCard}}" errorText="{{errorTextFrontIdCard}}" filePath="{{filePathsFrontIdCard}}" />
+        <comparison-image label="{{list[2].label}}" imgUrl="{{filePathsRearIdCard ? filePathsRearIdCard : list[2].img}}"
+          onTap="onChooseRearIdCard" isError="{{isErrorRearIdCard}}" errorText="{{errorTextRearIdCard}}"
+          filePath="{{filePathsRearIdCard}}" />
+      </view>
     </view>
   </view>
   <btn-footer onTap="onContinue" btnText="{{btnText}}" />
