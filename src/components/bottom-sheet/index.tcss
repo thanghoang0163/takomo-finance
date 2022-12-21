@@ -1,6 +1,6 @@
 .bottom-sheet-content {
-  padding: 10px;
   text-align: justify;
+  padding: 10px 10px 20px;
 }
 
 .bottom-sheet-title {
