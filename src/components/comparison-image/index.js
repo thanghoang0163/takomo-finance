@@ -4,6 +4,7 @@ Component({
     imgUrl: "",
     isError: false,
     errorText: "",
+    filePath: "",
     onTap: () => {},
   },
   methods: {
