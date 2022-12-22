@@ -5,7 +5,6 @@ export const request = async ({
   headers = {},
   data,
   path = "",
-  apiKey,
 }) => {
   return new Promise((resolve, reject) => {
     my.request({
@@ -13,7 +12,6 @@ export const request = async ({
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Cookie: `${apiKey}`,
         ...headers,
       },
       includeHeader: true,

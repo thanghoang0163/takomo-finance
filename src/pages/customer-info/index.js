@@ -40,6 +40,8 @@ Page({
     isFocusName: true,
     isFocusIdCard: false,
     genders: [],
+    phone: "",
+    apiKey: "",
   },
 
   onConfirmName() {
@@ -117,7 +119,7 @@ Page({
     });
   },
 
-  onContinue() {
+  async onContinue() {
     const {
       inputIdCard,
       inputName,
@@ -212,18 +214,42 @@ Page({
           maritalStatus: selectedMaritalStatus,
         },
       });
-      my.navigateTo({ url: "pages/address/index" });
+      const res = await registerApis.register(
+        {
+          data: {
+            phone: this.data.phone,
+            full_name: this.data.inputName,
+          },
+        },
+        this.data.apiKey
+      );
+      // if (res.data.success) {
+      //   my.navigateTo({ url: "pages/address/index" });
+      // }
+      console.log(res.data);
     }
   },
 
   async onLoad() {
     const res = await directoryApis.directory();
-    const data = res.data;
-    if (res.success) {
+    const data = res.data.data;
+    if (res.data.success) {
       this.setData({
         genders: data.Gender.items,
         listMaritalStatus: data.MaritalStatus.items.map((item) => item.title),
       });
     }
+
+    my.getStorage({
+      key: "login",
+      success: (res) => {
+        this.setData({
+          apiKey: res.data.apiKey,
+        });
+      },
+      fail: (err) => {
+        console.log(err);
+      },
+    });
   },
 });

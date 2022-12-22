@@ -13,7 +13,9 @@ export const register = async (payload, apiKey) => {
     path: "/registration",
     data: payload,
     method: "PUT",
-    apiKey: apiKey,
+    headers: {
+      Cookie: `${apiKey}`,
+    },
   });
   return res;
 };

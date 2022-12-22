@@ -150,7 +150,6 @@ Page({
       if (res.data.success) {
         my.navigateTo({ url: "pages/customer-info/index" });
       }
-      console.log(res.headers)
     }
   },
 
