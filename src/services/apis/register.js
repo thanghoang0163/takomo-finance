@@ -8,10 +8,12 @@ export const checkExistence = async (payload) => {
   return res;
 };
 
-export const register = async (payload) => {
+export const register = async (payload, apiKey) => {
   const res = await request({
     path: "/registration",
     data: payload,
+    method: "PUT",
+    apiKey: apiKey,
   });
   return res;
 };

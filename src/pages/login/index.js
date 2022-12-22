@@ -99,8 +99,12 @@ Page({
           phone: this.data.input,
         },
       });
-      const res = await registerApis.checkExistence({ phone: this.data.input });
-      if (res.success) {
+      const res = await registerApis.checkExistence({
+        data: {
+          phone: this.data.input,
+        },
+      });
+      if (res.data.data.client_exists) {
         this.data.modal = {
           ...this.data.modal,
           isShowModal: true,
@@ -112,8 +116,14 @@ Page({
           modal: this.data.modal,
         });
       } else {
-        // my.navigateTo({ url: "pages/register/index" });
-        console.log(res);
+        my.setStorage({
+          key: "login",
+          data: {
+            phone: this.data.input,
+            apiKey: Object.values(res.headers)[6].split(";")[0],
+          },
+        });
+        my.navigateTo({ url: "pages/register/index" });
       }
     }
   },

@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/login/index",
-    "pages/bank-info/index",
+    "pages/register/index",
     "pages/address/index",
+    "pages/take-photo/index",
+    "pages/job-info/index",
+    "pages/bank-info/index",
     "pages/customer-info/index",
     "pages/acquaintance-info/index",
-    "pages/job-info/index",
-    "pages/take-photo/index",
-    "pages/register/index",
     "pages/loan-contract/index",
     "pages/thank-you/index"
   ],

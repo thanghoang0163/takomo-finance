@@ -1,4 +1,5 @@
 import { isValidEmail } from "./index.sjs";
+import { registerApis } from "../../services/apis/index";
 
 Page({
   data: {
@@ -27,6 +28,8 @@ Page({
     isFocusPassword: true,
     isFocusPasswordAgain: false,
     isFocusEmail: false,
+    phone: "",
+    apiKey: "",
   },
 
   onConfirmPassword() {
@@ -76,7 +79,7 @@ Page({
     }
   },
 
-  onRegister() {
+  async onRegister() {
     const { inputPassword, inputPasswordAgain, inputEmail } = this.data;
     const inputPasswordLength = inputPassword.length;
     const inputPasswordAgainLength = inputPasswordAgain.length;
@@ -133,15 +136,36 @@ Page({
       inputPassword !== "" &&
       inputPasswordAgain !== ""
     ) {
-      my.setStorage({
-        key: "register",
-        data: {
-          password: inputPassword,
-          passwordAgain: inputPasswordAgain,
-          email: inputEmail,
+      const res = await registerApis.register(
+        {
+          data: {
+            phone: this.data.phone,
+            email: this.data.inputEmail,
+            password: this.data.inputPassword,
+            password_confirmation: this.data.inputPasswordAgain,
+          },
         },
-      });
-      my.navigateTo({ url: "pages/customer-info/index" });
+        this.data.apiKey
+      );
+      if (res.data.success) {
+        my.navigateTo({ url: "pages/customer-info/index" });
+      }
+      console.log(res.headers)
     }
+  },
+
+  onLoad() {
+    my.getStorage({
+      key: "login",
+      success: (res) => {
+        this.setData({
+          phone: res.data.phone,
+          apiKey: res.data.apiKey,
+        });
+      },
+      fail: (err) => {
+        console.log(err);
+      },
+    });
   },
 });
