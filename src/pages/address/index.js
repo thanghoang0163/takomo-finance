@@ -32,6 +32,7 @@ Page({
     cityErrorMsg: "",
     districtErrorMsg: "",
     wardErrorMsg: "",
+    address: {},
   },
 
   onChangeAddress(value) {
@@ -90,7 +91,9 @@ Page({
   onSelectAddress() {
     my.getAddress({
       success: (res) => {
-        console.log("address: ", res);
+        this.setData({
+          address: res,
+        });
       },
       fail: (res) => {
         console.log(res.errorMessage);

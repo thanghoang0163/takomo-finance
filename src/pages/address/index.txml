@@ -1,7 +1,7 @@
 <view class="address container">
   <view class="address-content content w-full">
     <view class="input-section">
-      <!-- <view class="address-title title">Chọn nhanh</view>
+      <view class="address-title title">Chọn nhanh</view>
       <view class="select-address input">
         <view class="select-address-content">
           <image src="/assets/icons/address.svg" />
@@ -12,8 +12,9 @@
         </button>
       </view>
       <view class="separator">hoặc</view>
-      <view class="address-title title">Điền thông tin</view> -->
-      <address streetPlaceholder="{{streetPlaceholder}}" streetErrorMsg="{{streetErrorMsg}}"
+      <view class="address-title title">Điền thông tin</view>
+      <address streetPlaceholder="{{streetPlaceholder}}" street="{{address.street}}" city="{{address.city_id}}"
+        district="{{address.district_id}}" ward="{{address.ward_id}}" streetErrorMsg="{{streetErrorMsg}}"
         cityErrorMsg="{{cityErrorMsg}}" districtErrorMsg="{{districtErrorMsg}}" wardErrorMsg="{{wardErrorMsg}}"
         cityPlaceLabel="{{cityPlaceLabel}}" cityPlaceholder="{{cityPlaceholder}}"
         districtPlaceLabel="{{districtPlaceLabel}}" districtPlaceholder="{{districtPlaceholder}}"
