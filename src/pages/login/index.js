@@ -3,6 +3,8 @@ import parse from "@tiki.vn/mini-html-parser2";
 import { registerApis } from "../../services/apis/index";
 import { isValidPhoneNumber, isNumber } from "../../utils/common.sjs";
 
+const app = getApp();
+
 Page({
   data: {
     text: "Takomo ",
@@ -123,6 +125,7 @@ Page({
             apiKey: Object.values(res.headers)[6].split(";")[0],
           },
         });
+        app.getData();
         my.navigateTo({ url: "pages/register/index" });
       }
     }

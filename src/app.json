@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/customer-info/index",
     "pages/login/index",
+    "pages/customer-info/index",
     "pages/register/index",
     "pages/address/index",
     "pages/take-photo/index",

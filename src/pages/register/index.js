@@ -1,6 +1,8 @@
 import { isValidEmail } from "./index.sjs";
 import { registerApis } from "../../services/apis/index";
 
+const app = getApp();
+
 Page({
   data: {
     labelPassword: "Mật khẩu:",
@@ -139,32 +141,17 @@ Page({
       const res = await registerApis.register(
         {
           data: {
-            phone: this.data.phone,
+            phone: app.data.phone,
             email: this.data.inputEmail,
             password: this.data.inputPassword,
             password_confirmation: this.data.inputPasswordAgain,
           },
         },
-        this.data.apiKey
+        app.data.apiKey
       );
-      if (res.data.success) {
-        my.navigateTo({ url: "pages/customer-info/index" });
-      }
+      // if (res.data.success) {
+      //   my.navigateTo({ url: "pages/customer-info/index" });
+      // }
     }
-  },
-
-  onLoad() {
-    my.getStorage({
-      key: "login",
-      success: (res) => {
-        this.setData({
-          phone: res.data.phone,
-          apiKey: res.data.apiKey,
-        });
-      },
-      fail: (err) => {
-        console.log(err);
-      },
-    });
   },
 });
