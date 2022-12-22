@@ -254,7 +254,7 @@ Page({
 
   async onLoad() {
     const res = await directoryApis.directory();
-    const data = res.data;
+    const data = res.data.data;
     if (res.success) {
       this.setData({
         listJobType: data.Employment.items.map((item) => item.title),

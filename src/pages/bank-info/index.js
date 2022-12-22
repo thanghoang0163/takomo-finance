@@ -238,7 +238,7 @@ Page({
 
   async onLoad() {
     const res = await directoryApis.directory();
-    const data = res.data;
+    const data = res.data.data;
     const listBank = data.FinInstrumentBank.items.map((item) => {
       return { ...item, bigTitle: item.title.split("-")[0] };
     });

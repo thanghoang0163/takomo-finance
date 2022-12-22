@@ -191,7 +191,7 @@ Page({
 
   async onLoad() {
     const res = await directoryApis.directory();
-    const data = res.data;
+    const data = res.data.data;
     if (res.success) {
       this.setData({
         listResidence: data.StagePeriod.items.map((item) => item.title),

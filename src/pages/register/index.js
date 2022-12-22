@@ -138,20 +138,17 @@ Page({
       inputPassword !== "" &&
       inputPasswordAgain !== ""
     ) {
-      const res = await registerApis.register(
-        {
-          data: {
-            phone: app.data.phone,
-            email: this.data.inputEmail,
-            password: this.data.inputPassword,
-            password_confirmation: this.data.inputPasswordAgain,
-          },
+      const res = await registerApis.register({
+        data: {
+          phone: app.data.phone,
+          email: this.data.inputEmail,
+          password: this.data.inputPassword,
+          password_confirmation: this.data.inputPasswordAgain,
         },
-        app.data.apiKey
-      );
-      // if (res.data.success) {
-      //   my.navigateTo({ url: "pages/customer-info/index" });
-      // }
+      });
+      if (res.data.success) {
+        my.navigateTo({ url: "pages/customer-info/index" });
+      }
     }
   },
 });
