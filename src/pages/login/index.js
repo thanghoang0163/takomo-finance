@@ -73,7 +73,7 @@ Page({
   async onLogin() {
     const { input } = this.data;
     const itemInput = input.slice(0, 1);
-    const formatNumberinput = input.slice(0, 2);
+    const formatNumberinput = input.slice(0, 3);
     const inputLength = input.length;
     if (inputLength === 0) {
       this.setData({
@@ -87,7 +87,7 @@ Page({
       });
     } else if (
       (itemInput !== "0" && itemInput.length !== 0) ||
-      !isValidPhoneNumber(formatNumberinput) ||
+      !await isValidPhoneNumber(formatNumberinput) ||
       !isNumber(itemInput)
     ) {
       this.setData({
