@@ -1,5 +1,5 @@
 {
-  "defaultTitle":"Tài khoản nhận tiền",
+  "defaultTitle": "Tài khoản nhận tiền",
   "titleBarColor": "#7209b7",
   "usingComponents": {
     "input-item": "components/input-item/index",

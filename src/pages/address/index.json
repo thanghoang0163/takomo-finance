@@ -1,5 +1,5 @@
 {
-  "defaultTitle":"Thông tin địa chỉ",
+  "defaultTitle": "Thông tin địa chỉ",
   "titleBarColor": "#7209b7",
   "usingComponents": {
     "input-item": "components/input-item/index",

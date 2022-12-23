@@ -1,5 +1,5 @@
 {
-  "defaultTitle":"Ký hợp đồng vay",
+  "defaultTitle": "Ký hợp đồng vay",
   "titleBarColor": "#7209b7",
   "usingComponents": {
     "btn-footer": "components/btn-footer/index"

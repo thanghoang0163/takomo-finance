@@ -1,5 +1,5 @@
 {
-  "defaultTitle":"Thông tin người liên hệ",
+  "defaultTitle": "Thông tin người liên hệ",
   "titleBarColor": "#7209b7",
   "usingComponents": {
     "input-item": "components/input-item/index",

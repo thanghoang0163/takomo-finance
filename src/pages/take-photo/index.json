@@ -1,5 +1,5 @@
 {
-  "defaultTitle":"Chụp ảnh đối chiếu",
+  "defaultTitle": "Chụp ảnh đối chiếu",
   "titleBarColor": "#7209b7",
   "usingComponents": {
     "btn-footer": "components/btn-footer/index",

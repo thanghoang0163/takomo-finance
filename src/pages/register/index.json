@@ -1,5 +1,5 @@
 {
-  "defaultTitle":"Tạo tài khoản Takomo",
+  "defaultTitle": "Tạo tài khoản Takomo",
   "titleBarColor": "#7209b7",
   "usingComponents": {
     "input-item": "components/input-item/index",
