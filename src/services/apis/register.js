@@ -1,5 +1,7 @@
 import request from "../index";
 
+const app = getApp();
+
 export const checkExistence = async (payload) => {
   const res = await request({
     path: "/client/register",
@@ -8,13 +10,13 @@ export const checkExistence = async (payload) => {
   return res;
 };
 
-export const register = async (payload, apiKey) => {
+export const register = async (payload) => {
   const res = await request({
     path: "/registration",
     data: payload,
     method: "PUT",
     headers: {
-      Cookie: `${apiKey}`,
+      Cookie: `${app.data.apiKey}`,
     },
   });
   return res;
