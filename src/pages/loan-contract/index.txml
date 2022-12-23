@@ -21,11 +21,11 @@
             <view class="loan-info-money">
               <view class="loan-info-container">
                 <view class="loan-info-label">Số tiền được duyệt:</view>
-                <view class="loan-info-content">{{moneyFormatter(approvedMoney, "đ")}}</view>
+                <view class="loan-info-content">{{moneyFormatter(approvedMoney)}}</view>
               </view>
               <view class="loan-info-container">
                 <view class="loan-info-label">Số tiền cần trả:</view>
-                <view class="loan-info-content">{{moneyFormatter(paidMoney, "đ")}}</view>
+                <view class="loan-info-content">{{moneyFormatter(paidMoney)}}</view>
               </view>
             </view>
           </view>
@@ -34,7 +34,7 @@
             <block tiki:for="{{feeList}}" tiki:key="{{item.id}}">
               <view class="loan-info-container">
                 <view class="loan-info-label">{{item.text}}</view>
-                <view class="loan-info-content">{{moneyFormatter(item.amount, "đ")}}</view>
+                <view class="loan-info-content">{{moneyFormatter(item.amount)}}</view>
               </view>
             </block>
           </view>

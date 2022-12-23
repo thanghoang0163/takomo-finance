@@ -6,7 +6,7 @@ export const isHasValue = (value) =>
 export const isNotEmpty = (value) =>
   isHasValue(value) && (value + "").trim().length > 0;
 
-export const moneyFormatter = (number, suffix = "") => {
+export const moneyFormatter = (number, suffix = " đ") => {
   if (!isNotEmpty(number)) return "";
   return parseInt(number).toLocaleString("vi-VN") + suffix;
 };
@@ -14,7 +14,7 @@ export const moneyFormatter = (number, suffix = "") => {
 export const isValidPhoneNumber = async (phoneNumber) => {
   const res = await phoneNumberApis.prefixPhoneNumber();
   var regex = res.data.data.auth_otp_ivr_prefixes;
-    return regex.includes(phoneNumber.toString());
+  return regex.includes(phoneNumber.toString());
 };
 
 export const checkWhiteSpace = (text) => {
@@ -63,6 +63,15 @@ export const getAge = (dateString) => {
   }
 
   return age;
+};
+
+export const formatBirthDay = (birthday) => {
+  const birth = birthday.split("-");
+  const day = birth[0];
+  const month = birth[1];
+  const year = birth[2];
+
+  return year + "-" + month + "-" + day;
 };
 
 export const hasSpecialCharater = (string) => {
