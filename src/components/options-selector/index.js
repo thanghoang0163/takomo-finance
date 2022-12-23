@@ -8,6 +8,8 @@ Component({
     isRequired: false,
     isDisabled: false,
     list: [],
+    idKey: "",
+    labelKey: "",
     value: "",
     errorMsg: "",
     onSelect: () => {},
