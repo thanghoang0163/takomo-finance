@@ -1,5 +1,3 @@
-import { phoneNumberApis } from "../services/apis/index";
-
 export const isHasValue = (value) =>
   value !== null && typeof value !== "undefined";
 
@@ -12,9 +10,39 @@ export const moneyFormatter = (number, suffix = " đ") => {
 };
 
 export const isValidPhoneNumber = async (phoneNumber) => {
-  const res = await phoneNumberApis.prefixPhoneNumber();
-  var regex = res.data.data.auth_otp_ivr_prefixes;
-  return regex.includes(phoneNumber.toString());
+  var regex = [
+    "032",
+    "033",
+    "034",
+    "035",
+    "036",
+    "037",
+    "038",
+    "039",
+    "086",
+    "096",
+    "097",
+    "098",
+    "081",
+    "082",
+    "083",
+    "084",
+    "085",
+    "088",
+    "091",
+    "094",
+    "092",
+    "056",
+    "058",
+    "099",
+    "059",
+    "070",
+    "079",
+    "077",
+    "076",
+    "078",
+  ];
+  return regex.includes(phoneNumber);
 };
 
 export const checkWhiteSpace = (text) => {
