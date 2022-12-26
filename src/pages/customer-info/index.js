@@ -3,8 +3,11 @@ import {
   isValidName,
   getAge,
   hasSpecialCharater,
+  formatBirthDay,
 } from "../../utils/common.sjs";
-import { directoryApis } from "../../services/apis/index";
+import { directoryApis, applicationApis } from "../../services/apis/index";
+
+const app = getApp();
 
 Page({
   data: {
@@ -33,15 +36,19 @@ Page({
     errorTextMaritalStatus: "",
     selectedMaritalStatus: "",
     isErrorMaritalStatus: false,
-    gender: "",
     btnText: "Tiếp tục bước 2/7",
     errorTextGender: "",
     isErrorGender: false,
     isFocusName: true,
     isFocusIdCard: false,
-    genders: [],
-    phone: "",
-    apiKey: "",
+    genderId: 0,
+    maritalId: 0,
+    modal: {
+      isShowModal: false,
+      desc: [],
+      header: [],
+      btnTextModal: "",
+    },
   },
 
   onConfirmName() {
@@ -76,6 +83,7 @@ Page({
   onSelectMaritalStatus(value) {
     this.setData({
       selectedMaritalStatus: value,
+      maritalId: value.id,
     });
     if (this.data.isErrorMaritalStatus) {
       this.setData({
@@ -86,7 +94,7 @@ Page({
 
   onChangeGender(value) {
     this.setData({
-      gender: value,
+      genderId: value,
     });
     if (this.data.isErrorGender) {
       this.setData({
@@ -113,9 +121,13 @@ Page({
     }
   },
 
-  onInputMaritalStatus(value) {
+  onCloseModal() {
+    this.data.modal = {
+      ...this.data.modal,
+      isShowModal: false,
+    };
     this.setData({
-      inputBirthDay: value,
+      modal: this.data.modal,
     });
   },
 
@@ -204,29 +216,34 @@ Page({
       inputIdCard !== "" &&
       inputName !== ""
     ) {
-      my.setStorage({
-        key: "customerInfo",
+      const res = await applicationApis.applicationInfo({
         data: {
-          name: inputName,
-          idCard: inputIdCard,
-          birthday: selectedDate,
-          gender: gender,
-          maritalStatus: selectedMaritalStatus,
+          step: 1,
+          full_name: this.data.inputName,
+          identity_card_number: this.data.inputIdCard,
+          birthdate: formatBirthDay(selectedDate),
+          gender_id: this.data.genderId,
+          marital_status_id: this.data.maritalId,
+          email: app.data.email,
         },
       });
-      const res = await registerApis.register(
-        {
-          data: {
-            phone: this.data.phone,
-            full_name: this.data.inputName,
-          },
-        },
-        this.data.apiKey
-      );
-      // if (res.data.success) {
+      // if (res.data.error.code === 125) {
+      //   this.data.modal = {
+      //     ...this.data.modal,
+      //     isShowModal: true,
+      //     desc: ["Số CMND/CCCD đã tồn tại"],
+      //     header: ["Trùng CMND/CCCD"],
+      //     btnTextModal: "Đã hiểu",
+      //   };
+      //   this.setData({
+      //     modal: this.data.modal,
+      //   });
+      // } else {
       //   my.navigateTo({ url: "pages/address/index" });
       // }
-      console.log(res.data);
+      if (res.data.success) {
+        my.navigateTo({ url: "pages/address/index" });
+      }
     }
   },
 
@@ -236,20 +253,8 @@ Page({
     if (res.data.success) {
       this.setData({
         genders: data.Gender.items,
-        listMaritalStatus: data.MaritalStatus.items.map((item) => item.title),
+        listMaritalStatus: data.MaritalStatus.items,
       });
     }
-
-    my.getStorage({
-      key: "login",
-      success: (res) => {
-        this.setData({
-          apiKey: res.data.apiKey,
-        });
-      },
-      fail: (err) => {
-        console.log(err);
-      },
-    });
   },
 });

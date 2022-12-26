@@ -1,5 +1,5 @@
 import { checkWhiteSpace, hasSpecialCharater } from "../../utils/common.sjs";
-import { directoryApis } from "../../services/apis/index";
+import { directoryApis, applicationApis } from "../../services/apis/index";
 
 Page({
   data: {
@@ -44,6 +44,14 @@ Page({
     isDisabled: false,
     isNext: false,
     btnText: "Tiếp tục bước 4/7",
+    listJobType: [],
+    listJobField: [],
+    listLastWorkPlace: [],
+    listIncome: [],
+    jobTypeId: 0,
+    jobFieldId: "",
+    incomeId: 0,
+    lastWorkPlaceId: 0,
   },
 
   onInputCompanyName(value) {
@@ -71,37 +79,39 @@ Page({
   onSelectJobType(value) {
     this.setData({
       selectedJobType: value,
+      jobTypeId: value.id,
     });
     if (this.data.isErrorJobType) {
       this.setData({
         isErrorJobType: false,
       });
     }
-    if (value === "Thất nghiệp") {
-      this.setData({
-        isDisabled: true,
-        inputCompanyName: "",
-        inputPosition: "",
-        selectedIncome: "",
-        selectedLastWorkPlace: "",
-        selectedJobField: "",
-        isErrorLastWorkPlace: false,
-        isErrorJobField: false,
-        isErrorCompanyName: false,
-        isErrorPosition: false,
-        isErrorIncome: false,
-        isNext: true,
-      });
-    } else {
-      this.setData({
-        isDisabled: false,
-      });
-    }
+    // if (value.title === "Thất nghiệp") {
+    //   this.setData({
+    //     isDisabled: true,
+    //     inputCompanyName: "",
+    //     inputPosition: "",
+    //     selectedIncome: "",
+    //     selectedLastWorkPlace: "",
+    //     selectedJobField: "",
+    //     isErrorLastWorkPlace: false,
+    //     isErrorJobField: false,
+    //     isErrorCompanyName: false,
+    //     isErrorPosition: false,
+    //     isErrorIncome: false,
+    //     isNext: true,
+    //   });
+    // } else {
+    //   this.setData({
+    //     isDisabled: false,
+    //   });
+    // }
   },
 
   onSelectJobField(value) {
     this.setData({
       selectedJobField: value,
+      jobFieldId: value.id,
     });
     if (this.data.isErrorJobField) {
       this.setData({
@@ -113,6 +123,7 @@ Page({
   onSelectLastWorkPlace(value) {
     this.setData({
       selectedLastWorkPlace: value,
+      lastWorkPlaceId: value.id,
     });
     if (this.data.isErrorLastWorkPlace) {
       this.setData({
@@ -124,6 +135,7 @@ Page({
   onSelectIncome(value) {
     this.setData({
       selectedIncome: value,
+      incomeId: value.id,
     });
     if (this.data.isErrorIncome) {
       this.setData({
@@ -132,7 +144,7 @@ Page({
     }
   },
 
-  onContinue() {
+  async onContinue() {
     const {
       selectedJobType,
       selectedJobField,
@@ -143,7 +155,6 @@ Page({
       isNext,
     } = this.data;
 
-    const companyNameArray = inputCompanyName.split(" ");
     const positionArray = inputPosition.split(" ");
     if (selectedJobType.length === 0) {
       this.setData({
@@ -183,10 +194,7 @@ Page({
         errorTextCompanyName: "Vui lòng nhập tên công ty đang làm việc!",
         isNext: false,
       });
-    } else if (
-      !checkWhiteSpace(companyNameArray) ||
-      hasSpecialCharater(inputCompanyName)
-    ) {
+    } else if (hasSpecialCharater(inputCompanyName)) {
       this.setData({
         isErrorCompanyName: true,
         errorTextCompanyName: "Định dạng tên công ty không đúng!",
@@ -211,43 +219,71 @@ Page({
       });
     }
 
-    if (!isNext) {
-      if (
-        !this.data.isErrorCompanyName &&
-        !this.data.isErrorIncome &&
-        !this.data.isErrorLastWorkPlace &&
-        !this.data.isErrorJobField &&
-        !this.data.isErrorJobType &&
-        !this.data.isErrorPosition &&
-        selectedLastWorkPlace !== "" &&
-        selectedJobField !== "" &&
-        selectedJobType !== "" &&
-        selectedIncome !== "" &&
-        inputCompanyName !== "" &&
-        inputPosition !== ""
-      ) {
-        my.setStorage({
-          key: "jobInfo",
-          data: {
-            JobType: selectedJobType,
-            JobField: selectedJobField,
-            lastWorkPlace: selectedLastWorkPlace,
-            income: selectedIncome,
-            companyName: inputCompanyName,
-            position: inputPosition,
-          },
-        });
-        my.navigateTo({ url: "pages/acquaintance-info/index" });
-      }
-    } else {
-      this.setData({
-        isErrorLastWorkPlace: false,
-        isErrorJobField: false,
-        isErrorCompanyName: false,
-        isErrorPosition: false,
-        isErrorIncome: false,
-        isNext: true,
-      });
+    // if (!isNext) {
+    //   if (
+    //     !this.data.isErrorCompanyName &&
+    //     !this.data.isErrorIncome &&
+    //     !this.data.isErrorLastWorkPlace &&
+    //     !this.data.isErrorJobField &&
+    //     !this.data.isErrorJobType &&
+    //     !this.data.isErrorPosition &&
+    //     selectedLastWorkPlace !== "" &&
+    //     selectedJobField !== "" &&
+    //     selectedJobType !== "" &&
+    //     selectedIncome !== "" &&
+    //     inputCompanyName !== "" &&
+    //     inputPosition !== ""
+    //   ) {
+    //     this.getApi();
+    //   }
+    // } else {
+    //   this.setNextPage();
+    //   this.getApi();
+    // }
+    if (
+      !this.data.isErrorCompanyName &&
+      !this.data.isErrorIncome &&
+      !this.data.isErrorLastWorkPlace &&
+      !this.data.isErrorJobField &&
+      !this.data.isErrorJobType &&
+      !this.data.isErrorPosition &&
+      selectedLastWorkPlace !== "" &&
+      selectedJobField !== "" &&
+      selectedJobType !== "" &&
+      selectedIncome !== "" &&
+      inputCompanyName !== "" &&
+      inputPosition !== ""
+    ) {
+      this.getApi();
+    }
+  },
+
+  setNextPage() {
+    this.setData({
+      isErrorLastWorkPlace: false,
+      isErrorJobField: false,
+      isErrorCompanyName: false,
+      isErrorPosition: false,
+      isErrorIncome: false,
+      isNext: true,
+    });
+  },
+
+  async getApi() {
+    const res = await applicationApis.applicationInfo({
+      data: {
+        occupation_VN_v2: {
+          employment_id: this.data.jobTypeId,
+          employer_type_id: this.data.jobFieldId,
+          workplace: this.data.inputCompanyName,
+          post: this.data.inputPosition,
+          income_amount_id: this.data.incomeId,
+          stage_period_id: this.data.lastWorkPlaceId,
+        },
+        step: 3,
+      },
+    });
+    if (res.data.success) {
       my.navigateTo({ url: "pages/acquaintance-info/index" });
     }
   },
@@ -255,12 +291,12 @@ Page({
   async onLoad() {
     const res = await directoryApis.directory();
     const data = res.data.data;
-    if (res.success) {
+    if (res.data.success) {
       this.setData({
-        listJobType: data.Employment.items.map((item) => item.title),
-        listJobField: data.EmployerType.items.map((item) => item.title),
-        listLastWorkPlace: data.StagePeriod.items.map((item) => item.title),
-        listIncome: data.IncomeAmount.items.map((item) => item.title).splice(1),
+        listJobType: data.Employment.items,
+        listJobField: data.EmployerType.items,
+        listLastWorkPlace: data.StagePeriod.items,
+        listIncome: data.IncomeAmount.items.splice(1),
       });
     }
   },

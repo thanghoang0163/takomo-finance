@@ -5,7 +5,7 @@ import {
   hasSpecialCharater,
   isNumber,
 } from "../../utils/common.sjs";
-import { directoryApis } from "../../services/apis/index";
+import { directoryApis, applicationApis } from "../../services/apis/index";
 
 Page({
   data: {
@@ -48,6 +48,8 @@ Page({
     isFocusNameColleague: false,
     isFocusPhoneColleague: false,
     btnText: "Tiếp tục bước 5/7",
+    listRelationship: [],
+    relationshipId: 0,
   },
 
   onConfirmNameRelative() {
@@ -165,6 +167,7 @@ Page({
   onSelectRelationship(value) {
     this.setData({
       selectedRelationship: value,
+      relationshipId: value.id,
     });
     if (this.data.isErrorRelationship) {
       this.setData({
@@ -173,7 +176,7 @@ Page({
     }
   },
 
-  onContinue() {
+  async onContinue() {
     const {
       inputNameRelative,
       inputPhoneRelative,
@@ -305,26 +308,45 @@ Page({
       inputPhoneColleague !== "" &&
       selectedRelationship !== ""
     ) {
-      my.setStorage({
-        key: "accquaintanceInfo",
+      const res = await applicationApis.applicationInfo({
         data: {
-          nameRelative: inputNameRelative,
-          phoneRelative: inputPhoneRelative,
-          nameColleague: inputNameColleague,
-          phoneColleague: inputPhoneColleague,
-          relationship: selectedRelationship,
+          contact_person_VN: {
+            first_name: this.getFirstName(this.data.inputNameRelative),
+            kinship_id: this.data.relationshipId,
+            last_name: this.getLastName(this.data.inputNameRelative),
+            phone: this.data.inputPhoneRelative,
+          },
+          colleague_VN: {
+            first_name: this.getFirstName(this.data.inputNameColleague),
+            last_name: this.getLastName(this.data.inputNameColleague),
+            phone: this.data.inputPhoneColleague,
+          },
+          step: 4,
         },
       });
-      my.navigateTo({ url: "pages/bank-info/index" });
+      if (res.data.success) {
+        my.navigateTo({ url: "pages/bank-info/index" });
+      }
     }
+  },
+
+  getLastName(name) {
+    const nameArray = name.split(" ").slice(1);
+    const lastName = nameArray.join(" ");
+    return lastName;
+  },
+
+  getFirstName(name) {
+    const firstName = name.split(" ")[0];
+    return firstName;
   },
 
   async onLoad() {
     const res = await directoryApis.directory();
     const data = res.data.data;
-    if (res.success) {
+    if (res.data.success) {
       this.setData({
-        listRelationship: data.Kinship.items.map((item) => item.title),
+        listRelationship: data.Kinship.items,
       });
     }
   },

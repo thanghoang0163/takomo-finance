@@ -1,3 +1,5 @@
+const app = getApp();
+
 Page({
   data: {
     filePathsFace: "",
@@ -174,6 +176,25 @@ Page({
       !this.data.isErrorFrontIdCard &&
       !this.data.isErrorRearIdCard
     ) {
+      my.uploadFile({
+        url: `https://ppmob.takomo.vn/v1/4/${app.data.applicationId}/documents`,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Cookie: `${app.data.apiKey}`,
+        },
+        fileType: "image/jpg",
+        fileName: "file",
+        filePath: path,
+        success: (res) => {
+          console.log(res);
+          my.alert({ title: "Upload success" });
+        },
+        fail: function (res) {
+          console.log(res);
+          my.alert({ title: "Upload fail" });
+        },
+      });
       my.navigateTo({ url: "pages/loan-contract/index" });
     }
   },

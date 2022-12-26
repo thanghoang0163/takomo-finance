@@ -1,5 +1,7 @@
 import { isValidStreet, hasSpecialCharater } from "../../utils/common.sjs";
-import { directoryApis } from "../../services/apis/index";
+import { directoryApis, applicationApis } from "../../services/apis/index";
+
+const app = getApp();
 
 Page({
   data: {
@@ -12,8 +14,8 @@ Page({
     wardPlaceholder: "Chọn phường / Xã / Thị trấn",
     labelApartment: "Số căn hộ:",
     placeHolderApartment: "Nhập số căn hộ",
-    typeApartment: "text",
-    maxLengthApartment: 100,
+    typeApartment: "number",
+    maxLengthApartment: 10,
     errorTextApartment: "",
     inputApartment: "",
     isErrorApartment: false,
@@ -33,6 +35,8 @@ Page({
     districtErrorMsg: "",
     wardErrorMsg: "",
     address: {},
+    listResidence: [],
+    residenceId: 0,
   },
 
   onChangeAddress(value) {
@@ -80,6 +84,7 @@ Page({
   onSelectResidence(value) {
     this.setData({
       selectedResidence: value,
+      residenceId: value.id,
     });
     if (this.data.isErrorResidence) {
       this.setData({
@@ -112,7 +117,7 @@ Page({
     }
   },
 
-  onTapNextStep() {
+  async onTapNextStep() {
     const { street, district, city, ward, selectedResidence, inputApartment } =
       this.data;
 
@@ -174,27 +179,33 @@ Page({
       district !== "" &&
       ward !== ""
     ) {
-      my.setStorage({
-        key: "address",
+      const res = await applicationApis.applicationInfo({
         data: {
-          street,
-          city,
-          district,
-          ward,
-          apartment: inputApartment,
-          residenceTime: selectedResidence,
+          residential_address_VN: {
+            additional_territory: this.data.district,
+            address_type_id: 1,
+            apartment: this.data.inputApartment,
+            city: this.data.city,
+            house: this.data.street.split(' ')[0],
+            region_code: "00",
+            street: this.data.street,
+            years_period_id: this.data.residenceId,
+          },
+          step: 2,
         },
       });
-      my.navigateTo({ url: "pages/job-info/index" });
+      if (res.data.success) {
+        my.navigateTo({ url: "pages/job-info/index" });
+      }
     }
   },
 
   async onLoad() {
     const res = await directoryApis.directory();
     const data = res.data.data;
-    if (res.success) {
+    if (res.data.success) {
       this.setData({
-        listResidence: data.StagePeriod.items.map((item) => item.title),
+        listResidence: data.StagePeriod.items,
       });
     }
   },

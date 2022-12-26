@@ -1,4 +1,3 @@
-import { decode } from "html-entities";
 import parse from "@tiki.vn/mini-html-parser2";
 import { registerApis } from "../../services/apis/index";
 import { isValidPhoneNumber, isNumber } from "../../utils/common.sjs";
@@ -87,7 +86,7 @@ Page({
       });
     } else if (
       (itemInput !== "0" && itemInput.length !== 0) ||
-      !await isValidPhoneNumber(formatNumberinput) ||
+      !(await isValidPhoneNumber(formatNumberinput)) ||
       !isNumber(itemInput)
     ) {
       this.setData({
@@ -125,7 +124,7 @@ Page({
             apiKey: Object.values(res.headers)[6].split(";")[0],
           },
         });
-        app.getData();
+        app.getLogin();
         my.navigateTo({ url: "pages/register/index" });
       }
     }

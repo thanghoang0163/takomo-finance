@@ -1,5 +1,5 @@
 import { isValidEmail } from "./index.sjs";
-import { registerApis } from "../../services/apis/index";
+import { registerApis, applicationApis } from "../../services/apis/index";
 
 const app = getApp();
 
@@ -147,7 +147,38 @@ Page({
         },
       });
       if (res.data.success) {
-        my.navigateTo({ url: "pages/customer-info/index" });
+        my.setStorage({
+          key: "login",
+          data: {
+            phone: app.data.phone,
+            apiKey: Object.values(res.headers)[6].split(";")[0],
+          },
+        });
+        my.setStorage({
+          key: "register",
+          data: {
+            password: this.data.inputPassword,
+            email: this.data.inputEmail,
+          },
+        });
+        const resApp = await applicationApis.getApplicationId({
+          data: {
+            phone: app.data.phone,
+            password: this.data.inputPassword,
+          },
+        });
+        my.setStorage({
+          key: "application",
+          data: {
+            applicationId: resApp.data.data.id,
+          },
+        });
+        app.getLogin()
+        app.getRegister();
+        app.getApplication();
+        if (resApp.data.success) {
+          my.navigateTo({ url: "pages/customer-info/index" });
+        }
       }
     }
   },

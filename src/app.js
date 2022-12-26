@@ -1,21 +1,57 @@
 App({
   data: {
     phone: "",
+    password: "",
+    email: "",
     apiKey: "",
+    applicationId: 0,
   },
 
-  getData() {
+  getLogin() {
     my.getStorage({
       key: "login",
       success: (res) => {
-        this.data.phone = res.data.phone;
-        this.data.apiKey = res.data.apiKey;
+        this.data = {
+          ...this.data,
+          phone: res.data.phone,
+          apiKey: res.data.apiKey,
+        };
       },
       fail: (err) => {
         console.log(err);
       },
     });
-    console.log(this.data.phone, this.data.apiKey);
+  },
+
+  getRegister() {
+    my.getStorage({
+      key: "register",
+      success: (res) => {
+        this.data = {
+          ...this.data,
+          password: res.data.password,
+          email: res.data.email,
+        };
+      },
+      fail: (err) => {
+        console.log(err);
+      },
+    });
+  },
+
+  getApplication() {
+    my.getStorage({
+      key: "application",
+      success: (res) => {
+        this.data = {
+          ...this.data,
+          applicationId: res.data.applicationId,
+        };
+      },
+      fail: (err) => {
+        console.log(err);
+      },
+    });
   },
 
   onLaunch(options) {
