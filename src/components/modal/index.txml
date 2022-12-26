@@ -3,7 +3,7 @@
   <view slot="description">
     <rich-text nodes="{{desc}}" />
   </view>
-  <view slot="footer">
+  <view class="modal-footer" slot="footer">
     <button class="modal-btn" onTap="_onCloseModal">{{btnText}}</button>
   </view>
 </modal>

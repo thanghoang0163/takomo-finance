@@ -1,3 +1,7 @@
+.tu-modal-show {
+  z-index: 200;
+}
+
 .tu-modal-footer {
   display: flex;
   justify-content: center;
@@ -5,8 +9,15 @@
   margin-bottom: 10px;
 }
 
+.modal-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal-btn {
-  width: 80vw;
+  width: 100%;
   background-color: var(--second-color);
   border-radius: 4px;
   border: none;
