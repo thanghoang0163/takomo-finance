@@ -2,7 +2,7 @@
 <import-sjs name="{randomNumber, countDate}" from="./index.sjs" />
 
 <view class="loan-contract container">
-  <view class="loan-contract-container content w-full">
+  <view class="loan-contract-container content w-full mb-x-small">
     <view class="loan-contract-content w-full">
       <view class="loan-info-container">
         <view class="input-section">

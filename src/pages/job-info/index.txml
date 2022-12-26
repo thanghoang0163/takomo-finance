@@ -1,12 +1,13 @@
 <view class="job-info container">
-  <view class="job-info-container content w-full">
+  <view class="job-info-container content w-full mb-x-small">
     <view class="job-info-content w-full">
       <view class="input-section">
-        <options-selector isRequired="{{true}}" list="{{listJobType}}" title="{{titleJobType}}" label="{{labelJobType}}"
-          placeHolder="{{placeHolderJobType}}" isError="{{isErrorJobType}}" errorText="{{errorTextJobType}}"
-          value="{{selectedJobType}}" onSelect="onSelectJobType" />
-        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listJobField}}"
-          title="{{titleJobField}}" label="{{labelJobField}}" placeHolder="{{placeHolderJobField}}"
+        <options-selector isRequired="{{true}}" list="{{listJobType}}" idKey="id" labelKey="title"
+          title="{{titleJobType}}" label="{{labelJobType}}" placeHolder="{{placeHolderJobType}}"
+          isError="{{isErrorJobType}}" errorText="{{errorTextJobType}}" value="{{selectedJobType}}"
+          onSelect="onSelectJobType" />
+        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listJobField}}" idKey="id"
+          labelKey="title" title="{{titleJobField}}" label="{{labelJobField}}" placeHolder="{{placeHolderJobField}}"
           isError="{{isErrorJobField}}" errorText="{{errorTextJobField}}" value="{{selectedJobField}}"
           onSelect="onSelectJobField" />
         <input-item isRequired="{{true}}" isFocus="{{true}}" isDisabled="{{isDisabled}}" label="{{labelCompanyName}}"
@@ -15,12 +16,12 @@
         <input-item isRequired="{{true}}" isDisabled="{{isDisabled}}" label="{{labelPosition}}" type="{{typePosition}}"
           placeHolder="{{placeHolderPosition}}" maxlength="{{maxLengthPosition}}" isError="{{isErrorPosition}}"
           errorText="{{errorTextPosition}}" onInput="onInputPosition" />
-        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listLastWorkPlace}}"
-          title="{{titleLastWorkPlace}}" label="{{labelLastWorkPlace}}" placeHolder="{{placeHolderLastWorkPlace}}"
-          isError="{{isErrorLastWorkPlace}}" errorText="{{errorTextLastWorkPlace}}" value="{{selectedLastWorkPlace}}"
-          onSelect="onSelectLastWorkPlace" />
-        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listIncome}}"
-          title="{{titleIncome}}" label="{{labelIncome}}" placeHolder="{{placeHolderIncome}}"
+        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listLastWorkPlace}}" idKey="id"
+          labelKey="title" title="{{titleLastWorkPlace}}" label="{{labelLastWorkPlace}}"
+          placeHolder="{{placeHolderLastWorkPlace}}" isError="{{isErrorLastWorkPlace}}"
+          errorText="{{errorTextLastWorkPlace}}" value="{{selectedLastWorkPlace}}" onSelect="onSelectLastWorkPlace" />
+        <options-selector isRequired="{{true}}" isDisabled="{{isDisabled}}" list="{{listIncome}}" idKey="id"
+          labelKey="title" title="{{titleIncome}}" label="{{labelIncome}}" placeHolder="{{placeHolderIncome}}"
           isError="{{isErrorIncome}}" errorText="{{errorTextIncome}}" value="{{selectedIncome}}"
           onSelect="onSelectIncome" />
       </view>

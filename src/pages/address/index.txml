@@ -1,5 +1,5 @@
 <view class="address container">
-  <view class="address-content content w-full">
+  <view class="address-content content w-full mb-x-small">
     <view class="input-section">
       <view class="address-title title">Chọn nhanh</view>
       <view class="select-address input">
@@ -23,9 +23,10 @@
       <input-item label="{{labelApartment}}" type="{{typeApartment}}" placeHolder="{{placeHolderApartment}}"
         maxlength="{{maxLengthApartment}}" isError="{{isErrorApartment}}" errorText="{{errorTextApartment}}"
         onInput="onInputApartment" />
-      <options-selector isRequired="{{true}}" list="{{listResidence}}" title="{{titleResidence}}"
-        label="{{labelResidence}}" placeHolder="{{placeHolderResidence}}" isError="{{isErrorResidence}}"
-        errorText="{{errorTextResidence}}" value="{{selectedResidence}}" onSelect="onSelectResidence" />
+      <options-selector isRequired="{{true}}" list="{{listResidence}}" idKey="id" labelKey="title"
+        title="{{titleResidence}}" label="{{labelResidence}}" placeHolder="{{placeHolderResidence}}"
+        isError="{{isErrorResidence}}" errorText="{{errorTextResidence}}" value="{{selectedResidence}}"
+        onSelect="onSelectResidence" />
     </view>
   </view>
   <btn-footer onTap="onTapNextStep" btnText="{{btnText}}" />

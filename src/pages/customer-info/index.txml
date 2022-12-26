@@ -1,5 +1,5 @@
 <view class="customer-info container">
-  <view class="customer-info-container content w-full">
+  <view class="customer-info-container content w-full mb-x-small">
     <view class="customer-info-content">
       <view class="input-section">
         <input-item isRequired="{{true}}" isFocus="{{isFocusName}}" label="{{labelName}}" type="{{typeName}}"
@@ -13,11 +13,15 @@
           onTap="onSelectDate" />
         <radio-button isRequired="{{true}}" items="{{genders}}" isError="{{isErrorGender}}" onChange="onChangeGender"
           errorText="{{errorTextGender}}" onChange="onChangeGender" />
-        <options-selector isRequired="{{true}}" list="{{listMaritalStatus}}" title="{{titleMaritalStatus}}"
-          label="{{labelMaritalStatus}}" placeHolder="{{placeHolderMaritalStatus}}" isError="{{isErrorMaritalStatus}}"
-          errorText="{{errorTextMaritalStatus}}" value="{{selectedMaritalStatus}}" onSelect="onSelectMaritalStatus" />
+        <options-selector isRequired="{{true}}" list="{{listMaritalStatus}}" idKey="id" labelKey="title"
+          title="{{titleMaritalStatus}}" label="{{labelMaritalStatus}}" placeHolder="{{placeHolderMaritalStatus}}"
+          isError="{{isErrorMaritalStatus}}" errorText="{{errorTextMaritalStatus}}" value="{{selectedMaritalStatus}}"
+          onSelect="onSelectMaritalStatus" />
       </view>
     </view>
   </view>
   <btn-footer onTap="onContinue" btnText="{{btnText}}" />
 </view>
+
+<modal className="modal" isShow="{{modal.isShowModal}}" desc="{{modal.desc}}" header="{{modal.header}}"
+  btnText="{{modal.btnTextModal}}" onCloseModal="onCloseModal" />

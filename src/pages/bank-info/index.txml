@@ -1,5 +1,5 @@
 <view class="bank-info container">
-  <view class="bank-info-container content w-full">
+  <view class="bank-info-container content w-full mb-x-small">
     <view class="bank-info-content">
       <view class="input-section">
         <view class="banks-selector-tabs flex justify-around">
@@ -21,22 +21,25 @@
           <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelBankAcc}}" type="{{typeBankAcc}}"
             placeHolder="{{placeHolderBankAcc}}" maxlength="{{maxLengthBankAcc}}" isError="{{isErrorBankAcc}}"
             errorText="{{errorTextBankAcc}}" onInput="onInputBankAcc" />
-          <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
-            label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurposeBank}}"
-            errorText="{{errorTextLoanPurposeBank}}" value="{{selectedLoanPurposeBank}}"
-            onSelect="onSelectLoanPurposeBank" />
+          <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" idKey="id" labelKey="title"
+            title="{{titleLoanPurpose}}" label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}"
+            isError="{{isErrorLoanPurposeBank}}" errorText="{{errorTextLoanPurposeBank}}"
+            value="{{selectedLoanPurposeBank}}" onSelect="onSelectLoanPurposeBank" />
         </block>
         <block tiki:else>
           <input-item isRequired="{{true}}" isFocus="{{true}}" label="{{labelPhoneMomo}}" type="{{typePhoneMomo}}"
             placeHolder="{{placeHolderPhoneMomo}}" maxlength="{{maxLengthPhoneMomo}}" isError="{{isErrorPhoneMomo}}"
             errorText="{{errorTextPhoneMomo}}" onInput="onInputPhoneMomo" />
-          <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" title="{{titleLoanPurpose}}"
-            label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}" isError="{{isErrorLoanPurposeMomo}}"
-            errorText="{{errorTextLoanPurposeMomo}}" value="{{selectedLoanPurposeMomo}}"
-            onSelect="onSelectLoanPurposeMomo" />
+          <options-selector isRequired="{{true}}" list="{{listLoanPurpose}}" idKey="id" labelKey="title"
+            title="{{titleLoanPurpose}}" label="{{labelLoanPurpose}}" placeHolder="{{placeHolderLoanPurpose}}"
+            isError="{{isErrorLoanPurposeMomo}}" errorText="{{errorTextLoanPurposeMomo}}"
+            value="{{selectedLoanPurposeMomo}}" onSelect="onSelectLoanPurposeMomo" />
         </block>
       </view>
     </view>
   </view>
   <btn-footer onTap="onContinue" btnText="{{btnText}}" />
 </view>
+
+<modal className="modal" isShow="{{modal.isShowModal}}" desc="{{modal.desc}}" header="{{modal.header}}"
+  btnText="{{modal.btnTextModal}}" onCloseModal="onCloseModal" />

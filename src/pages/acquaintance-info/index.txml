@@ -8,9 +8,10 @@
             type="{{typeNameRelative}}" placeHolder="{{placeHolderNameRelative}}" maxlength="{{maxLengthNameRelative}}"
             isError="{{isErrorNameRelative}}" errorText="{{errorTextNameRelative}}" onInput="onInputNameRelative"
             onConfirm="onConfirmNameRelative" />
-          <options-selector isRequired="{{true}}" list="{{listRelationship}}" title="{{titleRelationship}}"
-            label="{{labelRelationship}}" placeHolder="{{placeHolderRelationship}}" isError="{{isErrorRelationship}}"
-            errorText="{{errorTextRelationship}}" value="{{selectedRelationship}}" onSelect="onSelectRelationship" />
+          <options-selector isRequired="{{true}}" list="{{listRelationship}}" idKey="id" labelKey="title"
+            title="{{titleRelationship}}" label="{{labelRelationship}}" placeHolder="{{placeHolderRelationship}}"
+            isError="{{isErrorRelationship}}" errorText="{{errorTextRelationship}}" value="{{selectedRelationship}}"
+            onSelect="onSelectRelationship" />
           <input-item isRequired="{{true}}" isFocus="{{isFocusPhoneRelative}}" label="{{labelPhoneRelative}}"
             type="{{typePhoneRelative}}" placeHolder="{{placeHolderPhoneRelative}}"
             maxlength="{{maxLengthPhoneRelative}}" isError="{{isErrorPhoneRelative}}"
