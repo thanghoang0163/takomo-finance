@@ -33,7 +33,7 @@ Component({
       this.props.onClose();
     },
     _onSelectBank(e) {
-      this.props.onSelectBank(e.target.dataset.name);
+      this.props.onSelectBank(e.target.dataset);
     },
   },
 });

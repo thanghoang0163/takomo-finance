@@ -18,10 +18,11 @@
     </block>
   </view>
   <bottom-sheet show="{{isShow}}" title="Ngân hàng" onClose="_onClose">
-    <search-bar className="search-bar" placeholder="Tìm kiếm ngân hàng" value="{{valueSearch}}" focus onInput="_onSearch" />
+    <search-bar className="search-bar" placeholder="Tìm kiếm ngân hàng" value="{{valueSearch}}" focus
+      onInput="_onSearch" />
     <block tiki:if="{{!isEmpty}}">
       <view class="bank-item flex items-center" tiki:for="{{list}}" tiki:key="{{item.id}}" data-name="{{item.title}}"
-        onTap="_onSelectBank">
+        data-id="{{item.id}}" onTap="_onSelectBank">
         <image class="bank-item-img" src="{{item.icon}}" />
         <view class="bank-item-content">
           <view class="bank-item-title">{{item.bigTitle}}</view>
@@ -30,6 +31,7 @@
       </view>
     </block>
     <block tiki:else>
-      <view class="bank-non-item bank-item-title">Không tìm thấy ngân hàng</view> </block>
+      <view class="bank-non-item bank-item-title">Không tìm thấy ngân hàng</view>
+    </block>
   </bottom-sheet>
 </view>
