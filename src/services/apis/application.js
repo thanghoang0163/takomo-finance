@@ -6,15 +6,18 @@ export const getApplicationId = async (payload) => {
   const res = await request({
     path: "/auth/login",
     data: payload,
-    method: "POST",
+    headers: {
+      Cookie: `${app.data.apiKey}`,
+    },
   });
   return res;
 };
 
-export const applicationInfo = async () => {
+export const applicationInfo = async (payload) => {
   const res = await request({
     path: `/apps/${app.data.applicationId}`,
     method: "PUT",
+    data: payload,
     headers: {
       Cookie: `${app.data.apiKey}`,
     },
