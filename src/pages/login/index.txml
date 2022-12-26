@@ -37,6 +37,7 @@
     </block>
   </view>
   <btn-footer style={{modal.isShow ? "background: #7209b7" : "" }} btnText="{{btnText}}" onTap="onLogin" />
-  <modal className="modal" isShow="{{modal.isShowModal}}" desc="{{modal.desc}}" header="{{modal.header}}" btnText="{{modal.btnTextModal}}" onCloseModal="onCloseModal" />
+  <modal className="modal" isShow="{{modal.isShowModal}}" desc="{{modal.desc}}" header="{{modal.header}}"
+    btnText="{{modal.btnTextModal}}" onCloseModal="onCloseModal" />
 </view>
 <bottom-sheet isShow="{{isShow}}" isAboutUs="{{isAboutUs}}" onClose="onClose" />
