@@ -1,8 +1,11 @@
+import { applicationApis } from "../../services/apis/index";
+
 Page({
   data: {
-    loanTime: 7,
-    approvedMoney: 500000,
-    paidMoney: 570000,
+    loanTime: 0,
+    approvedMoney: 0,
+    paidMoney: 0,
+    dueDate: "",
     btnText: "Xác nhận",
     feeList: [
       {
@@ -25,5 +28,16 @@ Page({
 
   onConfirm() {
     my.navigateTo({ url: "pages/thank-you/index" });
+  },
+
+  async onLoad() {
+    const res = await applicationApis.currentApplicationInfo();
+    const data = res.data.data;
+    this.setData({
+      paidMoney: data.loan_summary.total_amount,
+      approvedMoney: data.amount,
+      dueDate: data.loan_summary.due_date,
+      loanTime: data.term.term,
+    });
   },
 });

@@ -7,18 +7,18 @@ export const randomNumber = () => {
   return random;
 };
 
-export const countDate = () => {
-  var targetDate = getDate();
+// export const countDate = () => {
+//   var targetDate = getDate();
 
-  var futureDay = getDate(targetDate);
-  futureDay.setDate(targetDate.getDate() + 7);
+//   var futureDay = getDate(targetDate);
+//   futureDay.setDate(targetDate.getDate() + 7);
 
-  var dd = futureDay.getDate();
-  var mm = futureDay.getMonth() + 1; // 0 is January, so we must add 1
-  var yyyy = futureDay.getFullYear();
+//   var dd = futureDay.getDate();
+//   var mm = futureDay.getMonth() + 1; // 0 is January, so we must add 1
+//   var yyyy = futureDay.getFullYear();
 
-  var dateString =
-    (dd < 10 ? "0" + dd : dd) + "/" + (mm < 10 ? "0" + mm : mm) + "/" + yyyy;
+//   var dateString =
+//     (dd < 10 ? "0" + dd : dd) + "/" + (mm < 10 ? "0" + mm : mm) + "/" + yyyy;
 
-  return dateString;
-};
+//   return dateString;
+// };

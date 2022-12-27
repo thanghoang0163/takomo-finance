@@ -1,5 +1,5 @@
 <import-sjs name="{moneyFormatter}" from="../../utils/common.sjs" />
-<import-sjs name="{randomNumber, countDate}" from="./index.sjs" />
+<import-sjs name="{randomNumber}" from="./index.sjs" />
 
 <view class="loan-contract container">
   <view class="loan-contract-container content w-full mb-x-small">
@@ -15,7 +15,7 @@
               </view>
               <view class="loan-info-container">
                 <view class="loan-info-label">Ngày đáo hạn:</view>
-                <view class="loan-info-content">{{countDate()}}</view>
+                <view class="loan-info-content">{{dueDate}}</view>
               </view>
             </view>
             <view class="loan-info-money">
