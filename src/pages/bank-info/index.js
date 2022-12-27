@@ -1,3 +1,4 @@
+import parse from "@tiki.vn/mini-html-parser2";
 import { isValidPhoneNumber, isNumber } from "../../utils/common.sjs";
 import {
   directoryApis,
@@ -47,6 +48,7 @@ Page({
     MomoProvider: "",
     loanPurposeId: 0,
     financialInstrumentId: 0,
+    htmlNodes: [],
     modal: {
       isShowModal: false,
       desc: [],
@@ -109,17 +111,6 @@ Page({
     if (this.data.isErrorPhoneMomo) {
       this.setData({
         isErrorPhoneMomo: false,
-      });
-    }
-  },
-
-  onSelectLoanPurposeMomo(value) {
-    this.setData({
-      selectedLoanPurposeMomo: value,
-    });
-    if (this.data.isErrorLoanPurposeMomo) {
-      this.setData({
-        isErrorLoanPurposeMomo: false,
       });
     }
   },
@@ -251,19 +242,15 @@ Page({
       });
     }
 
-    if (
-      (selectedBank !== "" &&
+    if (this.data.isBank) {
+      if (
+        selectedBank !== "" &&
         inputBankAcc !== "" &&
         selectedLoanPurposeBank !== "" &&
         !this.data.isErrorBank &&
         !this.data.isErrorBankAcc &&
-        !this.data.isErrorLoanPurposeBank) ||
-      (inputPhoneMomo !== "" &&
-        selectedLoanPurposeMomo !== "" &&
-        !this.data.isErrorPhoneMomo &&
-        !this.data.isErrorLoanPurposeMomo)
-    ) {
-      if (this.data.isBank) {
+        !this.data.isErrorLoanPurposeBank
+      ) {
         const res = await financeApis.postFinancialInstrument({
           data: {
             fin_instrument_type: this.data.bankType,
@@ -272,11 +259,31 @@ Page({
             provider_id: this.data.bankProvider,
           },
         });
-        this.setData({
-          financialInstrumentId: res.data.data.fin_instrument_id,
-        });
+        if (res.data.success) {
+          this.setData({
+            financialInstrumentId: res.data.data.fin_instrument_id,
+          });
+        } else if (res.data.error.code === 127 || res.data.error.code === 126) {
+          this.data.modal = {
+            ...this.data.modal,
+            isShowModal: true,
+            desc: this.data.htmlNodes,
+            header: ["Lỗi"],
+            btnTextModal: "Đã hiểu",
+          };
+          this.setData({
+            modal: this.data.modal,
+          });
+        }
         this.postToApplication();
-      } else {
+      }
+    } else {
+      if (
+        inputPhoneMomo !== "" &&
+        selectedLoanPurposeMomo !== "" &&
+        !this.data.isErrorPhoneMomo &&
+        !this.data.isErrorLoanPurposeMomo
+      ) {
         const res = await financeApis.postFinancialInstrument({
           data: {
             fin_instrument_type: this.data.MomoType,
@@ -284,24 +291,22 @@ Page({
             provider_id: this.data.MomoProvider,
           },
         });
-        // if (res.data.success) {
-        //   this.setData({
-        //     financialInstrumentId: res.data.data.fin_instrument_id,
-        //   });
-        // } else if (res.data.error.code === 127 || res.data.error.code === 126) {
-        //   this.data.modal = {
-        //     ...this.data.modal,
-        //     isShowModal: true,
-        //     desc: ["Số điện thoại đã tồn tại"],
-        //     header: ["Lỗi"],
-        //     btnTextModal: "Đã hiểu",
-        //   };
-        //   this.setData({
-        //     modal: this.data.modal,
-        //   });
-        this.setData({
-          financialInstrumentId: res.data.data.fin_instrument_id,
-        });
+        if (res.data.success) {
+          this.setData({
+            financialInstrumentId: res.data.data.fin_instrument_id,
+          });
+        } else if (res.data.error.code === 127 || res.data.error.code === 126) {
+          this.data.modal = {
+            ...this.data.modal,
+            isShowModal: true,
+            desc: this.data.htmlNodes,
+            header: ["Lỗi"],
+            btnTextModal: "Đã hiểu",
+          };
+          this.setData({
+            modal: this.data.modal,
+          });
+        }
         this.postToApplication();
       }
     }
@@ -321,6 +326,14 @@ Page({
   },
 
   async onLoad() {
+    const html = `Số điện thoại momo hoặc tài khoản ngân hàng đã tồn tại`;
+    parse(html, (err, htmlNodes) => {
+      if (!err) {
+        this.setData({
+          htmlNodes,
+        });
+      }
+    });
     const res = await directoryApis.directory();
     const data = res.data.data;
     const listBank = data.FinInstrumentBank.items.map((item) => {
