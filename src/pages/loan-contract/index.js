@@ -26,8 +26,15 @@ Page({
     ],
   },
 
-  onConfirm() {
-    my.navigateTo({ url: "pages/thank-you/index" });
+  async onConfirm() {
+    const res = await applicationApis.applicationInfo({
+      data: {
+        step: 999,
+      },
+    });
+    if (res.data.success) {
+      my.navigateTo({ url: "pages/thank-you/index" });
+    }
   },
 
   async onLoad() {
