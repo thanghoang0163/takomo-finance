@@ -1,3 +1,5 @@
+import RegionCode from "./region_codes_vn.json";
+
 export const isHasValue = (value) =>
   value !== null && typeof value !== "undefined";
 
@@ -106,4 +108,9 @@ export const hasSpecialCharater = (string) => {
   var regExp = /[~`!@#$%^&()_={}[\]:;,.<>+\?-]/;
 
   return string.match(regExp);
+};
+
+export const regionCode = (code) => {
+  const region = RegionCode.find((item) => item.title.includes(code));
+  return region.code;
 };

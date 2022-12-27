@@ -1,4 +1,8 @@
-import { isValidStreet, hasSpecialCharater } from "../../utils/common.sjs";
+import {
+  isValidStreet,
+  hasSpecialCharater,
+  regionCode,
+} from "../../utils/common.sjs";
 import { directoryApis, applicationApis } from "../../services/apis/index";
 
 const app = getApp();
@@ -186,8 +190,8 @@ Page({
             address_type_id: 1,
             apartment: this.data.inputApartment,
             city: this.data.city,
-            house: this.data.street.split(' ')[0],
-            region_code: "00",
+            house: this.data.street.split(" ")[0],
+            region_code: regionCode(this.data.city),
             street: this.data.street,
             years_period_id: this.data.residenceId,
           },
