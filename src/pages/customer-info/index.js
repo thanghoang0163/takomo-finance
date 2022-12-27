@@ -1,3 +1,4 @@
+import parse from "@tiki.vn/mini-html-parser2";
 import {
   checkWhiteSpace,
   isValidName,
@@ -43,6 +44,7 @@ Page({
     isFocusIdCard: false,
     genderId: 0,
     maritalId: 0,
+    htmlNodes: [],
     modal: {
       isShowModal: false,
       desc: [],
@@ -227,27 +229,32 @@ Page({
           email: app.data.email,
         },
       });
-      // if (res.data.error.code === 125) {
-      //   this.data.modal = {
-      //     ...this.data.modal,
-      //     isShowModal: true,
-      //     desc: ["Số CMND/CCCD đã tồn tại"],
-      //     header: ["Trùng CMND/CCCD"],
-      //     btnTextModal: "Đã hiểu",
-      //   };
-      //   this.setData({
-      //     modal: this.data.modal,
-      //   });
-      // } else {
-      //   my.navigateTo({ url: "pages/address/index" });
-      // }
       if (res.data.success) {
         my.navigateTo({ url: "pages/address/index" });
+      } else if (res.data.error.code === 125) {
+        this.data.modal = {
+          ...this.data.modal,
+          isShowModal: true,
+          desc: this.data.htmlNodes,
+          header: ["Lỗi"],
+          btnTextModal: "Đã hiểu",
+        };
+        this.setData({
+          modal: this.data.modal,
+        });
       }
     }
   },
 
   async onLoad() {
+    const html = `Số CMND/CCCD đã tồn tại`;
+    parse(html, (err, htmlNodes) => {
+      if (!err) {
+        this.setData({
+          htmlNodes,
+        });
+      }
+    });
     const res = await directoryApis.directory();
     const data = res.data.data;
     if (res.data.success) {
