@@ -25,7 +25,7 @@ export const applicationInfo = async (payload) => {
   return res;
 };
 
-export const currentCusInfo = async () => {
+export const currentApplicationInfo = async () => {
   const res = await request({
     path: `/apps/current`,
     method: "GET",
