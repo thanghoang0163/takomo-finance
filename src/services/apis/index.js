@@ -3,6 +3,7 @@ import * as directoryApis from "./directory";
 import * as applicationApis from "./application";
 import * as phoneNumberApis from "./phone-number";
 import * as financeApis from "./finance";
+import * as photoApis from "./upload-photo";
 
 export {
   registerApis,
@@ -10,4 +11,5 @@ export {
   applicationApis,
   phoneNumberApis,
   financeApis,
+  photoApis,
 };
