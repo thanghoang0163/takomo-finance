@@ -30,8 +30,6 @@ Page({
     isFocusPassword: true,
     isFocusPasswordAgain: false,
     isFocusEmail: false,
-    phone: "",
-    apiKey: "",
   },
 
   onConfirmPassword() {
