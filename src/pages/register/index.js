@@ -154,7 +154,9 @@ Page({
           key: "login",
           data: {
             phone: app.data.phone,
-            apiKey: Object.values(res.headers)[6].split(";")[0],
+            apiKey: Object.values(res.headers).find((item) =>
+            item.includes("_mobile_session_key")
+          ),
           },
         });
         my.setStorage({

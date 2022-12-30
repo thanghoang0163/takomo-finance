@@ -121,7 +121,9 @@ Page({
           key: "login",
           data: {
             phone: this.data.input,
-            apiKey: Object.values(res.headers)[6].split(";")[0],
+            apiKey: Object.values(res.headers).find((item) =>
+              item.includes("_mobile_session_key")
+            ),
           },
         });
         app.getLogin();
