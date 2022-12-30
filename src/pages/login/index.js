@@ -86,7 +86,7 @@ Page({
       });
     } else if (
       (itemInput !== "0" && itemInput.length !== 0) ||
-      !(await isValidPhoneNumber(formatNumberinput)) ||
+      !isValidPhoneNumber(formatNumberinput) ||
       !isNumber(itemInput)
     ) {
       this.setData({
