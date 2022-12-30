@@ -100,7 +100,7 @@ Page({
     } else if (inputPasswordLength < 4 && inputPasswordLength > 0) {
       this.setData({
         isErrorPassword: true,
-        errorTextPassword: "Mật khẩu từ 4 - 6 số!",
+        errorTextPassword: "Mật khẩu từ 4 - 8 số!",
       });
     }
 
