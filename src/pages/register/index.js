@@ -57,6 +57,11 @@ Page({
         isErrorPassword: false,
       });
     }
+    if (this.data.isErrorPasswordAgain) {
+      this.setData({
+        isErrorPasswordAgain: false,
+      });
+    }
   },
 
   onInputPasswordAgain(value) {
@@ -173,7 +178,7 @@ Page({
             applicationId: resApp.data.data.id,
           },
         });
-        app.getLogin()
+        app.getLogin();
         app.getRegister();
         app.getApplication();
         if (resApp.data.success) {
