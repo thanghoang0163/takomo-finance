@@ -1,6 +1,7 @@
 import parse from "@tiki.vn/mini-html-parser2";
 import { registerApis } from "../../services/apis/index";
 import { isValidPhoneNumber, isNumber } from "../../utils/common.sjs";
+import { convertHtmlNodes } from "../../utils/common.js";
 
 const app = getApp();
 
@@ -9,7 +10,6 @@ Page({
     text: "Takomo ",
     btnText: "Đăng ký",
     htmlNodes: [],
-    htmlNodesText: "",
     isFirst: true,
     isError: false,
     isShow: false,
@@ -143,12 +143,12 @@ Page({
   },
 
   onLoad() {
-    const html = `Để đăng nhập quản trị tài khoản hoặc vay thêm, quý khách vui lòng truy cập <span style="color: #7209b7">ứng dụng di động</span> hoặc website <span style="color: #7209b7">takomo.vn</span> để tiếp tục`;
-    parse(html, (err, htmlNodes) => {
+    const string = `Để đăng nhập quản trị tài khoản hoặc vay thêm, quý khách vui lòng truy cập <span style="color: #7209b7">ứng dụng di động</span> hoặc website <span style="color: #7209b7">takomo.vn</span> để tiếp tục`;
+
+    parse(string, (err, htmlNodes) => {
       if (!err) {
         this.setData({
           htmlNodes,
-          htmlNodesText: JSON.stringify(htmlNodes, null, 2),
         });
       }
     });
