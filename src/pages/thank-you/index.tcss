@@ -5,7 +5,6 @@
 
 .success-content {
   margin-top: 10vh;
-  width: 95vw;
 }
 
 .success-label {
