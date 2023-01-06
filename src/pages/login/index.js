@@ -142,15 +142,12 @@ Page({
     });
   },
 
-  onLoad() {
+  async onLoad() {
     const string = `Để đăng nhập quản trị tài khoản hoặc vay thêm, quý khách vui lòng truy cập <span style="color: #7209b7">ứng dụng di động</span> hoặc website <span style="color: #7209b7">takomo.vn</span> để tiếp tục`;
 
-    parse(string, (err, htmlNodes) => {
-      if (!err) {
-        this.setData({
-          htmlNodes,
-        });
-      }
+    const htmlNodes = await convertHtmlNodes(string);
+    this.setData({
+      htmlNodes,
     });
   },
 

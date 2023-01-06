@@ -5,6 +5,7 @@ import {
   applicationApis,
   financeApis,
 } from "../../services/apis/index";
+import { convertHtmlNodes } from "../../utils/common.js";
 
 Page({
   data: {
@@ -326,13 +327,10 @@ Page({
   },
 
   async onLoad() {
-    const html = `Số điện thoại momo hoặc tài khoản ngân hàng đã tồn tại`;
-    parse(html, (err, htmlNodes) => {
-      if (!err) {
-        this.setData({
-          htmlNodes,
-        });
-      }
+    const string = `Số điện thoại momo hoặc tài khoản ngân hàng đã tồn tại`;
+    const htmlNodes = await convertHtmlNodes(string);
+    this.setData({
+      htmlNodes,
     });
     const res = await directoryApis.directory();
     const data = res.data.data;

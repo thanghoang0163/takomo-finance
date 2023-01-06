@@ -7,6 +7,7 @@ import {
   formatBirthDay,
 } from "../../utils/common.sjs";
 import { directoryApis, applicationApis } from "../../services/apis/index";
+import { convertHtmlNodes } from "../../utils/common.js";
 
 const app = getApp();
 
@@ -247,13 +248,10 @@ Page({
   },
 
   async onLoad() {
-    const html = `Số CMND/CCCD đã tồn tại`;
-    parse(html, (err, htmlNodes) => {
-      if (!err) {
-        this.setData({
-          htmlNodes,
-        });
-      }
+    const string = `Số CMND/CCCD đã tồn tại`;
+    const htmlNodes = await convertHtmlNodes(string);
+    this.setData({
+      htmlNodes,
     });
     const res = await directoryApis.directory();
     const data = res.data.data;
