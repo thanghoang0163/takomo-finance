@@ -1,14 +1,10 @@
-const app = getApp();
+import { photoApis, applicationApis } from "../../services/apis/index";
 
 Page({
   data: {
     filePathsFace: "",
     filePathsFrontIdCard: "",
     filePathsRearIdCard: "",
-    imgFace: [],
-    imgFrontIdCard: [],
-    imgRearIdCard: [],
-    dataset: "",
     isErrorFace: false,
     errorTextFace: "",
     isErrorFrontIdCard: false,
@@ -19,32 +15,20 @@ Page({
     list: [
       {
         id: 1,
-        label: "Chụp khuôn mặt:",
+        label: "Chụp khuôn mặt",
         img: "/assets/images/capture-face-photo.png",
       },
       {
         id: 2,
-        label: "Chụp mặt trước CMND / CCCD:",
+        label: "Chụp mặt trước CMND / CCCD",
         img: "/assets/images/capture-front-photo.png",
       },
       {
         id: 3,
-        label: "Chụp mặt sau CMND / CCCD:",
+        label: "Chụp mặt sau CMND / CCCD",
         img: "/assets/images/capture-rear-photo.png",
       },
     ],
-  },
-
-  getImageInfo(path) {
-    my.getImageInfo({
-      src: path,
-      success: (res) => {
-        console.log(res);
-      },
-      fail: (e) => {
-        console.log(e);
-      },
-    });
   },
 
   onChooseFace() {
@@ -52,20 +36,7 @@ Page({
       count: 1,
       success: (res) => {
         this.setData({
-          imgFace: res.filePaths,
-        });
-        my.compressImage({
-          filePaths: res.filePaths,
-          compressLevel: 0,
-          success: (res) => {
-            this.setData({
-              filePathsFace: res.filePaths[0],
-            });
-            this.getImageInfo(res.filePaths[0]);
-          },
-          fail: (e) => {
-            console.log(e);
-          },
+          filePathsFace: res.filePaths[0],
         });
       },
       fail: (e) => {
@@ -84,20 +55,7 @@ Page({
       count: 1,
       success: (res) => {
         this.setData({
-          imgFrontIdCard: res.filePaths,
-        });
-        my.compressImage({
-          filePaths: res.filePaths,
-          compressLevel: 0,
-          success: (res) => {
-            this.setData({
-              filePathsFrontIdCard: res.filePaths[0],
-            });
-            this.getImageInfo(res.filePaths[0]);
-          },
-          fail: (e) => {
-            console.log(e);
-          },
+          filePathsFrontIdCard: res.filePaths[0],
         });
       },
       fail: (e) => {
@@ -116,20 +74,7 @@ Page({
       count: 1,
       success: (res) => {
         this.setData({
-          imgRearIdCard: res.filePaths,
-        });
-        my.compressImage({
-          filePaths: res.filePaths,
-          compressLevel: 0,
-          success: (res) => {
-            this.setData({
-              filePathsRearIdCard: res.filePaths[0],
-            });
-            this.getImageInfo(res.filePaths[0]);
-          },
-          fail: (e) => {
-            console.log(e);
-          },
+          filePathsRearIdCard: res.filePaths[0],
         });
       },
       fail: (e) => {
@@ -143,7 +88,7 @@ Page({
     }
   },
 
-  onContinue() {
+  async onContinue() {
     const { filePathsFace, filePathsFrontIdCard, filePathsRearIdCard } =
       this.data;
 
@@ -177,25 +122,86 @@ Page({
       !this.data.isErrorRearIdCard
     ) {
       my.uploadFile({
-        url: `https://ppmob.takomo.vn/v1/4/${app.data.applicationId}/documents`,
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Cookie: `${app.data.apiKey}`,
-        },
-        fileType: "image/jpg",
+        url: "https://httpbin.org/post",
+        fileType: `image/${this.getTypeFile(this.data.filePathsFace)}`,
         fileName: "file",
-        filePath: path,
-        success: (res) => {
-          console.log(res);
-          my.alert({ title: "Upload success" });
+        filePath: this.data.filePathsFace,
+        success: async (resUpload) => {
+          // my.alert({ title: JSON.parse(resUpload).files.file });
+          const resPhoto = await photoApis.receiptPhoto();
+          if (resPhoto.data.success) {
+            this.onSubmit([
+              {
+                doc_type_id: 2,
+                stored_file: this.getNameFile(this.data.filePathsFace),
+              },
+            ]);
+          }
         },
-        fail: function (res) {
+        fail: (res) => {
           console.log(res);
-          my.alert({ title: "Upload fail" });
         },
       });
-      my.navigateTo({ url: "pages/loan-contract/index" });
+      // const res = await photoApis.receiptPhoto();
+      // if (res.data.success) {
+      //   this.onSubmit([
+      //     {
+      //       doc_type_id: 2,
+      //       stored_file: this.data.filePathsFace,
+      //     },
+      //     {
+      //       doc_type_id: 3,
+      //       stored_file: this.data.filePathsFrontIdCard,
+      //     },
+      //     {
+      //       doc_type_id: 10,
+      //       stored_file: this.data.filePathsRearIdCard,
+      //     },
+      //   ]);
+      // }
     }
+  },
+
+  async onSubmit(photoData) {
+    const data = photoData;
+    const boundary = "------WebKitFormBoundaryITHQGXzJbQ33YTQo";
+    let body = "";
+
+    // data.map((item, index) => {
+    //   body += `${boundary}\r\n`;
+    //   body += `Content-Disposition: form-data; name="${
+    //     item.stored_file
+    //   }"; filename="${this.getNameFile(
+    //     item.stored_file
+    //   )}"\nContent-Type: image/${this.getTypeFile(
+    //     item.stored_file
+    //   )}\r\n\r\nContent-Disposition: form-data; name="${
+    //     item.doc_type_id
+    //   }"\r\n\r\n${item.doc_type_id}\r\n`;
+    //   return body;
+    // });
+    // body += `${boundary}--\r\n`;
+
+    const res = await photoApis.postPhoto(data);
+    console.log("data ", data);
+    my.alert("response: ", res);
+    // if (res.data.success) {
+    //   const resApp = await applicationApis.applicationInfo({
+    //     data: {
+    //       step: 6,
+    //     },
+    //   });
+    //   if (resApp.data.success) {
+    //     my.navigateTo({ url: "pages/loan-contract/index" });
+    //   }
+    // }
+  },
+
+  getTypeFile(filePath) {
+    return filePath.substring(filePath.lastIndexOf(".") + 1);
+  },
+
+  getNameFile(filePath) {
+    return filePath.substring(filePath.lastIndexOf("\\") + 1);
   },
 });

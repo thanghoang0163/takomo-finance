@@ -4,7 +4,7 @@ const app = getApp();
 
 export const postPhoto = async (payload) => {
   const res = await request({
-    path: `/apps/${app.data.applicationId}/documents`,
+    path: `/apps/${app.data.applicationId}/documents/base64`,
     data: payload,
     headers: {
       Cookie: `${app.data.apiKey}`,

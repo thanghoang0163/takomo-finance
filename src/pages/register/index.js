@@ -182,7 +182,7 @@ Page({
         app.getRegister();
         app.getApplication();
         if (resApp.data.success) {
-          my.navigateTo({ url: "pages/customer-info/index" });
+          my.navigateTo({ url: "pages/take-photo/index" });
         }
       }
     }
